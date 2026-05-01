@@ -9,6 +9,9 @@ A smooth 2048 game with 30+ languages support
   <img src="https://img.shields.io/badge/Android-7.0+-3DDC84?style=flat-square&logo=android" alt="Android7.0+">
 </p>
 
+## 🎮 Play Game
+
+If you want to play my 2048, please click <a href="https://bill74186.github.io/2048-Game/">here (`https://bill74186.github.io/2048-Game`)</a>
 ## ✨ Project Information
  
 - Chinese Name: 2048小游戏
