@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>2048 Mini Game</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>2048</h1>
+	<main>
+		<section class="scores">
+			<div class="score">
+				<div class="score-label">Score</div>
+				<div class="score-value" id="score">0</div>
+			</div>
+			<div class="score">
+				<div class="score-label">Best</div>
+				<div class="score-value" id="best-score">0</div>
+			</div>
+		</section>
+
+		<div id="game"></div>
+
+		<div class="btns">
+			<button id="restart">New Game</button>
+			<button id="toggle-intro">How to Play</button>
+		</div>
+
+		<aside class="intro collapsible" id="intro">
+			<h3>Game Guide</h3>
+			<p>&#x1F3AE; Slide tiles to merge same numbers</p>
+			<p>&#x1F3AF; Reach 2048 to win, keep playing for high score</p>
+			<p>&#x2328;&#xFE0F; PC: Use arrow keys to move</p>
+			<p>&#x1F4F1; Mobile: Swipe screen to control</p>
+			<p>&#x1F95A; Easter egg: Swipe down 10 times</p>
+			<p id="qrcode"></p>
+		</aside>
+	</main>
+
+	<footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+		<a href="index.html">← Change Language</a>
+	</footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script src="script.js"></script>
+	
+	<script>
+		let now = new Date();
+		let currentYear = now.getUTCFullYear();
+		document.getElementById("Year").innerText = currentYear;
+
+		$(document).ready(function () {
+			$('#game').init2048({
+				bestScoreKey: '2048-best-enUS',
+				textGameOver: 'Game Over',
+				textNewGame: 'New Game',
+				textWin: 'You Win!',
+				textKeepPlaying: 'Continue',
+				textHide: 'Hide',
+				textHowToPlay: 'How to Play'
+			});
+			$('#intro').on('touchmove', function (e) {
+				e.stopPropagation();
+			});
+		});
+	</script>
+</body>
+</html>

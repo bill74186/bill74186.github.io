@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Гра 2048</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>2048</h1>
+    <main>
+        <section class="scores">
+            <div class="score">
+                <div class="score-label">Поточний рахунок</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score">
+                <div class="score-label">Найкращий рахунок</div>
+                <div class="score-value" id="best-score">0</div>
+            </div>
+        </section>
+
+        <div id="game"></div>
+
+        <div class="btns">
+            <button id="restart">Нова гра</button>
+            <button id="toggle-intro">Правила гри</button>
+        </div>
+
+        <aside class="intro collapsible" id="intro">
+            <h3>Правила гри</h3>
+            <p>&#x1F3AE; Як грати: Пересувайте плитки, об'єднуйте однакові числа, щоб отримати більші</p>
+            <p>&#x1F3AF; Мета: Створіть плитку 2048, щоб перемогти, потім продовжуйте для вищих рахунків</p>
+            <p>&#x2328;&#xFE0F; Комп'ютер: Використовуйте клавіші зі стрілками вгору, вниз, вліво і вправо</p>
+            <p>&#x1F4F1; Телефон: Проведіть по екрану вгору, вниз, вліво і вправо</p>
+            <p>&#x1F95A; Пасхалка: Проведіть вниз 10 разів! Є сюрприз</p>
+			<p id="qrcode"></p>
+        </aside>
+    </main>
+
+    <footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+        <a href="index.html">← Вибрати іншу мову</a>
+    </footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script src="script.js"></script>
+	
+    <script>
+        let now = new Date();
+        let currentYear = now.getUTCFullYear();
+        document.getElementById("Year").innerText = currentYear;
+
+        $(document).ready(function () {
+            $('#game').init2048({
+                bestScoreKey: '2048-best-ukUA',
+                textGameOver: 'Гра закінчена',
+                textNewGame: 'Нова гра',
+                textWin: 'Вітаємо, ви перемогли!',
+                textKeepPlaying: 'Продовжити гру',
+                textHide: 'Приховати правила',
+                textHowToPlay: 'Правила гри'
+            });
+
+            $('#intro').on('touchmove', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>

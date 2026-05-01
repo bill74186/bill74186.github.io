@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>隐藏彩蛋设置</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+			margin: 16px 0;
+			font-size: 14px;
+		}
+		
+		input {
+			width: 110px;
+			padding: 8px 4px;
+			background: #f0f0f0;
+			border: 2px solid #8f7a66;
+			border-radius: 0;
+			color: #333;
+			font-family: inherit;
+			text-align: center;
+			font-size: 14px;
+			outline: none;
+		}
+		
+		.sw {
+			display: inline-flex;
+			position: relative;
+			width: 110px;
+			height: 34px;
+			background: #6f5a46;
+			border-radius: 0;
+			transition: background 0.25s ease;
+			cursor: pointer;
+		}
+		.sw input {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: 10;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			cursor: pointer;
+		}
+		.sw-block {
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			width: 52px;
+			height: 28px;
+			background: #f0f0f0;
+			color: #333;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: bold;
+			transition: transform 0.25s ease;
+			border-radius: 0;
+			pointer-events: none;
+		}
+		.sw.on {
+			background: #8f7a66;
+		}
+		.sw.on .sw-block {
+			transform: translateX(52px);
+		}
+		.clear-btn{
+			width: 110px;
+			padding: 8px 0;
+			background: #6f5a46;
+			border: 2px solid #8f7a66;
+			border-radius: 0;
+			color: #fff;
+			font-size: 14px;
+			font-family: inherit;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Easter Eggs设置</h1>
+
+	<main>
+		<div class="intro">
+			<h3>高级自定义参数</h3>
+
+			<div class="item">
+				<span>下滑彩蛋方块数值</span>
+				<input type="number" id="eggNum" min="2" placeholder="8192">
+			</div>
+
+			<div class="item">
+				<span>开局初始方块数量</span>
+				<input type="number" id="startCount" min="1" max="6" placeholder="2">
+			</div>
+
+			<div class="item">
+				<span>随机生成数字列表</span>
+				<input type="text" id="randList" placeholder="2,4">
+			</div>
+
+			<div class="item">
+				<span>滑动动画速度(ms)</span>
+				<input type="number" id="animSpeed" min="50" max="500" placeholder="200">
+			</div>
+
+			<div class="item">
+				<span>通关目标分值</span>
+				<input type="number" id="winGoal" min="128" placeholder="2048">
+			</div>
+
+			<div class="item">
+				<span>天文数字自动压缩简写</span>
+				<label class="sw">
+					<input type="checkbox" id="autoFormatSwitch">
+					<div class="sw-block">关闭</div>
+				</label>
+			</div>
+
+			<div class="item">
+				<span>一键清除全语言最高分</span>
+				<button class="clear-btn" id="clearAllScore">清除分数</button>
+			</div>
+
+		</div>
+
+		<div class="btns">
+			<button id="saveConfig">保存设置</button>
+			<button onclick="history.back()">返回首页</button>
+		</div>
+
+		<div class="intro">
+			<h3>使用说明 / Instructions</h3>
+
+			<div id="tip-cn">
+				<p>&#x2B07;&#xFE0F; 下滑彩蛋数值：达成指定数字自动触发隐藏彩蛋特效</p>
+				<p>&#x1F3FD; 开局方块数量：调整游戏初始生成的数字块个数</p>
+				<p>&#x1F522; 随机数字列表：使用逗号分隔，自定义对局生成的数字</p>
+				<p>&#x23F1;&#xFE0F; 动画速度：数值越小滑动合并越快，单位毫秒</p>
+				<p>&#x1F49F; 通关目标分值：修改判定游戏胜利的目标数字</p>
+				<p>&#x2728; 数字压缩简写：开启K/M/G/T/P超大单位简化显示</p>
+				<p>&#x1F4A5; 恶搞彩蛋：一键清空全部30种语言独立篡改分数</p>
+			</div>
+
+			<div id="tip-en" style="display:none;">
+				<p>&#x2B07;&#xFE0F; Easter Egg Value: Auto trigger hidden effect at target number</p>
+				<p>&#x1F3FD; Start Tiles: Adjust initial tiles count when game begins</p>
+				<p>&#x1F522; Random Number List: Custom spawn numbers, separated by commas</p>
+				<p>&#x23F1;&#xFE0F; Animation Speed: Lower = faster slide & merge (ms)</p>
+				<p>&#x1F49F; Win Goal: Change target number to win the game</p>
+				<p>&#x2728; Auto Format: Show big numbers as K/M/G/T/P</p>
+				<p>&#x1F4A5; Prank: Clear all 30 language best scores in one click</p>
+			</div>
+
+			<div id="qrcode"></div>
+
+			<div class="btns" style="margin:12px 0 0;">
+				<button onclick="showLang('cn')">中文</button>
+				<button onclick="showLang('en')">EN</button>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game
+	</footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script>
+		let now = new Date();
+		document.getElementById("Year").innerText = now.getFullYear();
+		
+		const defaultSet = {
+			eggCube: 8192,
+			startCount: 2,
+			randList: "2,4",
+			animSpeed: 200,
+			winGoal: 2048,
+			autoFormat: true
+		};
+		
+		function loadConfig(){
+			let res = JSON.parse(localStorage.getItem("eggConfig")) || defaultSet;
+			window.eggConfig = res;
+			return res;
+		}
+		
+		let cfg = loadConfig();
+		const swBox = document.querySelector('.sw');
+		const swText = document.querySelector('.sw-block');
+		const check = document.getElementById("autoFormatSwitch");
+		
+		function swUI(){
+			check.checked ? (swBox.classList.add('on'), swText.innerText = "开启") 
+						  : (swBox.classList.remove('on'), swText.innerText = "关闭");
+		}
+		
+		check.addEventListener('change', swUI);
+		
+		document.getElementById("eggNum").value = cfg.eggCube;
+		document.getElementById("startCount").value = cfg.startCount;
+		document.getElementById("randList").value = cfg.randList;
+		document.getElementById("animSpeed").value = cfg.animSpeed;
+		document.getElementById("winGoal").value = cfg.winGoal;
+		check.checked = cfg.autoFormat;
+		swUI();
+		
+		document.getElementById("saveConfig").addEventListener("click",()=>{
+			cfg.eggCube = Number(document.getElementById("eggNum").value);
+			cfg.startCount = Number(document.getElementById("startCount").value);
+			cfg.randList = document.getElementById("randList").value;
+			cfg.animSpeed = Number(document.getElementById("animSpeed").value);
+			cfg.winGoal = Number(document.getElementById("winGoal").value);
+			cfg.autoFormat = check.checked;
+		
+			localStorage.setItem("eggConfig",JSON.stringify(cfg));
+			loadConfig();
+			alert("✅ 设置保存成功 · 全部即时生效");
+		});
+		
+		// 核心：遍历清除所有 2048-best- 开头的全部语言分数
+		document.getElementById("clearAllScore").addEventListener('click',()=>{
+			Object.keys(localStorage).forEach(key => {
+				if(key.startsWith("2048-best")){
+					localStorage.removeItem(key);
+				}
+			});
+			alert("💥 已清空【全部30种语言】独立最高分！恶搞直接拉满");
+		});
+		// 说明面板语言切换
+		function showTipLang(lang) {
+		  document.getElementById('tip-cn').style.display = lang === 'cn' ? 'block' : 'none';
+		  document.getElementById('tip-en').style.display = lang === 'en' ? 'block' : 'none';
+		}
+	</script>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

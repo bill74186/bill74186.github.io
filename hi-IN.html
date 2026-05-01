@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi-IN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>2048 गेम</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>2048</h1>
+	<main>
+		<section class="scores">
+			<div class="score">
+				<div class="score-label">वर्तमान स्कोर</div>
+				<div class="score-value" id="score">0</div>
+			</div>
+			<div class="score">
+				<div class="score-label">सर्वश्रेष्ठ स्कोर</div>
+				<div class="score-value" id="best-score">0</div>
+			</div>
+		</section>
+
+		<div id="game"></div>
+
+		<div class="btns">
+			<button id="restart">नया गेम</button>
+			<button id="toggle-intro">गेम निर्देश</button>
+		</div>
+
+		<aside class="intro collapsible" id="intro">
+			<h3>गेम निर्देश</h3>
+			<p>&#x1F3AE; कैसे खेलें: ब्लॉकों को स्वाइप करें, समान संख्याओं को मिलाकर बड़ी संख्याएं बनाएं</p>
+			<p>&#x1F3AF; लक्ष्य: जीतने के लिए 2048 ब्लॉक बनाएं, फिर उच्च स्कोर के लिए जारी रखें</p>
+			<p>&#x2328;&#xFE0F; कंप्यूटर: ऊपर, नीचे, बाएं और दाएं तीर कुंजियों का उपयोग करें</p>
+			<p>&#x1F4F1; फोन: स्क्रीन को ऊपर, नीचे, बाएं और दाएं स्वाइप करें</p>
+			<p>&#x1F95A; ईस्टर एग: 10 बार नीचे स्वाइप करें! एक सरप्राइज है</p>
+			<p id="qrcode"></p>
+		</aside>
+	</main>
+
+	<footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+		<a href="index.html">← दूसरी भाषा चुनें</a>
+	</footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script src="script.js"></script>
+	
+	<script>
+		let now = new Date();
+		let currentYear = now.getUTCFullYear();
+		document.getElementById("Year").innerText = currentYear;
+
+		$(document).ready(function () {
+			$('#game').init2048({
+				bestScoreKey: '2048-best-hiIN',
+				textGameOver: 'गेम खत्म',
+				textNewGame: 'नया गेम',
+				textWin: 'बधाई हो, आप जीत गए!',
+				textKeepPlaying: 'खेल जारी रखें',
+				textHide: 'निर्देश छिपाएं',
+				textHowToPlay: 'गेम निर्देश'
+			});
+
+			$('#intro').on('touchmove', function (e) {
+				e.stopPropagation();
+			});
+		});
+	</script>
+</body>
+</html>

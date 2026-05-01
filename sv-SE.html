@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>2048 Spelet</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>2048</h1>
+	<main>
+		<section class="scores">
+			<div class="score">
+				<div class="score-label">Nuvarande poäng</div>
+				<div class="score-value" id="score">0</div>
+			</div>
+			<div class="score">
+				<div class="score-label">Bästa poäng</div>
+				<div class="score-value" id="best-score">0</div>
+			</div>
+		</section>
+
+		<div id="game"></div>
+
+		<div class="btns">
+			<button id="restart">Nytt spel</button>
+			<button id="toggle-intro">Spelinstruktioner</button>
+		</div>
+
+		<aside class="intro collapsible" id="intro">
+			<h3>Spelinstruktioner</h3>
+			<p>&#x1F3AE; Hur man spelar: Dra blocken, kombinera likadana siffror för att få större siffror</p>
+			<p>&#x1F3AF; Mål: Skapa blocket 2048 för att vinna, fortsätt sedan för högre poäng</p>
+			<p>&#x2328;&#xFE0F; Dator: Använd piltangenterna upp, ner, vänster och höger</p>
+			<p>&#x1F4F1; Telefon: Svep skärmen upp, ner, vänster och höger</p>
+			<p>&#x1F95A; Easter egg: Svep ner 10 gånger! Det finns en överraskning</p>
+			<p id="qrcode"></p>
+		</aside>
+	</main>
+
+	<footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+		<a href="index.html">← Välj ett annat språk</a>
+	</footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script src="script.js"></script>
+	
+	<script>
+		let now = new Date();
+		let currentYear = now.getUTCFullYear();
+		document.getElementById("Year").innerText = currentYear;
+
+		$(document).ready(function () {
+			$('#game').init2048({
+				bestScoreKey: '2048-best-svSE',
+				textGameOver: 'Spelet är slut',
+				textNewGame: 'Nytt spel',
+				textWin: 'Grattis, du vann!',
+				textKeepPlaying: 'Fortsätt spela',
+				textHide: 'Dölj instruktioner',
+				textHowToPlay: 'Spelinstruktioner'
+			});
+
+			$('#intro').on('touchmove', function (e) {
+				e.stopPropagation();
+			});
+		});
+	</script>
+</body>
+</html>

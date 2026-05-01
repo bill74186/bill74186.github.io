@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<script src="firewall.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>2048 Game | Select Language</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<h1>2048 Game</h1>
+	<p class="subtitle">请选择您的语言 / Select Language</p>
+
+	<main>
+		<aside class="intro">
+			<h3>关于 2048 / About 2048</h3>
+
+			<div id="intro-cn">
+				<p>&#x1F3AE; 经典数字益智游戏</p>
+				<p>&#x1F3AF; 滑动合并相同数字，挑战2048</p>
+				<p>&#x1F30D; 支持全球30种语言</p>
+				<p>&#x1F4F1; 完美适配手机和电脑</p>
+			</div>
+
+			<div id="intro-en" style="display:none;">
+				<p>&#x1F3AE; Classic number puzzle game</p>
+				<p>&#x1F3AF; Swipe to merge same numbers, reach 2048</p>
+				<p>&#x1F30D; 30 languages supported</p>
+				<p>&#x1F4F1; Perfect for mobile & desktop</p>
+			</div>
+
+			<div class="btns">
+				<button onclick="showLang('cn')">中文</button>
+				<button onclick="showLang('en')">EN</button>
+			</div>
+		</aside>
+		<ul>
+			<li><a href="zh-CN.html">简体中文</a></li>
+			<li><a href="zh-TW.html">繁體中文</a></li>
+			<li><a href="en-US.html">English</a></li>
+			<li><a href="ja-JP.html">日本語</a></li>
+			<li><a href="ko-KR.html">한국어</a></li>
+			<li><a href="es-ES.html">Español</a></li>
+			<li><a href="fr-FR.html">Français</a></li>
+			<li><a href="de-DE.html">Deutsch</a></li>
+			<li><a href="it-IT.html">Italiano</a></li>
+			<li><a href="pt-BR.html">Português</a></li>
+			<li><a href="ru-RU.html">Русский</a></li>
+			<li><a href="is-IS.html">Íslenska</a></li>
+			<li><a href="hi-IN.html">हिन्दी</a></li>
+			<li><a href="th-TH.html">ไทย</a></li>
+			<li><a href="vi-VN.html">Tiếng Việt</a></li>
+			<li><a href="id-ID.html">Indonesia</a></li>
+			<li><a href="ms-MY.html">Melayu</a></li>
+			<li><a href="tr-TR.html">Türkçe</a></li>
+			<li><a href="pl-PL.html">Polski</a></li>
+			<li><a href="nl-NL.html">Nederlands</a></li>
+			<li><a href="sv-SE.html">Svenska</a></li>
+			<li><a href="da-DK.html">Dansk</a></li>
+			<li><a href="no-NO.html">Norsk</a></li>
+			<li><a href="fi-FI.html">Suomi</a></li>
+			<li><a href="cs-CZ.html">Čeština</a></li>
+			<li><a href="hu-HU.html">Magyar</a></li>
+			<li><a href="ro-RO.html">Română</a></li>
+			<li><a href="uk-UA.html">Українська</a></li>
+			<li><a href="el-GR.html">Ελληνικά</a></li>
+			<li><a href="cy-GB.html">Cymraeg</a></li>
+			
+		</ul>
+	</main>
+
+	<footer>
+		&copy; <span id="Year">2026</span>
+		<a href="ca-ES.html">Bill74186</a> | 2048 Game
+	</footer>
+
+	<div class="ver"><a href="description.txt">v2.2.6</a> · <a href="index.html">Bill74186</a></div>
+	<div id="load" class="ltx">Loading…</div>
+	<script>
+		let now = new Date();
+		let currentYear = now.getUTCFullYear();
+		document.getElementById("Year").innerText = currentYear;
+	</script>
+	<script src="script.js"></script>
+</body>
+
+</html>

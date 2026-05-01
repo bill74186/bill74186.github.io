@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>2048ゲーム</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="jquery.qrcode-1.0.3.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>2048</h1>
+	<main>
+		<section class="scores">
+			<div class="score">
+				<div class="score-label">スコア</div>
+				<div class="score-value" id="score">0</div>
+			</div>
+			<div class="score">
+				<div class="score-label">ベスト</div>
+				<div class="score-value" id="best-score">0</div>
+			</div>
+		</section>
+
+		<div id="game"></div>
+
+		<div class="btns">
+			<button id="restart">最初から</button>
+			<button id="toggle-intro">遊び方</button>
+		</div>
+
+		<aside class="intro collapsible" id="intro">
+			<h3>遊び説明</h3>
+			<p>&#x1F3AE; 同じ数字をスワイプして合体させる</p>
+			<p>&#x1F3AF; 2048を作成するとクリア、高得点を目指せ</p>
+			<p>&#x2328;&#xFE0F; PC：矢印キーで操作</p>
+			<p>&#x1F4F1; スマホ：画面をスワイプ</p>
+			<p>&#x1F95A; 隠し要素：下へ10回スワイプ</p>
+			<p id="qrcode"></p>
+		</aside>
+	</main>
+
+	<footer>
+		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+		<a href="index.html">← 言語変更</a>
+	</footer>
+
+	<div id="load" class="ltx">Loading…</div>
+	<div class="ver">v2.2.6 · <a href="index.html">Bill74186</a></div>
+
+	<script src="script.js"></script>
+	
+	<script>
+		let now = new Date();
+		let currentYear = now.getUTCFullYear();
+		document.getElementById("Year").innerText = currentYear;
+
+		$(document).ready(function () {
+			$('#game').init2048({
+				bestScoreKey: '2048-best-jaJP',
+				textGameOver: 'ゲームオーバー',
+				textNewGame: '最初から',
+				textWin: 'クリア！',
+				textKeepPlaying: '続ける',
+				textHide: '閉じる',
+				textHowToPlay: '遊び方'
+			});
+			$('#intro').on('touchmove', function (e) {
+				e.stopPropagation();
+			});
+		});
+	</script>
+</body>
+</html>
