@@ -1,3 +1,5 @@
+<div align="center">
+
 # 2048 Game
 A smooth 2048 game with 30+ languages support
 
@@ -9,9 +11,14 @@ A smooth 2048 game with 30+ languages support
   <img src="https://img.shields.io/badge/Android-7.0+-3DDC84?style=flat-square&logo=android" alt="Android7.0+">
 </p>
 
+</div>
+
 ## 🎮 Play Game
 
-If you want to play my 2048, please click <a href="https://bill74186.github.io/2048-Game/">here (`https://bill74186.github.io/2048-Game`)</a>
+If you want to play my 2048, please click 👉
+<a href="https://bill74186.github.io/2048-Game/">here (`https://bill74186.github.io/2048-Game`)</a>
+Give me a Star if you like it,please!
+
 ## ✨ Project Information
  
 - Chinese Name: 2048小游戏
@@ -45,7 +52,7 @@ If you want to play my 2048, please click <a href="https://bill74186.github.io/2
  
 All content is produced by bill74186, all contents can be modified freely.
  
- Can you give me some money? I'm running out of money to eat?  🙃🙃🙃
+Can you give me some money? I'm running out of money to eat?  🙃🙃🙃
  
 The code structure is a bit redundant, it works fine anyway.
  
@@ -112,4 +119,4 @@ Writing this README is the same🤪
  
 Just enjoy the game by yourself!👽
  
-This project is open-sourced under the MIT License, you are free to use, modify and distribute all codes of this project.📖
+> This project is open-sourced under the MIT License, you are free to use, modify and distribute all codes of this project.📖
