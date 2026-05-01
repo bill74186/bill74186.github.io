@@ -8,6 +8,9 @@ A smooth 2048 game with 30+ languages support
   <a href="https://github.com/bill74186/2048-Game/network/members"><img src="https://img.shields.io/github/forks/bill74186/2048-Game?style=for-the-badge&logo=github&color=6cc644" alt="Forks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
+
+---
+
 <p>
   <img src="https://img.shields.io/badge/HTML-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS-3-1572B6?style=flat-square&logo=css" alt="CSS3">
@@ -21,43 +24,45 @@ A smooth 2048 game with 30+ languages support
 ## 🎮 Play Game
 
 If you want to play my 2048, please click 👉
-<a href="https://bill74186.github.io/2048-Game/">here (`https://bill74186.github.io/2048-Game`)</a>
+<a href="https://bill74186.github.io/2048-Game/">here 
+*(`https://bill74186.github.io/2048-Game`)*
+</a>
 Give me a Star if you like it,please!
 
 ## ✨ Project Information
  
-- Chinese Name: 2048小游戏
-- English Name: 2048 Game
-- Creation Date: 2026/04/15
-- Current Version: v2.2.6
-- Developer: bill74186 & AI Assist
+- **Chinese Name**: 2048小游戏
+- **English Name**: 2048 Game
+- **Creation Date**: 2026/04/15
+- **Current Version**: v2.2.6
+- **Developer**: bill74186 & AI Assist
  
  
  
 ## 📌 Project Introduction
  
-- Style: Minimal soft pixel design
-- Device Support: Perfect adaptation for PC & mobile devices
-- Features: Ultra-smooth original operation, no anti-shake & no frame lock, full multi-language internationalization, independent highest score local storage, hidden easter egg custom setting system
-- Highlight: The easter egg setting page is disguised as a Catalan language file with high concealment. The entrance is hidden under the footer author name.
+- **Style**: Minimal soft pixel design
+- **Device Support**: Perfect adaptation for PC & mobile devices
+- **Features**: Ultra-smooth original operation, no anti-shake & no frame lock, full multi-language internationalization, independent highest score local storage, hidden easter egg custom setting system
+- **Highlight**: The easter egg setting page is disguised as a Catalan language file with high concealment. The entrance is hidden under the footer author name.
  
  
  
 ## 👤 Author Profile
  
-- Real Name: Secret 😜
-- Nickname: bill74186
-- Age: Just turned eighteen
-- Personality: Super lazy, do nothing if possible
-- Hobbies: Playing games & learning programming
+- **Real Name**: Secret 😜
+- **Nickname**: bill74186
+- **Age**: Just turned eighteen
+- **Personality**: Super lazy, do nothing if possible
+- **Hobbies**: Playing games & learning programming
  
  
  
 ## 💬 Words From Author
  
-All content is produced by bill74186, all contents can be modified freely.
+All content is produced by *bill74186*, all contents can be modified freely.
  
-Can you give me some money? I'm running out of money to eat?  🙃🙃🙃
+Can you give me some *money* or *stars*? I'm running out of money to eat?  🙃🙃🙃
  
 The code structure is a bit redundant, it works fine anyway.
  
