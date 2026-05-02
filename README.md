@@ -26,8 +26,8 @@ A smooth 2048 game with 30+ languages support
 ## 🎮 Play Game
 
 If you want to play my 2048 online, please click 👉
-<a href="https://bill74186.github.io/2048-Game/">here 
-*(`https://bill74186.github.io/2048-Game`)*
+<a href="https://bill74186.github.io/">here 
+*(`https://bill74186.github.io/`)*
 </a>
 Give me a Star if you like it,please!
 
