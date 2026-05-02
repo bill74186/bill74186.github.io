@@ -25,7 +25,7 @@ A smooth 2048 game with 30+ languages support
 
 ## 🎮 Play Game
 
-If you want to play my 2048, please click 👉
+If you want to play my 2048 online, please click 👉
 <a href="https://bill74186.github.io/2048-Game/">here 
 *(`https://bill74186.github.io/2048-Game`)*
 </a>
@@ -80,43 +80,43 @@ The entry file is  `index.html` , local server is required.
 
 ```
 2048 Game/
-├── font.ttf                    # Exclusive soft pixel font
-├── style.css                   # Global unified style sheet
-├── script.js                   # Main JS core(loading logic+game core+tool function)
-├── jquery-3.7.1.min.js         # Offline stable jQuery official version
+├── font.ttf          # Exclusive soft pixel font
+├── style.css         # Global unified style sheet
+├── script.js         # Main JS core(loading logic+game core+tool function)
+├── jquery-3.7.1.min.js  # Offline stable jQuery official version
 ├── jquery.qrcode-1.0.3.min.js  # Offline QR code generation plugin
-├── index.html                  # Homepage = Multilingual selection page
-├── zh-CN.html                  # Simplified Chinese game page
-├── zh-TW.html                  # Traditional Chinese game page
-├── en-US.html                  # American English game page
-├── ja-JP.html                  # Japanese game page
-├── ko-KR.html                  # Korean game page
-├── es-ES.html                  # Spanish game page
-├── fr-FR.html                  # French game page
-├── de-DE.html                  # German game page
-├── it-IT.html                  # Italian game page
-├── pt-BR.html                  # Brazilian Portuguese game page
-├── ru-RU.html                  # Russian game page
-├── is-IS.html                  # Icelandic game page
-├── hi-IN.html                  # Hindi game page
-├── th-TH.html                  # Thai game page
-├── vi-VN.html                  # Vietnamese game page
-├── id-ID.html                  # Indonesian game page
-├── ms-MY.html                  # Malay game page
-├── tr-TR.html                  # Turkish game page
-├── pl-PL.html                  # Polish game page
-├── nl-NL.html                  # Dutch game page
-├── sv-SE.html                  # Swedish game page
-├── da-DK.html                  # Danish game page
-├── no-NO.html                  # Norwegian game page
-├── fi-FI.html                  # Finnish game page
-├── cs-CZ.html                  # Czech game page
-├── hu-HU.html                  # Hungarian game page
-├── ro-RO.html                  # Romanian game page
-├── uk-UA.html                  # Ukrainian game page
-├── el-GR.html                  # Greek game page
-├── cy-GB.html                  # Welsh game page
-└── ca-ES.html                  # Hidden easter egg setting page (disguised)
+├── index.html        # Homepage = Multilingual selection page
+├── zh-CN.html        # Simplified Chinese game page
+├── zh-TW.html        # Traditional Chinese game page
+├── en-US.html        # American English game page
+├── ja-JP.html        # Japanese game page
+├── ko-KR.html        # Korean game page
+├── es-ES.html        # Spanish game page
+├── fr-FR.html        # French game page
+├── de-DE.html        # German game page
+├── it-IT.html        # Italian game page
+├── pt-BR.html        # Brazilian Portuguese game page
+├── ru-RU.html        # Russian game page
+├── is-IS.html        # Icelandic game page
+├── hi-IN.html        # Hindi game page
+├── th-TH.html        # Thai game page
+├── vi-VN.html        # Vietnamese game page
+├── id-ID.html        # Indonesian game page
+├── ms-MY.html        # Malay game page
+├── tr-TR.html        # Turkish game page
+├── pl-PL.html        # Polish game page
+├── nl-NL.html        # Dutch game page
+├── sv-SE.html        # Swedish game page
+├── da-DK.html        # Danish game page
+├── no-NO.html        # Norwegian game page
+├── fi-FI.html        # Finnish game page
+├── cs-CZ.html        # Czech game page
+├── hu-HU.html        # Hungarian game page
+├── ro-RO.html        # Romanian game page
+├── uk-UA.html        # Ukrainian game page
+├── el-GR.html        # Greek game page
+├── cy-GB.html        # Welsh game page
+└── ca-ES.html        # Hidden easter egg setting page (disguised)
  ```
  
  
