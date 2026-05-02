@@ -37,7 +37,7 @@ Give me a Star if you like it,please!
 - **English Name**: 2048 Game
 - **Creation Date**: 2026/04/15
 - **Current Version**: v2.2.6
-- **Developer**: bill74186 & AI Assist
+- **Developer**: bill74186 & me
  
 ## 📌 Project Introduction
  
