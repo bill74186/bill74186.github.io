@@ -11,6 +11,8 @@ A smooth 2048 game with 30+ languages support
 
 ---
 
+**English** | [简体中文](README-CN.md)
+
 <p>
   <img src="https://img.shields.io/badge/HTML-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS-3-1572B6?style=flat-square&logo=css" alt="CSS3">
