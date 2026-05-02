@@ -551,7 +551,7 @@ setInterval(applyCycleColor, 120);
 
 $('#qrcode').qrcode({
 	ender: 'canvas',
-	text: 'wxp://f2f0PhE55DHAPygOvaC-OE3HBZ0Qm1YCGWqbxTafhilBEz8',
+	text: 'https://github.com/bill74186/bill74186.github.io/',
 	width: 272,
 	height: 272,
 	foreground: "#000000",
