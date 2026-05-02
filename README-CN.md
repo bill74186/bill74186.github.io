@@ -79,9 +79,9 @@
 
 ```
 2048-Game/
-├── font.ttf        # 专用软像素字体文件
-├── style.css        # 全局公共样式
-├── script.js        # 全局唯一JS文件（加载逻辑+游戏核心+公共工具）
+├── font.ttf         # 专用软像素字体文件
+├── style.css         # 全局公共样式
+├── script.js         # 全局唯一JS文件（加载逻辑+游戏核心+公共工具）
 ├── jquery-3.7.1.min.js  # 本地离线jQuery官方最新稳定版
 ├── jquery.qrcode-1.0.3.min.js  # 本地离线jQuery二维码生成插件
 ├── index.html        # 首页=多语言选择页
