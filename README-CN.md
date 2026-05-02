@@ -26,8 +26,8 @@
 ## 🎮 线上游玩
 
 如果你不想下载来玩，请点 👉 
-<a href="https://bill74186.github.io/2048-Game/">这里 
-*(`https://bill74186.github.io/2048-Game`)*
+<a href="https://bill74186.github.io">这里 
+*(`https://bill74186.github.io`)*
 </a>
 喜欢的话就点点Star吧，求求了！
  
