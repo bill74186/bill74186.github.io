@@ -4,8 +4,8 @@
 A smooth 2048 game with 30+ languages support
 
 <p>
-  <a href="https://github.com/bill74186/2048-Game/stargazers"><img src="https://img.shields.io/github/stars/bill74186/2048-Game?style=for-the-badge&logo=github&color=f4c542" alt="Stars"></a>
-  <a href="https://github.com/bill74186/2048-Game/network/members"><img src="https://img.shields.io/github/forks/bill74186/2048-Game?style=for-the-badge&logo=github&color=6cc644" alt="Forks"></a>
+  <a href="https://github.com/bill74186/bill74186.github.io/stargazers"><img src="https://img.shields.io/github/stars/bill74186/bill74186.github.io?style=for-the-badge&logo=github&color=f4c542" alt="Stars"></a>
+  <a href="https://github.com/bill74186/bill74186.github.io/network/members"><img src="https://img.shields.io/github/forks/bill74186/bill74186.github.io?style=for-the-badge&logo=github&color=6cc644" alt="Forks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
 
