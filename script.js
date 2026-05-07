@@ -83,11 +83,15 @@ setTimeout(fadeOutLoad, 300);
 
 const UNIT_PREFIXES = ['', '', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q', 'X', 'W', 'V', 'U', 'S', 'A', 'B', 'C', 'D'];
 
-function formatNum(num) {
+function formatNum(num, autoFormat = true) {
 	const raw = Number(num);
 
 	if (isNaN(raw) || !isFinite(raw)) {
 		return "∞";
+	}
+
+	if (!autoFormat) {
+		return raw.toLocaleString('fullwide', { useGrouping: false });
 	}
 
 	let idx = 0;
@@ -186,7 +190,7 @@ function applyCycleColor(targetBoxes = null) {
 
 			const rawBest = localStorage.getItem(bestScoreKey);
 			bestScore = Number.isFinite(rawBest) ? Number(rawBest) : 0;
-			$bestScore.text(formatNum(bestScore));
+			$bestScore.text(formatNum(bestScore, cfg.autoFormat));
 			resetGame();
 			bind();
 		};
@@ -209,7 +213,7 @@ function applyCycleColor(targetBoxes = null) {
 			isWin = false;
 			score = 0;
 
-			$score.text(formatNum(score));
+			$score.text(formatNum(score, cfg.autoFormat));
 			_this.empty();
 			board = $('<div>').addClass('board').appendTo(_this);
 
@@ -261,7 +265,7 @@ function applyCycleColor(targetBoxes = null) {
 			}
 			value = String(value);
 
-			const showText = cfg.autoFormat ? formatNum(value) : value;
+			const showText = formatNum(value, cfg.autoFormat);
 			const newBox = $('<div>')
 				.addClass('box')
 				.attr({ position: chosenIndex, value: value })
@@ -280,7 +284,7 @@ function applyCycleColor(targetBoxes = null) {
 
 		const updateBoxValue = (box, value) => {
 			box.attr('value', value);
-			const showText = cfg.autoFormat ? formatNum(value) : value;
+			const showText = formatNum(value, cfg.autoFormat);
 			box.text(showText);
 			applyCycleColor([box[0]]);
 		};
@@ -290,12 +294,12 @@ function applyCycleColor(targetBoxes = null) {
 			const _value = numVal * 2;
 			score += _value;
 
-			$score.text(formatNum(score));
+			$score.text(formatNum(score, cfg.autoFormat));
 
 			if (score > bestScore) {
 				bestScore = score;
 				localStorage.setItem(bestScoreKey, bestScore.toString());
-				$bestScore.text(formatNum(bestScore));
+				$bestScore.text(formatNum(bestScore, cfg.autoFormat));
 			}
 
 			const targetBox = boxes[targetIndex];
