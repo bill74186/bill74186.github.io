@@ -276,6 +276,12 @@ ul a:hover {
 	opacity: 1;
 	pointer-events: all;
 }
+.ltx {
+	color: #8f7a66;
+	font-size: 16px;
+	letter-spacing: 3px;
+	user-select: none;
+}
 
 .ver {
 	position: fixed;
