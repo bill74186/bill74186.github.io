@@ -64,10 +64,12 @@ document.addEventListener('DOMContentLoaded', function(){
 	document.body.appendChild(mask);
 
 	const btnContinue = document.getElementById('btnContinue');
-	btnContinue.addEventListener('click', () => {
+	const handleContinue = () => {
 		mask.remove();
 		unlockScroll();
-	});
+		btnContinue.removeEventListener('click', handleContinue);
+	};
+	btnContinue.addEventListener('click', handleContinue);
 });
 
 const loadDom = document.getElementById('load');
@@ -175,18 +177,31 @@ function applyCycleColor(targetBoxes = null) {
 		let isGameOver = false;
 		let isWin = false;
 
+		let $score = null;
+		let $bestScore = null;
+
 		const init = () => {
+			$score = $('#score');
+			$bestScore = $('#best-score');
+
 			const rawBest = localStorage.getItem(bestScoreKey);
 			bestScore = Number.isFinite(rawBest) ? Number(rawBest) : 0;
-			$('#best-score').text(formatNum(bestScore));
+			$bestScore.text(formatNum(bestScore));
 			resetGame();
 			bind();
+		};
+
+		const cleanup = () => {
+			$(window).off('keydown');
+			$('#restart').off('click');
+			$('#toggle-intro').off('click');
 		};
 
 		const resetGame = () => {
 			const newCfg = getEggConfig();
 			Object.assign(cfg, newCfg);
 
+			boxes.forEach(box => box.stop(true).remove());
 			boxes = [];
 			matrix = [];
 			isCheating = 0;
@@ -194,7 +209,7 @@ function applyCycleColor(targetBoxes = null) {
 			isWin = false;
 			score = 0;
 
-			$('#score').text(formatNum(score));
+			$score.text(formatNum(score));
 			_this.empty();
 			board = $('<div>').addClass('board').appendTo(_this);
 
@@ -221,6 +236,7 @@ function applyCycleColor(targetBoxes = null) {
 		};
 
 		const cheat = () => {
+			cleanup();
 			_this.empty();
 			resetGame();
 			createBox(String(cfg.eggCube));
@@ -274,18 +290,18 @@ function applyCycleColor(targetBoxes = null) {
 			const _value = numVal * 2;
 			score += _value;
 
-			$('#score').text(formatNum(score));
+			$score.text(formatNum(score));
 
 			if (score > bestScore) {
 				bestScore = score;
 				localStorage.setItem(bestScoreKey, bestScore.toString());
-				$('#best-score').text(formatNum(bestScore));
+				$bestScore.text(formatNum(bestScore));
 			}
 
 			const targetBox = boxes[targetIndex];
 			const newValStr = String(_value);
 
-			targetBox.css({ zIndex: 99 })
+			targetBox.stop(true).css({ zIndex: 99 })
 				.animate({
 					width: '+=20',
 					height: '+=20',
@@ -303,7 +319,7 @@ function applyCycleColor(targetBoxes = null) {
 				});
 
 			updateBoxValue(targetBox, newValStr);
-			boxes[sourceIndex].remove();
+			boxes[sourceIndex].stop(true).remove();
 			boxes.splice(sourceIndex, 1);
 
 			if (_value === cfg.winGoal && !isWin) {
@@ -316,16 +332,16 @@ function applyCycleColor(targetBoxes = null) {
 			if (boxes.length !== 16) return false;
 
 			for (let i = 0; i < 16; i++) {
-				const boxA = boxes.find(b => b.attr('position') == i);
+				const boxA = boxes.find(b => b.attr('position') === String(i));
 				if (!boxA) continue;
 
 				if (i % 4 !== 3) {
-					const boxB = boxes.find(b => b.attr('position') == i + 1);
+					const boxB = boxes.find(b => b.attr('position') === String(i + 1));
 					if (boxB && boxA.attr('value') === boxB.attr('value')) return false;
 				}
 
 				if (i < 12) {
-					const boxB = boxes.find(b => b.attr('position') == i + 4);
+					const boxB = boxes.find(b => b.attr('position') === String(i + 4));
 					if (boxB && boxA.attr('value') === boxB.attr('value')) return false;
 				}
 			}
@@ -354,15 +370,17 @@ function applyCycleColor(targetBoxes = null) {
 		};
 
 		const bind = () => {
-			$(window).keydown(function(e) {
-				if (isGameOver) return;
+			const handleKeydown = (e) => {
+				if (isGameOver || e.repeat) return;
 				switch (e.which) {
 					case 37: e.preventDefault(); gameRun(dir.left); break;
 					case 38: e.preventDefault(); gameRun(dir.up); break;
 					case 39: e.preventDefault(); gameRun(dir.right); break;
 					case 40: e.preventDefault(); gameRun(dir.down); break;
 				}
-			});
+			};
+
+			$(window).keydown(handleKeydown);
 
 			$('#restart').click(resetGame);
 			$('#toggle-intro').click(function() {
@@ -371,33 +389,45 @@ function applyCycleColor(targetBoxes = null) {
 			});
 
 			let sx, sy;
-			document.addEventListener("touchstart", e => {
+			const handleTouchStart = (e) => {
 				if (e.touches.length > 1) return;
 				sx = e.touches[0].clientX;
 				sy = e.touches[0].clientY;
-			});
+			};
 
-			document.addEventListener("touchmove", e => e.preventDefault());
-			document.addEventListener("touchend", e => {
+			const handleTouchMove = (e) => e.preventDefault();
+
+			const handleTouchEnd = (e) => {
 				if (e.touches.length > 0) return;
 				const dx = e.changedTouches[0].clientX - sx;
 				const dy = e.changedTouches[0].clientY - sy;
 				if (Math.max(Math.abs(dx), Math.abs(dy)) > 10) {
 					gameRun(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? dir.right : dir.left) : (dy > 0 ? dir.down : dir.up));
 				}
+			};
+
+			document.addEventListener("touchstart", handleTouchStart);
+			document.addEventListener("touchmove", handleTouchMove);
+			document.addEventListener("touchend", handleTouchEnd);
+
+			$(window).on('beforeunload', () => {
+				document.removeEventListener("touchstart", handleTouchStart);
+				document.removeEventListener("touchmove", handleTouchMove);
+				document.removeEventListener("touchend", handleTouchEnd);
+				cleanup();
 			});
 		};
 
 		const findBoxIndex = (pos) => {
-			return boxes.findIndex(box => box.attr("position") == pos);
+			return boxes.findIndex(box => box.attr("position") === String(pos));
 		};
 
 		const moveBox = (boxIdx, targetPos, fromPos) => {
-			boxes[boxIdx].animate({
+			boxes[boxIdx].stop(true).animate({
 				marginLeft: matrix[targetPos].left + BORDER_OFFSET,
 				marginTop: matrix[targetPos].top + BORDER_OFFSET
 			}, options.delay);
-			boxes[boxIdx].attr('position', targetPos);
+			boxes[boxIdx].attr('position', String(targetPos));
 			matrix[targetPos].taken = true;
 			matrix[fromPos].taken = false;
 		};
@@ -415,13 +445,14 @@ function applyCycleColor(targetBoxes = null) {
 						if (!matrix[pos].taken) continue;
 						if (pos !== empty) {
 							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i * 4 && !matrix[empty - 1].combined) {
 							const k = findBoxIndex(empty);
 							const m = findBoxIndex(empty - 1);
-							if (boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
+							if (k !== -1 && m !== -1 && boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty - 1].combined = true;
@@ -441,13 +472,14 @@ function applyCycleColor(targetBoxes = null) {
 						if (!matrix[pos].taken) continue;
 						if (pos !== empty) {
 							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < i * 4 + 3 && !matrix[empty + 1].combined) {
 							const k = findBoxIndex(empty);
 							const m = findBoxIndex(empty + 1);
-							if (boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
+							if (k !== -1 && m !== -1 && boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty + 1].combined = true;
@@ -467,13 +499,14 @@ function applyCycleColor(targetBoxes = null) {
 						if (!matrix[pos].taken) continue;
 						if (pos !== empty) {
 							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i && !matrix[empty - 4].combined) {
 							const k = findBoxIndex(empty);
 							const m = findBoxIndex(empty - 4);
-							if (boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
+							if (k !== -1 && m !== -1 && boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty - 4].combined = true;
@@ -499,13 +532,14 @@ function applyCycleColor(targetBoxes = null) {
 						if (!matrix[pos].taken) continue;
 						if (pos !== empty) {
 							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < 12 + i && !matrix[empty + 4].combined) {
 							const k = findBoxIndex(empty);
 							const m = findBoxIndex(empty + 4);
-							if (boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
+							if (k !== -1 && m !== -1 && boxes[k] && boxes[m] && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty + 4].combined = true;
