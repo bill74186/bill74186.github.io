@@ -101,7 +101,7 @@ setTimeout(() => {
 	}
 
 	let cfg = getEggConfig();
-	var defaults = {
+	let defaults = {
 		delay: cfg.animSpeed
 	};
 
@@ -136,25 +136,25 @@ setTimeout(() => {
 	$.fn.init2048 = function(_options) {
 		var _this = this;
 		var options = $.extend(defaults, _options);
-		var dir = {
+		const dir = {
 			up: 'up',
 			right: 'right',
 			down: 'down',
 			left: 'left'
 		};
-		var board = {};
-		var matrix = [];
-		var boxes = [];
-		var score = 0;
-		var bestScoreKey = options.bestScoreKey || '2048-best';
+		let board = {};
+		let matrix = [];
+		let boxes = [];
+		let score = 0;
+		let bestScoreKey = options.bestScoreKey || '2048-best';
 
 		let rawBest = localStorage.getItem(bestScoreKey);
 		let bestScore = Number(rawBest);
 		if (isNaN(bestScore) || !isFinite(bestScore)) bestScore = 0;
 
-		var isCheating = 0;
-		var isGameOver = false;
-		var isWin = false;
+		let isCheating = 0;
+		let isGameOver = false;
+		let isWin = false;
 
 		const CELL_SIZE = 76;
 		const BORDER_OFFSET = 3;
@@ -222,7 +222,7 @@ setTimeout(() => {
 			value = String(value);
 
 			let showText = formatNum(value);
-			var newBox = $('<div>')
+			let newBox = $('<div>')
 				.addClass('box')
 				.attr({
 					position: chosenIndex,
@@ -374,6 +374,20 @@ setTimeout(() => {
 			});
 		}
 
+		function findBoxIndex(pos) {
+			return boxes.findIndex(box => box.attr("position") == pos);
+		}
+
+		function moveBox(boxIdx, targetPos, fromPos) {
+			boxes[boxIdx].animate({
+				marginLeft: matrix[targetPos].left + BORDER_OFFSET,
+				marginTop: matrix[targetPos].top + BORDER_OFFSET
+			}, options.delay);
+			boxes[boxIdx].attr('position', targetPos);
+			matrix[targetPos].taken = true;
+			matrix[fromPos].taken = false;
+		}
+
 		function run(dir) {
 			let isMoved = false;
 			for (let i = 0; i < 16; i++) matrix[i].combined = false;
@@ -386,19 +400,13 @@ setTimeout(() => {
 						let pos = i * 4 + j;
 						if (!matrix[pos].taken) continue;
 						if (pos != empty) {
-							let k = boxes.findIndex(box => box.attr("position") == pos);
-							boxes[k].animate({
-								marginLeft: matrix[empty].left + BORDER_OFFSET,
-								marginTop: matrix[empty].top + BORDER_OFFSET
-							}, options.delay);
-							boxes[k].attr('position', empty);
-							matrix[empty].taken = true;
-							matrix[pos].taken = false;
+							let k = findBoxIndex(pos);
+							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i * 4 && !matrix[empty - 1].combined) {
-							let k = boxes.findIndex(box => box.attr("position") == empty);
-							let m = boxes.findIndex(box => box.attr("position") == empty - 1);
+							let k = findBoxIndex(empty);
+							let m = findBoxIndex(empty - 1);
 							if (boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
@@ -418,19 +426,13 @@ setTimeout(() => {
 						let pos = i * 4 + j;
 						if (!matrix[pos].taken) continue;
 						if (pos != empty) {
-							let k = boxes.findIndex(box => box.attr("position") == pos);
-							boxes[k].animate({
-								marginLeft: matrix[empty].left + BORDER_OFFSET,
-								marginTop: matrix[empty].top + BORDER_OFFSET
-							}, options.delay);
-							boxes[k].attr('position', empty);
-							matrix[empty].taken = true;
-							matrix[pos].taken = false;
+							let k = findBoxIndex(pos);
+							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < i * 4 + 3 && !matrix[empty + 1].combined) {
-							let k = boxes.findIndex(box => box.attr("position") == empty);
-							let m = boxes.findIndex(box => box.attr("position") == empty + 1);
+							let k = findBoxIndex(empty);
+							let m = findBoxIndex(empty + 1);
 							if (boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
@@ -450,19 +452,13 @@ setTimeout(() => {
 						let pos = j * 4 + i;
 						if (!matrix[pos].taken) continue;
 						if (pos != empty) {
-							let k = boxes.findIndex(box => box.attr("position") == pos);
-							boxes[k].animate({
-								marginLeft: matrix[empty].left + BORDER_OFFSET,
-								marginTop: matrix[empty].top + BORDER_OFFSET
-							}, options.delay);
-							boxes[k].attr('position', empty);
-							matrix[empty].taken = true;
-							matrix[pos].taken = false;
+							let k = findBoxIndex(pos);
+							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i && !matrix[empty - 4].combined) {
-							let k = boxes.findIndex(box => box.attr("position") == empty);
-							let m = boxes.findIndex(box => box.attr("position") == empty - 4);
+							let k = findBoxIndex(empty);
+							let m = findBoxIndex(empty - 4);
 							if (boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
@@ -488,19 +484,13 @@ setTimeout(() => {
 						let pos = j * 4 + i;
 						if (!matrix[pos].taken) continue;
 						if (pos != empty) {
-							let k = boxes.findIndex(box => box.attr("position") == pos);
-							boxes[k].animate({
-								marginLeft: matrix[empty].left + BORDER_OFFSET,
-								marginTop: matrix[empty].top + BORDER_OFFSET
-							}, options.delay);
-							boxes[k].attr('position', empty);
-							matrix[empty].taken = true;
-							matrix[pos].taken = false;
+							let k = findBoxIndex(pos);
+							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < 12 + i && !matrix[empty + 4].combined) {
-							let k = boxes.findIndex(box => box.attr("position") == empty);
-							let m = boxes.findIndex(box => box.attr("position") == empty + 4);
+							let k = findBoxIndex(empty);
+							let m = findBoxIndex(empty + 4);
 							if (boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
@@ -547,7 +537,6 @@ function applyCycleColor() {
 }
 
 $(document).on("ready slide move merge spawn restart", applyCycleColor);
-setInterval(applyCycleColor, 120);
 
 $('#qrcode').qrcode({
 	ender: 'canvas',
