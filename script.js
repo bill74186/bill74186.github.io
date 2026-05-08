@@ -1,16 +1,10 @@
 document.addEventListener('DOMContentLoaded', function(){
 	const ua = navigator.userAgent;
-	let isOldDevice = false;
+	const androidVer = parseFloat((ua.match(/Android\s([0-9.]+)/) || [])[1]) || 0;
+	const isOldDevice = androidVer <= 6 || /Windows NT 6\.1/.test(ua) || /MSIE|Trident/.test(ua);
 
-	const androidMatch = ua.match(/Android\s([0-9.]+)/);
-	if(androidMatch){
-		const androidVer = parseFloat(androidMatch[1]);
-		isOldDevice = androidVer <= 6;
-	}
-	if(/Windows NT 6\.1/.test(ua)) isOldDevice = true;
-	if(/MSIE|Trident/.test(ua)) isOldDevice = true;
+	if (!isOldDevice) return;
 
-	if(!isOldDevice) return;
 	const lockScroll = () => {
 		document.body.style.overflow = 'hidden';
 		document.documentElement.style.overflow = 'hidden';
@@ -69,10 +63,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	mask.appendChild(popup);
 	document.body.appendChild(mask);
 
-	document.getElementById('btnContinue').onclick = function(){
+	const btnContinue = document.getElementById('btnContinue');
+	const handleContinue = () => {
 		mask.remove();
 		unlockScroll();
+		btnContinue.removeEventListener('click', handleContinue);
 	};
+	btnContinue.addEventListener('click', handleContinue);
 });
 
 const loadDom = document.getElementById('load');
@@ -82,6 +79,13 @@ setTimeout(() => {
 	loadDom.classList.remove('show');
 	setTimeout(() => loadDom.remove(), 600);
 }, 300);
+
+const UNIT_PREFIXES = ['', '', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q', 'X', 'W', 'V', 'U', 'S', 'A', 'B', 'C', 'D'];
+
+const CYCLE_COLORS = [
+	"#FFF8D7", "#FFED97", "#FFBB77", "#FF9224", "#FF5809", "#EA0000",
+	"#FFFF37", "#F9F900", "#FFD700", "#FFC125", "#FFA500", "#FF8C00", "#FF00FF"
+];
 
 (function($) {
 
@@ -94,33 +98,32 @@ setTimeout(() => {
 			winGoal: 2048,
 			autoFormat: true
 		};
-		let userCfg = JSON.parse(localStorage.getItem("eggConfig")) || defaultCfg;
-		return userCfg;
+
+		try {
+			const stored = localStorage.getItem("eggConfig");
+			const userCfg = stored ? JSON.parse(stored) : null;
+			return { ...defaultCfg, ...userCfg };
+		} catch {
+			return defaultCfg;
+		}
 	}
 
-	let cfg = getEggConfig();
-	let defaults = {
-		delay: cfg.animSpeed
-	};
-
-	function formatNum(num, autoFormat) {
+	function formatNum(num) {
 		const raw = Number(num);
-
-		if (!cfg.autoFormat) {
-			if (!isFinite(raw) || isNaN(raw)) return "∞";
-			return raw.toLocaleString();
-		}
-
-		const unit = ["", "", "M", "G", "T", "P", "E", "Z", "Y", "R", "Q", "X", "W", "V", "U", "S", "A", "B", "C", "D"];
 
 		if (isNaN(raw) || !isFinite(raw)) {
 			return "∞";
 		}
 
+		const cfg = getEggConfig();
+		if (!cfg.autoFormat) {
+			return raw.toLocaleString();
+		}
+
 		let idx = 0;
 		let val = raw;
 
-		while (val >= 1000000 && idx < unit.length - 1) {
+		while (val >= 1000000 && idx < UNIT_PREFIXES.length - 1) {
 			val /= 1000;
 			idx++;
 		}
@@ -129,49 +132,90 @@ setTimeout(() => {
 			return raw.toLocaleString();
 		}
 
-		return Number.isInteger(val) ? val + unit[idx] : val.toFixed(1) + unit[idx];
+		return Number.isInteger(val) ? val + UNIT_PREFIXES[idx] : val.toFixed(1) + UNIT_PREFIXES[idx];
 	}
+
+	function applyCycleColor() {
+		document.querySelectorAll(".box").forEach(tile => {
+			const rawVal = tile.getAttribute("value");
+			if (!rawVal) return;
+			const numVal = Number(rawVal);
+
+			if (numVal <= 8192) {
+				tile.style.removeProperty("background-color");
+				tile.style.removeProperty("color");
+				tile.style.fontSize = "";
+				return;
+			}
+
+			const exp = Math.floor(Math.log2(numVal));
+			const baseExp = 13;
+			const idx = ((exp - baseExp - 1) % CYCLE_COLORS.length + CYCLE_COLORS.length) % CYCLE_COLORS.length;
+
+			tile.style.backgroundColor = CYCLE_COLORS[idx];
+			tile.style.color = "#ffffff";
+			const len = rawVal.length;
+			tile.style.fontSize = `${Math.max(12, 26 - len * 1.3)}px`;
+			tile.style.lineHeight = "70px";
+		});
+	}
+
 	$.fn.init2048 = function(_options) {
-		var _this = this;
-		var options = $.extend(defaults, _options);
-		const dir = {
-			up: 'up',
-			right: 'right',
-			down: 'down',
-			left: 'left'
-		};
+		const _this = this;
+		const cfg = getEggConfig();
+		const defaults = { delay: cfg.animSpeed };
+		const options = $.extend(defaults, _options);
+
+		const dir = { up: 'up', right: 'right', down: 'down', left: 'left' };
+		const CELL_SIZE = 76;
+		const BORDER_OFFSET = 3;
+
 		let board = {};
 		let matrix = [];
 		let boxes = [];
 		let score = 0;
-		let bestScoreKey = options.bestScoreKey || '2048-best';
-
-		let rawBest = localStorage.getItem(bestScoreKey);
-		let bestScore = Number(rawBest);
-		if (isNaN(bestScore) || !isFinite(bestScore)) bestScore = 0;
-
+		const bestScoreKey = options.bestScoreKey || '2048-best';
+		let bestScore = 0;
 		let isCheating = 0;
 		let isGameOver = false;
 		let isWin = false;
 
-		const CELL_SIZE = 76;
-		const BORDER_OFFSET = 3;
+		let $score = null;
+		let $bestScore = null;
 
-		$('#best-score').text(formatNum(bestScore));
-		resetGame();
-		bind();
+		const init = () => {
+			$score = $('#score');
+			$bestScore = $('#best-score');
 
-		function resetGame() {
-			cfg = getEggConfig();
+			const rawBest = localStorage.getItem(bestScoreKey);
+			bestScore = Number.isFinite(Number(rawBest)) ? Number(rawBest) : 0;
+			$bestScore.text(formatNum(bestScore));
+			resetGame();
+			bind();
+		};
+
+		const cleanup = () => {
+			$(window).off('keydown');
+			$('#restart').off('click');
+			$('#toggle-intro').off('click');
+		};
+
+		const resetGame = () => {
+			const newCfg = getEggConfig();
+			Object.assign(cfg, newCfg);
+
+			boxes.forEach(box => box.remove());
 			boxes = [];
 			matrix = [];
 			isCheating = 0;
 			isGameOver = false;
 			isWin = false;
 			score = 0;
-			$('#score').text(formatNum(score));
+
+			$score.text(formatNum(score));
 			_this.empty();
 			board = $('<div>').addClass('board').appendTo(_this);
+
 			for (let i = 0; i < 4; i++) {
 				for (let j = 0; j < 4; j++) {
 					matrix[i * 4 + j] = {
@@ -190,22 +234,23 @@ setTimeout(() => {
 						.appendTo(board);
 				}
 			}
-			for (let i = 0; i < cfg.startCount; i++) createBox();
-		}
 
-		function cheat() {
+			for (let i = 0; i < cfg.startCount; i++) createBox();
+		};
+
+		const cheat = () => {
+			cleanup();
 			_this.empty();
 			resetGame();
 			createBox(String(cfg.eggCube));
-		}
+		};
 
-		function createBox(value) {
-			let emptyMatrix = matrix.filter(item => !item.taken).length;
+		const createBox = (value) => {
+			const emptyMatrix = matrix.filter(item => !item.taken).length;
 			if (emptyMatrix === 0) return;
 
-			let random = Math.floor(Math.random() * emptyMatrix + 1);
-			let chosenIndex = 0,
-				j = 0;
+			const random = Math.floor(Math.random() * emptyMatrix + 1);
+			let chosenIndex = 0, j = 0;
 			for (; chosenIndex < matrix.length; chosenIndex++) {
 				if (!matrix[chosenIndex].taken && ++j === random) {
 					matrix[chosenIndex].taken = true;
@@ -214,18 +259,15 @@ setTimeout(() => {
 			}
 
 			if (!value) {
-				let numArr = cfg.randList.split(',').map(String);
+				const numArr = cfg.randList.split(',').map(String);
 				value = numArr[Math.floor(Math.random() * numArr.length)];
 			}
 			value = String(value);
 
-			let showText = formatNum(value);
-			let newBox = $('<div>')
+			const showText = formatNum(value);
+			const newBox = $('<div>')
 				.addClass('box')
-				.attr({
-					position: chosenIndex,
-					value: value
-				})
+				.attr({ position: chosenIndex, value: value })
 				.css({
 					marginTop: matrix[chosenIndex].top + BORDER_OFFSET,
 					marginLeft: matrix[chosenIndex].left + BORDER_OFFSET,
@@ -233,33 +275,35 @@ setTimeout(() => {
 				})
 				.text(showText)
 				.appendTo(board)
-				.animate({
-					opacity: 1
-				}, options.delay * 2);
+				.animate({ opacity: 1 }, options.delay * 2);
 
 			boxes.push(newBox);
-		}
+			applyCycleColor();
+		};
 
-		function combineBox(sourceIndex, targetIndex, valueStr) {
-			let numVal = Number(valueStr);
-			let _value = numVal * 2;
+		const updateBoxValue = (box, value) => {
+			box.attr('value', value);
+			box.text(formatNum(value));
+			applyCycleColor();
+		};
+
+		const combineBox = (sourceIndex, targetIndex, valueStr) => {
+			const numVal = Number(valueStr);
+			const _value = numVal * 2;
 			score += _value;
 
-			$('#score').text(formatNum(score));
+			$score.text(formatNum(score));
 
 			if (score > bestScore) {
 				bestScore = score;
-				localStorage.setItem(bestScoreKey, bestScore);
-				$('#best-score').text(formatNum(bestScore));
+				localStorage.setItem(bestScoreKey, bestScore.toString());
+				$bestScore.text(formatNum(bestScore));
 			}
 
-			let targetBox = boxes[targetIndex];
-			let newValStr = String(_value);
-			let showText = formatNum(newValStr);
+			const targetBox = boxes[targetIndex];
+			const newValStr = String(_value);
 
-			targetBox.attr('value', newValStr).text(showText).css({
-					zIndex: 99
-				})
+			targetBox.css({ zIndex: 99 })
 				.animate({
 					width: '+=20',
 					height: '+=20',
@@ -272,12 +316,11 @@ setTimeout(() => {
 						marginTop: '+=10',
 						marginLeft: '+=10'
 					}, options.delay / 2, function() {
-						$(this).css({
-							zIndex: 1
-						});
+						$(this).css({ zIndex: 1 });
 					});
 				});
 
+			updateBoxValue(targetBox, newValStr);
 			boxes[sourceIndex].remove();
 			boxes.splice(sourceIndex, 1);
 
@@ -285,69 +328,61 @@ setTimeout(() => {
 				isWin = true;
 				showWin();
 			}
-		}
+		};
 
-		function gameOver() {
-			if (boxes.length != 16) return false;
-			let i, a, b;
-			for (i = 0; i < 16; i++) {
-				for (a = 0; a < boxes.length; a++)
-					if (boxes[a].attr('position') == i) break;
+		const gameOver = () => {
+			if (boxes.length !== 16) return false;
+
+			for (let i = 0; i < 16; i++) {
+				const boxA = boxes.find(b => b.attr('position') === String(i));
+				if (!boxA) continue;
+
 				if (i % 4 !== 3) {
-					for (b = 0; b < boxes.length; b++)
-						if (boxes[b].attr('position') == i + 1) break;
-					if (boxes[a].attr('value') === boxes[b].attr('value')) return false;
+					const boxB = boxes.find(b => b.attr('position') === String(i + 1));
+					if (boxB && boxA.attr('value') === boxB.attr('value')) return false;
 				}
+
 				if (i < 12) {
-					for (b = 0; b < boxes.length; b++)
-						if (boxes[b].attr('position') == i + 4) break;
-					if (boxes[a].attr('value') === boxes[b].attr('value')) return false;
+					const boxB = boxes.find(b => b.attr('position') === String(i + 4));
+					if (boxB && boxA.attr('value') === boxB.attr('value')) return false;
 				}
 			}
 			return true;
-		}
+		};
 
-		function showGameOver() {
+		const showGameOver = () => {
 			isGameOver = true;
-			let overlay = $('<div>').addClass('overlay')
+			const overlay = $('<div>').addClass('overlay')
 				.append($('<h2>').text(options.textGameOver || '游戏结束'))
 				.append($('<button>').text(options.textNewGame || '重新开始').click(resetGame));
 			board.append(overlay);
-		}
+		};
 
-		function showWin() {
-			let overlay = $('<div>').addClass('overlay')
+		const showWin = () => {
+			const overlay = $('<div>').addClass('overlay')
 				.append($('<h2>').text(options.textWin || '恭喜通关！'))
 				.append($('<button>').text(options.textKeepPlaying || '继续挑战').click(() => overlay.remove()));
 			board.append(overlay);
-		}
+		};
 
-		function gameRun(dir) {
+		const gameRun = (direction) => {
 			if (isGameOver) return;
-			if (run(dir)) createBox();
+			if (run(direction)) createBox();
 			if (gameOver()) showGameOver();
-		}
+		};
 
-		function bind() {
-			$(window).keydown(function(e) {
-				if (isGameOver) return;
-				if (e.which === 37) {
-					e.preventDefault();
-					gameRun(dir.left);
+		const bind = () => {
+			const handleKeydown = (e) => {
+				if (isGameOver || e.repeat) return;
+				switch (e.which) {
+					case 37: e.preventDefault(); gameRun(dir.left); break;
+					case 38: e.preventDefault(); gameRun(dir.up); break;
+					case 39: e.preventDefault(); gameRun(dir.right); break;
+					case 40: e.preventDefault(); gameRun(dir.down); break;
 				}
-				if (e.which === 38) {
-					e.preventDefault();
-					gameRun(dir.up);
-				}
-				if (e.which === 39) {
-					e.preventDefault();
-					gameRun(dir.right);
-				}
-				if (e.which === 40) {
-					e.preventDefault();
-					gameRun(dir.down);
-				}
-			});
+			};
+
+			$(window).keydown(handleKeydown);
 			$('#restart').click(resetGame);
 			$('#toggle-intro').click(function() {
 				$('#intro').toggleClass('active');
@@ -355,57 +390,70 @@ setTimeout(() => {
 			});
 
 			let sx, sy;
-			let dx, dy;
-			document.addEventListener("touchstart", e => {
+			const handleTouchStart = (e) => {
 				if (e.touches.length > 1) return;
 				sx = e.touches[0].clientX;
 				sy = e.touches[0].clientY;
-			});
-			document.addEventListener("touchmove", e => e.preventDefault());
-			document.addEventListener("touchend", e => {
+			};
+
+			const handleTouchMove = (e) => e.preventDefault();
+
+			const handleTouchEnd = (e) => {
 				if (e.touches.length > 0) return;
-				dx = e.changedTouches[0].clientX - sx;
-				dy = e.changedTouches[0].clientY - sy;
+				const dx = e.changedTouches[0].clientX - sx;
+				const dy = e.changedTouches[0].clientY - sy;
 				if (Math.max(Math.abs(dx), Math.abs(dy)) > 10) {
 					gameRun(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? dir.right : dir.left) : (dy > 0 ? dir.down : dir.up));
 				}
+			};
+
+			document.addEventListener("touchstart", handleTouchStart);
+			document.addEventListener("touchmove", handleTouchMove);
+			document.addEventListener("touchend", handleTouchEnd);
+
+			$(window).on('beforeunload', () => {
+				document.removeEventListener("touchstart", handleTouchStart);
+				document.removeEventListener("touchmove", handleTouchMove);
+				document.removeEventListener("touchend", handleTouchEnd);
+				cleanup();
 			});
-		}
+		};
 
-		function findBoxIndex(pos) {
-			return boxes.findIndex(box => box.attr("position") == pos);
-		}
+		const findBoxIndex = (pos) => {
+			return boxes.findIndex(box => box.attr("position") === String(pos));
+		};
 
-		function moveBox(boxIdx, targetPos, fromPos) {
+		const moveBox = (boxIdx, targetPos, fromPos) => {
 			boxes[boxIdx].animate({
 				marginLeft: matrix[targetPos].left + BORDER_OFFSET,
 				marginTop: matrix[targetPos].top + BORDER_OFFSET
 			}, options.delay);
-			boxes[boxIdx].attr('position', targetPos);
+			boxes[boxIdx].attr('position', String(targetPos));
 			matrix[targetPos].taken = true;
 			matrix[fromPos].taken = false;
-		}
+		};
 
-		function run(dir) {
+		const run = (direction) => {
 			let isMoved = false;
 			for (let i = 0; i < 16; i++) matrix[i].combined = false;
 
-			if (dir == "left") {
+			if (direction === "left") {
 				isCheating = -1;
 				for (let i = 0; i < 4; i++) {
 					let empty = i * 4;
 					for (let j = 0; j < 4; j++) {
-						let pos = i * 4 + j;
+						const pos = i * 4 + j;
 						if (!matrix[pos].taken) continue;
-						if (pos != empty) {
-							let k = findBoxIndex(pos);
+						if (pos !== empty) {
+							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i * 4 && !matrix[empty - 1].combined) {
-							let k = findBoxIndex(empty);
-							let m = findBoxIndex(empty - 1);
-							if (boxes[k].attr('value') === boxes[m].attr('value')) {
+							const k = findBoxIndex(empty);
+							const m = findBoxIndex(empty - 1);
+							if (k !== -1 && m !== -1 && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty - 1].combined = true;
@@ -416,22 +464,23 @@ setTimeout(() => {
 						empty++;
 					}
 				}
-			} else if (dir == "right") {
+			} else if (direction === "right") {
 				isCheating = -1;
 				for (let i = 3; i > -1; i--) {
 					let empty = i * 4 + 3;
 					for (let j = 3; j > -1; j--) {
-						let pos = i * 4 + j;
+						const pos = i * 4 + j;
 						if (!matrix[pos].taken) continue;
-						if (pos != empty) {
-							let k = findBoxIndex(pos);
+						if (pos !== empty) {
+							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < i * 4 + 3 && !matrix[empty + 1].combined) {
-							let k = findBoxIndex(empty);
-							let m = findBoxIndex(empty + 1);
-							if (boxes[k].attr('value') === boxes[m].attr('value')) {
+							const k = findBoxIndex(empty);
+							const m = findBoxIndex(empty + 1);
+							if (k !== -1 && m !== -1 && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty + 1].combined = true;
@@ -442,22 +491,23 @@ setTimeout(() => {
 						empty--;
 					}
 				}
-			} else if (dir == "up") {
+			} else if (direction === "up") {
 				isCheating = -1;
 				for (let i = 0; i < 4; i++) {
 					let empty = i;
 					for (let j = 0; j < 4; j++) {
-						let pos = j * 4 + i;
+						const pos = j * 4 + i;
 						if (!matrix[pos].taken) continue;
-						if (pos != empty) {
-							let k = findBoxIndex(pos);
+						if (pos !== empty) {
+							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty > i && !matrix[empty - 4].combined) {
-							let k = findBoxIndex(empty);
-							let m = findBoxIndex(empty - 4);
-							if (boxes[k].attr('value') === boxes[m].attr('value')) {
+							const k = findBoxIndex(empty);
+							const m = findBoxIndex(empty - 4);
+							if (k !== -1 && m !== -1 && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty - 4].combined = true;
@@ -468,10 +518,10 @@ setTimeout(() => {
 						empty += 4;
 					}
 				}
-			} else if (dir == "down") {
-				if (isCheating != -1) {
+			} else if (direction === "down") {
+				if (isCheating !== -1) {
 					isCheating++;
-					if (isCheating == 10) {
+					if (isCheating === 10) {
 						cheat();
 						return true;
 					}
@@ -479,17 +529,18 @@ setTimeout(() => {
 				for (let i = 0; i < 4; i++) {
 					let empty = i + 12;
 					for (let j = 3; j > -1; j--) {
-						let pos = j * 4 + i;
+						const pos = j * 4 + i;
 						if (!matrix[pos].taken) continue;
-						if (pos != empty) {
-							let k = findBoxIndex(pos);
+						if (pos !== empty) {
+							const k = findBoxIndex(pos);
+							if (k === -1) continue;
 							moveBox(k, empty, pos);
 							isMoved = true;
 						}
 						if (empty < 12 + i && !matrix[empty + 4].combined) {
-							let k = findBoxIndex(empty);
-							let m = findBoxIndex(empty + 4);
-							if (boxes[k].attr('value') === boxes[m].attr('value')) {
+							const k = findBoxIndex(empty);
+							const m = findBoxIndex(empty + 4);
+							if (k !== -1 && m !== -1 && boxes[k].attr('value') === boxes[m].attr('value')) {
 								combineBox(k, m, boxes[k].attr('value'));
 								matrix[empty].taken = false;
 								matrix[empty + 4].combined = true;
@@ -501,43 +552,16 @@ setTimeout(() => {
 				}
 			}
 			return isMoved;
-		}
-	}
+		};
+
+		init();
+	};
 })(jQuery);
-
-function applyCycleColor() {
-	const colorList = [
-		"#FFF8D7", "#FFED97", "#FFBB77", "#FF9224", "#FF5809", "#EA0000",
-		"#FFFF37", "#F9F900", "#FFD700", "#FFC125", "#FFA500", "#FF8C00", "#FF00FF"
-	];
-	document.querySelectorAll(".box").forEach(tile => {
-		const rawVal = tile.getAttribute("value");
-		if (!rawVal) return;
-		const numVal = Number(rawVal);
-
-		if (numVal <= 8192) {
-			tile.style.removeProperty("background-color");
-			tile.style.removeProperty("color");
-			tile.style.fontSize = "";
-			return;
-		}
-
-		const exp = Math.floor(Math.log2(numVal));
-		const baseExp = 13;
-		const idx = ((exp - baseExp - 1) % colorList.length + colorList.length) % colorList.length;
-
-		tile.style.backgroundColor = colorList[idx];
-		tile.style.color = "#ffffff";
-		const len = rawVal.length;
-		tile.style.fontSize = `${Math.max(12, 26 - len * 1.3)}px`;
-		tile.style.lineHeight = "70px";
-	});
-}
 
 $(document).on("ready slide move merge spawn restart", applyCycleColor);
 
 $('#qrcode').qrcode({
-	ender: 'canvas',
+	render: 'canvas',
 	text: 'https://github.com/bill74186/bill74186.github.io/',
 	width: 272,
 	height: 272,
@@ -545,7 +569,7 @@ $('#qrcode').qrcode({
 	background: "#bbada0",
 	padding: 2,
 	correctLevel: 3
-	});
+});
 
 function showLang(lang) {
 	const cn = document.getElementById('intro-cn') || document.getElementById('tip-cn');
