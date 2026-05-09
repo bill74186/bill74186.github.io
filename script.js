@@ -579,3 +579,5 @@ function showLang(lang) {
 		en.style.display = lang === 'en' ? 'block' : 'none';
 	}
 }
+
+document.getElementById('Year').textContent = new Date().getUTCFullYear();
