@@ -1,5 +1,9 @@
+<div align="center">
+
 # 2048 小游戏说明文档
 Sorry, this file currently only supports simplified Chinese
+
+</div>
 
 ## 项目信息
 
@@ -866,13 +870,13 @@ Sorry, this file currently only supports simplified Chinese
 ### 5、最终稳定版架构（v2.2.6 ~ 至今）
 ——————————————————————
 **根目录文件**：
-font.ttf、style.css、script.js、jquery-3.7.1.min.js、jquery.qrcode-1.0.3.min.js、
-index.html、zh-CN.html、zh-TW.html、en-US.html、ja-JP.html、ko-KR.html、
-es-ES.html、fr-FR.html、de-DE.html、it-IT.html、pt-BR.html、ru-RU.html、
-is-IS.html、hi-IN.html、th-TH.html、vi-VN.html、id-ID.html、ms-MY.html、
-tr-TR.html、pl-PL.html、nl-NL.html、sv-SE.html、da-DK.html、no-NO.html、
-fi-FI.html、cs-CZ.html、hu-HU.html、ro-RO.html、uk-UA.html、el-GR.html、
-cy-GB.html、ca-ES.html、description.md
+`font.ttf`、`style.css`、`script.js`、`jquery-3.7.1.min.js`、`jquery.qrcode-1.0.3.min.js`、
+`index.html`、`zh-CN.html`、`zh-TW.html`、`en-US.html`、`ja-JP.html`、`ko-KR.html`、
+`es-ES.html`、`fr-FR.html`、`de-DE.html`、`it-IT.html`、`pt-BR.html`、`ru-RU.html`、
+`is-IS.html`、`hi-IN.html`、`th-TH.html`、`vi-VN.html`、`id-ID.html`、`ms-MY.html`、
+`tr-TR.html`、`pl-PL.html`、`nl-NL.html`、`sv-SE.html`、`da-DK.html`、`no-NO.html`、
+`fi-FI.html`、`cs-CZ.html`、`hu-HU.html`、`ro-RO.html`、`uk-UA.html`、`el-GR.html`、
+`cy-GB.html`、`ca-ES.html`、`description.md`
 **特点**：无任何冗余文件夹，所有资源全部扁平化存放于根目录，jQuery本地离线、全站版本统一
  
 ---
