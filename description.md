@@ -14,8 +14,11 @@ Sorry, this file currently only supports simplified Chinese
 **文件架构**：开发初期CSS与JS脚本统一存放于reference文件夹；拆分样式与脚本完成后才引入字体文件，后续全部资源统一迁移至根目录，结构干净规整、无冗余文件夹<br>
 **特色亮点**：彩蛋设置页伪装为加泰罗尼亚语语言文件，隐蔽性极高，入口藏于页脚作者名称
  
+> [!tip]
 > 更新日志记录起始版本： **v1.0.0**
- 
+
+---
+
 ## 完整开发更新日志
 
 
@@ -839,32 +842,32 @@ Sorry, this file currently only supports simplified Chinese
  
 ### 1、开发初期架构（v1.0.1 ~ v1.2.2）
 ——————————————————————
-**无字体文件**font.ttf
-**根目录**：index.html
-**文件夹**：reference
-**内部存放**：style.css 、 game.js
+**无字体文件**`font.ttf`<br>
+**根目录**：`index.html`<br>
+**文件夹**：`reference`<br>
+**内部存放**：`style.css`、`game.js`<br>
 **特点**：代码刚拆分完毕，资源分类存放，全程使用系统默认字体
  
 ### 2、字体引入后架构（v1.2.3）
 ——————————————————————
-**根目录**：index.html 、 font.ttf
-**文件夹**：reference
-**内部存放**：style.css 、 game.js
+**根目录**：`index.html`、`font.ttf`<br>
+**文件夹**：`reference`<br>
+**内部存放**：`style.css`、`game.js`<br>
 **特点**：CSS与JS拆分完成后，才正式添加像素字体文件
  
 ### 3、架构精简时期（v1.2.4 ~ v1.3.9）
 ——————————————————————
-**根目录**：index.html、style.css、game.js、font.ttf
+**根目录**：`index.html`、`style.css`、`game.js`、`font.ttf`<br>
 **特点**：全部样式脚本迁出reference、删除空文件夹、架构彻底简化
  
 ### 4、多语言完整架构（v1.4.0 ~ v2.0）
 ——————————————————————
-**根目录**：index.html(语言选择页)、style.css、game.js、font.ttf、全部语种HTML文件
+**根目录**：`index.html`(语言选择页)、`style.css`、`game.js`、`font.ttf`、全部语种`HTML`文件<br>
 **特点**：多语言体系成型，各页面独立、分数独立互不串档
  
 ### 5、根目录修改结构（v2.2.1 ~ v2.2.5）
 ——————————————————————
-**根目录**：index.html、style.css、game.js、font.ttf、全部语种HTML文件
+**根目录**：`index.html`、`style.css`、`game.js`、`font.ttf`、全部语种`HTML`文件<br>
 **特点**：项目文件名更规范，全站样式统一，无任何冗余文件
 
 ### 5、最终稳定版架构（v2.2.6 ~ 至今）
@@ -876,7 +879,7 @@ Sorry, this file currently only supports simplified Chinese
 `is-IS.html`、`hi-IN.html`、`th-TH.html`、`vi-VN.html`、`id-ID.html`、`ms-MY.html`、
 `tr-TR.html`、`pl-PL.html`、`nl-NL.html`、`sv-SE.html`、`da-DK.html`、`no-NO.html`、
 `fi-FI.html`、`cs-CZ.html`、`hu-HU.html`、`ro-RO.html`、`uk-UA.html`、`el-GR.html`、
-`cy-GB.html`、`ca-ES.html`、`description.md`
+`cy-GB.html`、`ca-ES.html`、`description.md`<br>
 **特点**：无任何冗余文件夹，所有资源全部扁平化存放于根目录，jQuery本地离线、全站版本统一
  
 ---
@@ -884,10 +887,10 @@ Sorry, this file currently only supports simplified Chinese
 ## 最终树形图形文件架构(不包括github文件)
  
 ```
-2048 Game/
-├── font.ttf        # 专用软像素字体文件
-├── style.css        # 全局公共样式
-├── script.js        # 全局唯一JS文件（加载逻辑+游戏核心+公共工具）
+2048-Game/
+├── font.ttf          # 专用软像素字体文件
+├── style.css         # 全局公共样式
+├── script.js         # 全局唯一JS文件（加载逻辑+游戏核心+公共工具）
 ├── jquery-3.7.1.min.js  # 本地离线jQuery官方最新稳定版
 ├── jquery.qrcode-1.0.3.min.js  # 本地离线jQuery二维码生成插件
 ├── index.html        # 首页=多语言选择页
@@ -922,7 +925,7 @@ Sorry, this file currently only supports simplified Chinese
 ├── el-GR.html        # 希腊语游戏页
 ├── cy-GB.html        # 威尔士语游戏页
 ├── ca-ES.html        # 隐藏彩蛋设置页（伪装加泰罗尼亚语）
-└── description.md        # 本项目说明文档
+└── description.md    # 本项目说明文档
 ```
 
 ---
@@ -940,4 +943,5 @@ Sorry, this file currently only supports simplified Chinese
 - [x] **加载体验**：终极逆向加载方案，所有设备100%稳定显示加载动画
 - [x] **数字显示**：百万以下原始数字带千分位，百万以上自动单位压缩，可全局开关
  
+> [!note]
 > 当前版本为**v2.5.1**代码质量优化稳定版，全开发时序、文件更名、版本迭代、本地化部署全部真实记录无误。后续如有发现BUG、兼容性问题或需要优化的地方，会继续更新修复并更新本文档。
