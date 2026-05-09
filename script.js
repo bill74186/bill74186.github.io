@@ -580,6 +580,7 @@ function showLang(lang) {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-	document.getElementById('Year').textContent = new Date().getUTCFullYear();
-});
+var yearEl = document.getElementById('Year');
+if (yearEl) {
+	yearEl.textContent = new Date().getUTCFullYear();
+}
