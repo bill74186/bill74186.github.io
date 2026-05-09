@@ -11,7 +11,7 @@
 
 ---
 
-[English](README.md) | **简体中文**
+[English](README.md) | **简体中文** | [更新日志](description.md)
 
 <p>
   <img src="https://img.shields.io/badge/HTML-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
