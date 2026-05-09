@@ -36,7 +36,7 @@ Give me a Star if you like it,please!
 - **Chinese Name**: 2048小游戏
 - **English Name**: 2048 Game
 - **Creation Date**: 2026/04/15
-- **Current Version**: v2.2.6
+- **Current Version**: v2.5.1
 - **Developer**: bill74186 & me
  
 ## 📌 Project Introduction
@@ -69,14 +69,14 @@ The font file does not belong to me, it will be deleted if copyright issue appea
 
 All content is produced by *bill74186*, all contents can be modified freely.
  
-Can you give me some *money* or a *star*? I'm running out of money to eat?  🙃🙃🙃
+Can you give me some *money* or a *star*? I'm running out of money to eat? 🙃🙃🙃
  
 The code structure is a bit redundant, it works fine anyway.
 
-The entry file is  `index.html` , local server is required.
+The entry file is `index.html`, local server is required.
  
 > [!important]
-Please run with a local server, do NOT open directly with  `file://`  protocol!
+Please run with a local server, do NOT open directly with `file://` protocol!
  
 ## 📁 File Structure
 
@@ -122,7 +122,7 @@ Please run with a local server, do NOT open directly with  `file://`  protocol
  ```
 
 > [!tip]
- All files are placed in the root directory for easy viewing
+All files are placed in the root directory for easy viewing
 
 ## 🧾 Footer & License
  
