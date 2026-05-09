@@ -72,11 +72,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	btnContinue.addEventListener('click', handleContinue);
 });
 
-var yearEl = document.getElementById('Year');
-if (yearEl) {
-	yearEl.textContent = new Date().getUTCFullYear();
-}
-
 const loadDom = document.getElementById('load');
 loadDom.classList.add('show');
 
