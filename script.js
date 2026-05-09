@@ -556,9 +556,9 @@ const CYCLE_COLORS = [
 
 		init();
 	};
+	
+	$(document).on("ready slide move merge spawn restart", applyCycleColor);
 })(jQuery);
-
-$(document).on("ready slide move merge spawn restart", applyCycleColor);
 
 $('#qrcode').qrcode({
 	render: 'canvas',
