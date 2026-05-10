@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="favicon.ico" alt="Logo" width="65px" height="65px">
+
 # 2048 Game
 A smooth 2048 game with 30+ languages support
 
