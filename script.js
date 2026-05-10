@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
 	const ua = navigator.userAgent;
 	const androidVer = parseFloat((ua.match(/Android\s([0-9.]+)/) || [])[1]) || 0;
-	const isOldDevice = androidVer <= 6 || /Windows NT [1-6]\.[0-1]/.test(ua) || /MSIE/.test(ua);
+	const windowsVer = parseFloat((ua.match(/Windows NT ([0-9.]+)/) || [])[1]) || 0;
+	const isOldDevice = androidVer <= 6 || windowsVer < 10 || /MSIE/.test(ua);
 
 	if (!isOldDevice) return;
 
