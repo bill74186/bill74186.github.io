@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	const ua = navigator.userAgent;
 	const androidVer = parseFloat((ua.match(/Android\s([0-9.]+)/) || [])[1]) || 0;
 	const windowsVer = parseFloat((ua.match(/Windows NT ([0-9.]+)/) || [])[1]) || 0;
-	const isOldDevice = androidVer <= 6 || windowsVer < 10 || /MSIE/.test(ua);
+	const isOldDevice = (androidVer > 0 && androidVer <= 6) || (windowsVer > 0 && windowsVer < 10) || /MSIE/.test(ua);
 
 	if (!isOldDevice) return;
 
