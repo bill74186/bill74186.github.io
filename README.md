@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="favicon.ico" alt="Logo" width="65px" height="65px">
-
 # 2048 Game
 A smooth 2048 game with 30+ languages support
 
@@ -36,7 +34,7 @@ Give me a Star if you like it,please!
 - **Chinese Name**: 2048小游戏
 - **English Name**: 2048 Game
 - **Creation Date**: 2026/04/15
-- **Current Version**: v2.5.7(157)
+- **Current Version**: v2.5.7(158)
 - **Developer**: bill74186 & me
  
 ## 📌 Project Introduction
@@ -67,12 +65,9 @@ This screenshot is not mine, it is a screenshot of the original gabrielecirulli
 > [!warning]
 The font file does not belong to me, it will be deleted if copyright issue appears.
 
-All content is produced by *bill74186*, all contents can be modified freely.
- 
-Can you give me some *money* or a *star*? I'm running out of money to eat? 🙃🙃🙃
- 
-The code structure is a bit redundant, it works fine anyway.
-
+All content is produced by *bill74186*, all contents can be modified freely.<br><br>
+Can you give me some *money* or a *star*? I'm running out of money to eat? 🙃🙃🙃<br><br>
+The code structure is a bit redundant, it works fine anyway.<br><br>
 The entry file is `index.html`, local server is required.
  
 > [!important]
@@ -126,12 +121,9 @@ All files are placed in the root directory for easy viewing
 
 ## 🧾 Footer & License
  
-Made By Bill74186👍
- 
-The footer is just for visual effect🥲
- 
-Writing this README is the same🤪
- 
+Made By Bill74186👍<br><br>
+The footer is just for visual effect🥲<br><br>
+Writing this README is the same🤪<br><br>
 Just enjoy the game by yourself!👽
 
 > [!note]
