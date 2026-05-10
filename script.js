@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', function(){
 	const ua = navigator.userAgent;
-	const androidVer = parseFloat((ua.match(/Android\s([0-9.]+)/) || [])[1]) || 0;
-	const isWindows = /Windows NT/.test(ua);
-	let isOldDevice = androidVer <= 6;
-	if (/Windows NT 6\.[0-1]/.test(ua)) isOldDevice = true;
-	if (/MSIE|Trident/.test(ua)) isOldDevice = true;
+	let isOldDevice = false;
 
-	if (!isOldDevice) return;
+	const androidMatch = ua.match(/Android\s([0-9.]+)/);
+	if(androidMatch){
+		const androidVer = parseFloat(androidMatch[1]);
+		isOldDevice = androidVer <= 6;
+	}
+	if(/Windows NT 6\.1/.test(ua)) isOldDevice = true;
+	if(/MSIE|Trident/.test(ua)) isOldDevice = true;
 
+	if(!isOldDevice) return;
 	const lockScroll = () => {
 		document.body.style.overflow = 'hidden';
 		document.documentElement.style.overflow = 'hidden';
@@ -66,13 +69,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	mask.appendChild(popup);
 	document.body.appendChild(mask);
 
-	const btnContinue = document.getElementById('btnContinue');
-	const handleContinue = () => {
+	document.getElementById('btnContinue').onclick = function(){
 		mask.remove();
 		unlockScroll();
-		btnContinue.removeEventListener('click', handleContinue);
 	};
-	btnContinue.addEventListener('click', handleContinue);
 });
 
 const loadDom = document.getElementById('load');
