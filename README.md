@@ -36,7 +36,7 @@ Give me a Star if you like it,please!
 - **Chinese Name**: 2048小游戏
 - **English Name**: 2048 Game
 - **Creation Date**: 2026/04/15
-- **Current Version**: v2.5.6(157)
+- **Current Version**: v2.5.7(157)
 - **Developer**: bill74186 & me
  
 ## 📌 Project Introduction
