@@ -26,9 +26,7 @@ A smooth 2048 game with 30+ languages support
 ## 🎮 Play Game
 
 If you want to play my 2048 online, please click 👉
-<a href="https://bill74186.github.io/">here 
-*(`https://bill74186.github.io/`)*
-</a>
+[here *(`https://bill74186.github.io/`)*](https://bill74186.github.io/)
 Give me a Star if you like it,please!
 
 ## ✨ Project Information
@@ -36,7 +34,7 @@ Give me a Star if you like it,please!
 - **Chinese Name**: 2048小游戏
 - **English Name**: 2048 Game
 - **Creation Date**: 2026/04/15
-- **Current Version**: v2.5.1
+- **Current Version**: v2.5.6(157)
 - **Developer**: bill74186 & me
  
 ## 📌 Project Introduction
@@ -57,7 +55,7 @@ This screenshot is not mine, it is a screenshot of the original gabrielecirulli
 ## 👤 Author Profile
  
 - **Real Name**: Secret 😜
-- **Nickname**: bill74186
+- **Nickname**: [bill74186](https://github.com/bill74186/)
 - **Age**: Just turned eighteen
 - **Personality**: Super lazy, do nothing if possible
 - **Hobbies**: Playing games & learning programming

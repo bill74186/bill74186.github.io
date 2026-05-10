@@ -41,20 +41,16 @@
 	</main>
 
 	<footer>
-		&copy; <span id="Year"></span> Bill74186 | 2048 Game<br>
+		&copy; <span id="Year">XXXX</span> Bill74186 | 2048 Game<br>
 		<a href="index.html">← 言語変更</a>
 	</footer>
 
 	<div id="load" class="ltx">Loading…</div>
-	<div class="ver">v2.5.1 · <a href="index.html">Bill74186</a></div>
+	<div class="ver">v2.5.6 · <a href="index.html">Bill74186</a></div>
 
 	<script src="script.js"></script>
 	
 	<script>
-		let now = new Date();
-		let currentYear = now.getUTCFullYear();
-		document.getElementById("Year").innerText = currentYear;
-
 		$(document).ready(function () {
 			$('#game').init2048({
 				bestScoreKey: '2048-best-jaJP',

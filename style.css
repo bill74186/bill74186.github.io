@@ -87,6 +87,19 @@ footer {
 	padding: 16px;
 	border-width: 3px;
 }
+button:focus,
+a:focus,
+input:focus {
+	outline: 3px solid #9f8b77;
+	outline-offset: 0px;
+	transition: outline-offset 0.15s ease;
+}
+button:focus-visible,
+a:focus-visible {
+	outline: 3px solid #9f8b77;
+	outline-offset: 0px;
+	transition: outline-offset 0.15s ease;
+}
 .scores {
 	display: flex;
 	gap: 4px;

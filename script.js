@@ -570,6 +570,8 @@ $('#qrcode').qrcode({
 	correctLevel: 3
 });
 
+document.getElementById("Year").textContent = new Date().getUTCFullYear();
+
 function showLang(lang) {
 	const cn = document.getElementById('intro-cn') || document.getElementById('tip-cn');
 	const en = document.getElementById('intro-en') || document.getElementById('tip-en');
