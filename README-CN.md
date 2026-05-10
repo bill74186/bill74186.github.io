@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="favicon.ico" alt="Logo" width="65px" height="65px">
+
 # 2048 小游戏
 一款丝滑滑动的2048小游戏，支持30多种语言
 
