@@ -140,6 +140,7 @@ a:focus-visible {
 	transition: background 0.2s;
 }
 .btns button:hover {
+	color: #6F5A45;
 	background: #9f8b77;
 }
 .overlay {
