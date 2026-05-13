@@ -414,10 +414,28 @@ const CYCLE_COLORS = [
 			document.addEventListener("touchmove", handleTouchMove);
 			document.addEventListener("touchend", handleTouchEnd);
 
+			const handleMouseDown = (e) => {
+				sx = e.clientX;
+				sy = e.clientY;
+			};
+
+			const handleMouseUp = (e) => {
+				const dx = e.clientX - sx;
+				const dy = e.clientY - sy;
+				if (Math.max(Math.abs(dx), Math.abs(dy)) > 10) {
+					gameRun(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? dir.right : dir.left) : (dy > 0 ? dir.down : dir.up));
+				}
+			};
+
+			document.addEventListener("mousedown", handleMouseDown);
+			document.addEventListener("mouseup", handleMouseUp);
+
 			$(window).on('beforeunload', () => {
 				document.removeEventListener("touchstart", handleTouchStart);
 				document.removeEventListener("touchmove", handleTouchMove);
 				document.removeEventListener("touchend", handleTouchEnd);
+				document.removeEventListener("mousedown", handleMouseDown);
+				document.removeEventListener("mouseup", handleMouseUp);
 				cleanup();
 			});
 		};
