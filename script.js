@@ -427,15 +427,7 @@ const CYCLE_COLORS = [
 				}
 			};
 
-			const handleMouseMove = (e) => {
-				const dx = e.clientX - sx;
-				const dy = e.clientY - sy;
-				if (Math.max(Math.abs(dx), Math.abs(dy)) > 10) {
-					gameRun(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? dir.right : dir.left) : (dy > 0 ? dir.down : dir.up));
-					sx = e.clientX;
-					sy = e.clientY;
-				}
-			};
+				const handleMouseMove = (e) => e.preventDefault();
 
 			document.addEventListener("mousedown", handleMouseDown);
 			document.addEventListener("mouseup", handleMouseUp);
