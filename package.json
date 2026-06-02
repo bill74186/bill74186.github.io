@@ -1,0 +1,25 @@
+{
+    "name": "Bill-blog",
+    "title": "Bill Blog",
+    "author": "Bill <bill74186@outlook.com>",
+    "version": "1.8.2",
+    "homepage": "http://bill74186.github.io",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bill74186/bill74186.github.io"
+    },
+    "bugs": "https://github.com/bill74186/bill74186.github.io/issues",
+    "devDependencies": {
+        "grunt": ">=1.3.0",
+        "grunt-banner": "~0.2.3",
+        "grunt-contrib-less": "^2.0.0",
+        "grunt-contrib-uglify": "^4.0.1",
+        "grunt-contrib-watch": "^1.1.0"
+    },
+    "scripts": {
+        "start": "bundle exec jekyll serve",
+        "dev": "grunt watch & npm run start",
+        "boil": "git push boilerplate boilerplate:master",
+        "push": "git push origin master --tag"
+    }
+}
