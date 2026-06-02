@@ -1540,14 +1540,7 @@ img::-moz-selection {
     margin-bottom: 25px;
   }
 }
-.tag-comments {
-  font-size: 12px;
-}
-@media only screen and (min-width: 768px) {
-  .tag-comments {
-    font-size: 14px;
-  }
-}
+
 .t:first-child {
   margin-top: 0px;
 }
