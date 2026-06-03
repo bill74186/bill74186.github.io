@@ -11,7 +11,7 @@
 
 > I never expected this to become popular.
 
-![](/img/blog-title.jpg)
+![](https://bill74186.github.io/img/blog-title.jpg)
 
 
 [User Manual 👉](_doc/Manual.md)
