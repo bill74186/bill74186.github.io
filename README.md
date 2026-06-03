@@ -11,7 +11,7 @@
 
 > I never expected this to become popular.
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+![](/img/blog-title.jpg)
 
 
 [User Manual 👉](_doc/Manual.md)
