@@ -2,7 +2,7 @@
 layout:     post
 title:      "你好 「Bill博客」"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
+date:       2026-06-04 
 author:     "bill74186"
 header-img: "img/offline-bg.jpg"
 catalog: true
@@ -13,7 +13,7 @@ tags:
 > “Yeah It's on. ”
 
 
-Hux 的 Blog 就这么开通了。
+bill74186 的 Blog 就这么开通了。
 
 [跳过废话，直接看技术实现 ](#build) 
 
@@ -44,7 +44,7 @@ Hux 的 Blog 就这么开通了。
 
 本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就专门找了个VPN加速器加速连接
 
-结果发现使用 **termux** git上传仓库巨快，所以就把VPN删了
+结果发现使用 **termux** `git`上传仓库巨快，所以就把VPN删了
 
 ---
 
