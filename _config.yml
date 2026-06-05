@@ -1,23 +1,23 @@
-# Site settings
+# ============
+#  _config.yml
+# ============
+
 title: Bill Blog
 SEOTitle: bill74186的博客 | Bill Blog
 header-img: img/post-bg-desk.jpg
 email: bill71186@outlook.com
 description: 「"一“码”之缘，有“源”再见！」    ——bill71186"
 keyword: "Bill, Bill Blog, Bill的博客, bill71186, 比尔, HTML, blog"
-url: "http://bill7486.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/bill74186/bill74186.github.io.git" # you code repository
+url: "http://bill7486.github.io"
+baseurl: ""
+github_repo: "https://github.com/bill74186/bill74186.github.io.git"
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+sidebar: true
 sidebar-about-description: "目标决定你将成为什么样的人！"
-sidebar-avatar: /img/bill74186.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/bill74186.png
 
-# Publish posts or collection documents with a future date.
 future: true
 
-# SNS settings
 RSS: false
 #weibo_username: bill74186
 zhihu_username: bill74186
@@ -26,8 +26,6 @@ github_username: bill74186
 #facebook_username:  bill74186
 #linkedin_username:  firstname-lastname-idxxxx
 
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
@@ -43,19 +41,11 @@ exclude:
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 timezone: CN
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-# make sure you have this gem installed
-# `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
 
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM # use Github Flavored Markdown !important
+  input: GFM 
   syntax_highlighter_opts:
     span:
       line_numbers: false
@@ -65,24 +55,19 @@ kramdown:
 
 # Analytics settings
 # Baidu Analytics
-# ba_track_id: [your track id]
+ba_track_id: 788ec39160ac61840afc0489faf9298f
 
 # Google Analytics
-ga_track_id: "UA-xxxxxx-xx" # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: "UA-xxxxxx-xx" # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
-# Featured Tags
-featured-tags: true # whether or not using Feature-Tags
-featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+featured-tags: true
+featured-condition-size: 1
 
-# Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
-# MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
 
-# Friends
 friends: [
     { title: "TACS", href: "https://github.com/TACS-Studio/"},
     { title: "Install-Kali-NetHunter", href: "http://github.com/Install-Kali-NetHunter/"},
