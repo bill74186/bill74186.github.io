@@ -1,17 +1,17 @@
 <section class="visible-md visible-lg">
   <hr>
-  <h5><a href="{{'ff/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
+  <h5><a href="{{'ff/about/' | prepend: site.baseurl }}"><i class="fa fa-user"></i> ABOUT ME</a></h5>
   <div class="short-about">
     {% if site.sidebar-avatar %}
     <img src="{{site.sidebar-avatar}}" />
     {% endif %}
     {% if site.sidebar-about-description %}
-    <p>{{site.sidebar-about-description}}</p>
+    <p><i class="fa fa-quote-left"> {{site.sidebar-about-description}}</p>
+    {% endif %}
+    {% if site.email %}
+    <p><i class="fa fa-envelope"> {{site.email}}</p>
     {% endif %}
     <!-- SNS Link -->
     {% include sns-links.html %}
   </div>
-  {% if site.email %}
-    <p> {{site.email}}</p>
- f {% endif %}
 </section>
