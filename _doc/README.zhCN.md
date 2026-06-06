@@ -3,7 +3,7 @@
 # Bill Blog
 「"一“码”之缘，有“源”再见！」
 
-![Blog Photo](https://bill74186.github.io/img/blog-title.jpg)
+![Blog Photo](../img/blog-title.png)
 
 [English](../README.md) | **简体中文** | [繁體中文](README.zhTW.md)
 
@@ -45,7 +45,7 @@
 	* [标题底图](#标题底图)
 	* [搜索展示标题-头文件](#头文件修改)
 
-
+## 开始
 
 ### 环境
 
@@ -92,6 +92,8 @@ tags:
     - 博客
 ---
 ```
+
+## 组件
 
 ### 侧边栏
 
