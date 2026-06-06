@@ -4,7 +4,7 @@ title:      "你好 「Bill博客」"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2026-06-04 
 author:     "bill74186"
-header-img: "img/offline-bg.jpg"
+header-img: "img/offline-bg.png"
 catalog: true
 tags:
     - 博客
@@ -26,6 +26,8 @@ tags:
 之前一直没有时间搞个人主页（*主要还是懒～*） 六一的时候觉得没有博客有点丢脸
 
 所以一不做二不休花了**三天**时间部署我的Blog，现在基本搞好了
+
+![blog-title.jpg](img/blog-title.jpg)
 
 <p id = "build"></p>
 
