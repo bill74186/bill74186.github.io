@@ -2,7 +2,7 @@
 <div align="center">
 
 # Bill Blog
-「"A code connection, goodbye with source!"」
+「A code connection, goodbye with source!"」
 
 ![Blog Photo](/img/blog-title.png)
 
