@@ -67,7 +67,6 @@
 </script>
 {% endif %}
 
-
 {% if page.title == 'Archive' %}
 <!-- jquery.tagcloud.js -->
 <script>
@@ -90,7 +89,6 @@
     })
 </script>
 
-
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
 <script>
@@ -111,7 +109,6 @@
 </script>
 {% endif %}
 
-
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
 <script>
@@ -129,6 +126,14 @@
 </script>
 {% endif %}
 
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x33wgbqrbr");
+</script>
 
 <!-- Side Catalog -->
 {% unless page.no-catalog %}
@@ -243,7 +248,7 @@
 </script>
 {% endif %}
 
-<!-- Simple Jekyll Search -->
+<!-- Search -->
 <script>
     // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
     function htmlDecode(input) {

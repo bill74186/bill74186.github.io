@@ -2,7 +2,7 @@
 <div align="center">
 
 # Bill Blog
-「"一「碼」之緣，有「源」再見！」
+「一「碼」之緣，有「源」再見！」
 
 ![Blog Photo](../img/blog-title.png)
 
