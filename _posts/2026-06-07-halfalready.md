@@ -3,7 +3,7 @@ layout: post
 title: "重要提示"
 subtitle: "博客进度已完成一半了"
 author: "bill74186"
-header-img: "img/post-bg-3.png"
+header-img: "img/post-bg-2.png"
 header-mask: 0.2
 tags:
   - 重要
