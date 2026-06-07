@@ -1,7 +1,7 @@
 <div align="center">
 
 # Bill Blog
-「"一“码”之缘，有“源”再见！」
+「一“码”之缘，有“源”再见！」
 
 ![Blog Photo](../img/blog-title.png)
 
@@ -13,7 +13,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
 
-博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 
+博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)
+
+博客模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)
 
 有兴趣可以看看原版教程
 
