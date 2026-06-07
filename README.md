@@ -4,9 +4,9 @@
 # Bill Blog
 「"A code connection, goodbye with source!"」
 
-![Blog Photo](../img/blog-title.png)
+![Blog Photo](/img/blog-title.png)
 
-**English** | [简体中文](README.zhCN.md) | [繁體中文](README.zhTW.md)
+**English** | [简体中文](_doc/README.zhCN.md) | [繁體中文](_doc/README.zhTW.md)
 
 <p>
   <a href="https://github.com/bill74186/bill74186.github.io/stargazers"><img src="https://img.shields.io/github/stars/bill74186/bill74186.github.io?style=for-the-badge&amp;logo=github&amp;color=f4c542" alt="Stars"></a>
@@ -22,7 +22,7 @@ Feel free to check out the original tutorial
 
 </div>
 
-&gt;
+>
 ### [Check out the blog here 👆](http://bill74186.github.io)
 
 
