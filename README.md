@@ -100,7 +100,7 @@ tags:
 ### Sidebar
 
 Look on the right:
-![Sidebar Image sidebar.png](sidebar.png)
+![Sidebar Image sidebar.png](_doc/sidebar.png)
 
 The settings are in the `Sidebar Settings` section of the `_config.yml` file.
 
@@ -147,7 +147,7 @@ Enter your social accounts below. Those not added will not be displayed in the s
 	 weibo_username:   username
 ```
 
-![SNS Settings SNS-Setting.png](SNS-Setting.png)
+![SNS Settings SNS-Setting.png](_doc/SNS-Setting.png)
 
 ### Friend Links
 
@@ -166,7 +166,7 @@ friends: [
 
 ### Keynote Layout
 
-![keynote.png](keynote.png)
+![keynote.png](_doc/keynote.png)
 
 This part is for HTML format slides, generally using Reveal.js, Impress.js, Slides, Prezi, etc. I think a modern blog can't be without the ability to display HTML slides~
 
@@ -220,7 +220,7 @@ But note that the title of this template is **white**, so the background color s
 
 ### Header Modification
 
-My blog title is **"BY Blog"** but I want it to display **"柏荧的博客 | BY Blog"** when searched. This requires the SEO Title to be defined.
+My blog title is **"Bill Blog"** but I want it to display **"bill74186的博客 | Bill Blog"** when searched. This requires the SEO Title to be defined.
 
 Actually, this SEO Title defines what's inside `&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;` and the share title. You can modify it yourself.
 
