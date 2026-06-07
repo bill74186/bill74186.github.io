@@ -29,8 +29,8 @@
 <script src="{{ "/js/script.min.js " | prepend: site.baseurl }}"></script>
 <!-- Simple Jekyll Search -->
 <script src="{{ "/js/search.min.js" | prepend: site.baseurl }}"></script>
-<!-- Service Worker -->
 {% if site.service-worker %}
+<!-- Service Worker -->
 <script src="{{ "/js/snackbar.js " | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/sw-registration.js " | prepend: site.baseurl }}"></script>
 {% endif %}
@@ -89,8 +89,8 @@
     })
 </script>
 
-<!-- Google Analytics -->
 {% if site.ga_track_id %}
+<!-- Google Analytics -->
 <script>
     // dynamic User by Bill
     var _gaId = '{{ site.ga_track_id }}';
@@ -109,8 +109,8 @@
 </script>
 {% endif %}
 
-<!-- Baidu Tongji -->
 {% if site.ba_track_id %}
+<!-- Baidu Tongji -->
 <script>
     // dynamic User by Bill
     var _baId = '{{ site.ba_track_id }}';
@@ -126,8 +126,8 @@
 </script>
 {% endif %}
 
-<!-- Side Catalog -->
 {% unless page.no-catalog %}
+<!-- Side Catalog -->
 <script type="text/javascript">
     function generateCatalog(selector) {
 

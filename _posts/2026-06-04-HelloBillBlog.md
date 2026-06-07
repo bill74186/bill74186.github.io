@@ -27,7 +27,7 @@ tags:
 
 所以一不做二不休花了**三天**时间部署我的Blog，现在基本搞好了
 
-![blog-title.jpg](img/blog-title.jpg)
+![blog-title.jpg](img/blog-title.png)
 
 <p id = "build"></p>
 
