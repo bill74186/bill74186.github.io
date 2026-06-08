@@ -24,3 +24,9 @@ multilingual: true
     {% capture about_en %}{% include about/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
+
+<!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable and page.comments != false %}
+<div id="gitalk-container"></div>
+{% endif %}
+<!-- Gitalk 评论 end -->

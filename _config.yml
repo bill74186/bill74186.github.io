@@ -58,7 +58,16 @@ ba_track_id: 788ec39160ac61840afc0489faf9298f
 
 # Google Analytics
 # ga_track_id: "UA-xxxxxx-xx" # Format: UA-xxxxxx-xx
-# ga_domain: huangxuan.me
+# ga_domain: bill74186.github.io
+
+gitalk:
+  enable: true
+  clientID: "Ov23liP2CLqcJYEBhES0"
+  clientSecret: "dc0393f29a8165ce41468028b6f4ec16c3a42cf4"
+  repo: "bill74186.github.io"
+  owner: "bill74186"
+  admin: "bill74186"
+  distractionFreeMode: true
 
 featured-tags: true
 featured-condition-size: 1

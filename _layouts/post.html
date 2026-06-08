@@ -2,10 +2,6 @@
 layout: default
 ---
 
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
@@ -26,6 +22,12 @@ layout: default
                 {% endif %}
 
 				{{ content }}
+
+                <!-- Gitalk 评论 start  -->
+                {% if site.gitalk.enable and page.comments != false %}
+                <div id="gitalk-container"></div>
+                {% endif %}
+                <!-- Gitalk 评论 end -->
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
