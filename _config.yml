@@ -61,7 +61,7 @@ ba_track_id: 788ec39160ac61840afc0489faf9298f
 # ga_domain: bill74186.github.io
 
 gitalk:
-  enable: true
+  enable: false
   clientID: "Ov23liP2CLqcJYEBhES0"
   clientSecret: "dc0393f29a8165ce41468028b6f4ec16c3a42cf4"
   repo: "bill74186.github.io"
