@@ -60,17 +60,11 @@ ba_track_id: 788ec39160ac61840afc0489faf9298f
 # ga_track_id: "UA-xxxxxx-xx" # Format: UA-xxxxxx-xx
 # ga_domain: bill74186.github.io
 
-gitalk:
-  enable: false
-  clientID: "Ov23liP2CLqcJYEBhES0"
-  clientSecret: "dc0393f29a8165ce41468028b6f4ec16c3a42cf4"
-  repo: "bill74186.github.io"
-  owner: "bill74186"
-  admin: "bill74186"
-  distractionFreeMode: true
+# Comments switch
+comments: true
 
 giscus:
-  enable: true
+  enable: false
   repo: "bill74186/bill74186.github.io"
   repo_id: "R_kgDOSuyHDQ"
   category: "Announcements"
@@ -83,6 +77,22 @@ giscus:
   theme: "light"
   lang: "zh-CN"
   loading: "lazy"
+
+utterances:
+  enable: true
+  repo: "bill74186/bill74186.github.io"
+  issue_term: "pathname"
+  label: "Comment"
+  theme: "github-light"
+
+gitalk:
+  enable: false
+  clientID: "Ov23liP2CLqcJYEBhES0"
+  clientSecret: "dc0393f29a8165ce41468028b6f4ec16c3a42cf4"
+  repo: "bill74186.github.io"
+  owner: "bill74186"
+  admin: "bill74186"
+  distractionFreeMode: true
 
 featured-tags: true
 featured-condition-size: 1
