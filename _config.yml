@@ -89,7 +89,7 @@ featured-condition-size: 1
 
 chrome-tab-theme-color: "#000000"
 service-worker: true
-page-mathjax: true
+mathjax: true
 
 friends: [
     { title: "TACS", href: "https://github.com/TACS-Studio/"},
