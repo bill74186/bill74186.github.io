@@ -103,9 +103,24 @@ layout: default
     </div>
 </article>
 
-<!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
-  {% include mathjax_support.html %}
+<!-- add support for mathjax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true,
+    equationNumbers: { autoNumber: "AMS" }
+  },
+  svg: {
+    scale: 90
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js">
+</script>
 {% endif %}
 
 {% if site.anchorjs %}
