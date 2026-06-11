@@ -21,13 +21,13 @@ sidebar-email: bill74186@outlook.com
 future: true
 
 RSS: false
-#weibo_username: bill74186
-#jianshu_username: bill74186
+weibo_username: bill74186
+jianshu_username: bill74186
 zhihu_username: bill74186
 github_username: bill74186
-#twitter_username: bill74186
-#facebook_username: bill74186
-#linkedin_username: firstname-lastname-idxxxx
+twitter_username: bill74186
+facebook_username: bill74186
+linkedin_username: firstname-lastname-idxxxx
 
 highlighter: rouge
 permalink: pretty
