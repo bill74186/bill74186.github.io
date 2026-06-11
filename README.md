@@ -4,6 +4,14 @@
 # Bill Blog
 「A code connection, goodbye with source!"」
 
+<p>
+  <img src="https://img.shields.io/badge/HTML5-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-3-1572B6?style=flat-square&logo=css3&" alt="CSS3">
+  <img src="https://img.shields.io/badge/Less-4.2.0-1D365D?style=flat-square&logo=less&" alt="Less">
+  <img src="https://img.shields.io/badge/JavaScript-ES2025-F7DF1E?style=flat-square&logo=javascript&" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Ruby-3.4-CC342D?style=flat-square&logo=ruby&" alt="Ruby">
+</p>
+
 ![Blog Photo](/img/blog-title.png)
 
 **English** | [简体中文](_doc/README.zhCN.md) | [繁體中文](_doc/README.zhTW.md)
@@ -185,9 +193,51 @@ The iframe will automatically adjust its size on different devices. Padding is k
 
 ### Comment System
 
-This blog does not currently support a comment system
+This blog fully supports the following three different comment systems:
+- `giscus`
+- `utterances`
+- `gitalk`
 
-Sorry about that
+You can freely choose the comment system you need. For detailed configuration code, please refer to the `_config.yml` file:
+
+```yaml
+# Global Comment Switch
+comments: [true/false]
+
+giscus:
+  enable: [true/false]
+  repo: "username/reponame"
+  repo_id: "[Repository ID]"
+  category: "[Category Name]"
+  category_id: "[Category ID]"
+  mapping: "[pathname/url/title]"
+  strict: [0/1]
+  reactions_enabled: [0/1]
+  emit_metadata: [0/1]
+  input_position: "[top/bottom]"
+  theme: "[light/dark/custom]"
+  lang: "[zh-CN/en-US/other]"
+  loading: "[lazy/eager]"
+
+utterances:
+  enable: [true/false]
+  repo: "username/reponame"
+  issue_term: "pathname"
+  label: "[Comment/other]"
+  theme: "[github-light/other]"
+
+gitalk:
+  enable: [true/false]
+  clientID: "[Client ID]"
+  clientSecret: "[Client Secret]"
+  repo: "username/reponame"
+  owner: "[Owner Name]"
+  admin: "[Admin Account]"
+  distractionFreeMode: [true/false]
+```
+
+> ![note]
+> The values shown here are recommended defaults. Please modify them according to your actual situation.
 
 ### Statistical Analysis
 
