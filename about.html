@@ -9,20 +9,89 @@ multilingual: true
 
 <!-- Language Selector -->
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-	<option value="0" selected> 中文 | Chinese </option>
-	<option value="1"> 英文 | English </option>
+	<option value="0" selected> 简体中文 | Simplified Chinese </option>
+	<option value="1"> 繁体中文 | Traditional Chinese </option>
+	<option value="2"> 美式英文 | American English </option>
 </select>
 
-<!-- Chinese Version -->
-<div class="zh post-container">
-	{% capture about_zh %}{% include about/zh.md %}{% endcapture %}
-	{{ about_zh | markdownify }}
+<!-- 简体中文 -->
+<div class="zhCN post-container">
+	{% capture about_zhCN %}{% include about/zh.md %}{% endcapture %}
+	{{ about_zhCN | markdownify }}
 </div>
 
-<!-- English Version -->
-<div class="en post-container">
-	{% capture about_en %}{% include about/en.md %}{% endcapture %}
-	{{ about_en | markdownify }}
+<!-- 繁体中文 -->
+<div class="zhTW post-container">
+	{% capture about_zhTW %}{% include about/zhTW.md %}{% endcapture %}
+	{{ about_zhTW | markdownify }}
 </div>
+
+<!-- 美式英文 -->
+<div class="enUS post-container">
+	{% capture about_enUS %}{% include about/en.md %}{% endcapture %}
+	{{ about_enUS | markdownify }}
+</div>
+
+<!-- Language Change -->
+<script type="text/javascript">
+    var $zhCN = document.querySelector(".zhCN");
+    var $zhTW = document.querySelector(".zhTW");
+    var $enUS = document.querySelector(".enUS");
+    var $select = document.querySelector(".sel-lang");
+
+    function getLang() {
+        return new URLSearchParams(document.location.search).get("lang");
+    }
+
+    function setLang(newLang) {
+        const params = new URLSearchParams(document.location.search);
+        params.set("lang", newLang);
+        document.location.search = params.toString();
+    }
+
+    function _render() {
+        $zhCN.style.display = "none";
+        $zhCN.classList.remove("active");
+        $zhTW.style.display = "none";
+        $zhTW.classList.remove("active");
+        $enUS.style.display = "none";
+        $enUS.classList.remove("active");
+
+        const lang = getLang();
+        switch (lang) {
+            case "zhCN":
+                $select.selectedIndex = 0;
+                $zhCN.style.display = "block";
+                $zhCN.classList.add("active");
+                break;
+            case "zhTW":
+                $select.selectedIndex = 1;
+                $zhTW.style.display = "block";
+                $zhTW.classList.add("active");
+                break;
+            case "enUS":
+                $select.selectedIndex = 2;
+                $enUS.style.display = "block";
+                $enUS.classList.add("active");
+                break;
+            default:
+                $select.selectedIndex = 0;
+                $zhCN.style.display = "block";
+                $zhCN.classList.add("active");
+        }
+        generateCatalog(".catalog-body");
+    }
+
+    function onLanChange(val) {
+        const langMap = {
+            "0": "zhCN",
+            "1": "zhTW",
+            "2": "enUS"
+        };
+        setLang(langMap[val]);
+    }
+
+    _render();
+</script>
 
 {% include comments.html %}

@@ -6,11 +6,11 @@
 ![Blog Photo](../img/blog-title.png)
 
 <p>
-  <img src="https://img.shields.io/badge/HTML5-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-3-1572B6?style=flat-square&logo=css3&" alt="CSS3">
-  <img src="https://img.shields.io/badge/Less-4.2.0-1D365D?style=flat-square&logo=less&" alt="Less">
-  <img src="https://img.shields.io/badge/JavaScript-ES2025-F7DF1E?style=flat-square&logo=javascript&" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Ruby-3.4-CC342D?style=flat-square&logo=ruby&" alt="Ruby">
+  <img src="https://img.shields.io/badge/HTML-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS-3-1572B6?style=flat-square&logo=css&" alt="CSS3">
+  <img src="https://img.shields.io/badge/Less-4.2.0-1D365D?style=flat-square&logo=less&" alt="Less4.2.0">
+  <img src="https://img.shields.io/badge/JavaScript-ES2025-F7DF1E?style=flat-square&logo=javascript&" alt="JavaScript-ES2025">
+  <img src="https://img.shields.io/badge/Ruby-3.4-CC342D?style=flat-square&logo=ruby&" alt="Ruby3.4">
 </p>
 
 [English](../README.md) | **简体中文** | [繁體中文](README.zhTW.md)
