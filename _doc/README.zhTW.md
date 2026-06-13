@@ -148,11 +148,13 @@ featured-condition-size: 1
 ```yaml
 	# SNS 設定
 	RSS: false
-	jianshu_username: 	jianshu_id
-	zhihu_username:     username
-	facebook_username:  username
-	github_username:    username
-	 weibo_username:   username
+    weibo_username: bill74186
+    jianshu_username: bill74186
+    zhihu_username: bill74186
+    github_username: bill74186
+    twitter_username: bill74186
+    facebook_username: bill74186
+    linkedin_username: firstname-lastname-idxxxx
 ```
 
 ![SNS 設定SNS-Setting.png](SNS-Setting.png)

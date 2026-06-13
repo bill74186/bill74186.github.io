@@ -148,11 +148,13 @@ Enter your social accounts below. Those not added will not be displayed in the s
 ```
 	# SNS Settings
 	RSS: false
-	jianshu_username: 	jianshu_id
-	zhihu_username:     username
-	facebook_username:  username
-	github_username:    username
-	 weibo_username:   username
+    weibo_username: bill74186
+    jianshu_username: bill74186
+    zhihu_username: bill74186
+    github_username: bill74186
+    twitter_username: bill74186
+    facebook_username: bill74186
+    linkedin_username: firstname-lastname-idxxxx
 ```
 
 ![SNS Settings SNS-Setting.png](_doc/SNS-Setting.png)

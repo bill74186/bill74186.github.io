@@ -16,11 +16,6 @@ layout: default
 				col-md-10 col-md-offset-1
 				post-container">
 
-				<!-- Multi-Lingual -->
-				{% if page.multilingual %}
-					{% include multilingual-sel.html %}
-				{% endif %}
-
 				{{ content }}
 
 				{% include comments.html %}
@@ -81,28 +76,6 @@ layout: default
 		</div>
 	</div>
 </article>
-
-{% if site.mathjax %}
-<!-- add support for mathjax -->
-<script>
-window.MathJax = {
-  tex: {
-	inlineMath: [['$', '$']],
-	displayMath: [['$$', '$$']],
-	processEscapes: true,
-	equationNumbers: { autoNumber: "AMS" }
-  },
-  svg: {
-	scale: 0.9,
-	fontCache: 'global'
-  }
-};
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js">
-</script>
-{% endif %}
-
 
 {% if site.anchorjs %}
 <!-- async load function -->

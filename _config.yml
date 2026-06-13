@@ -56,12 +56,18 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Baidu Analytics
-ba_track_id: 788ec39160ac61840afc0489faf9298f
+microsoft-clarity:
+  enable: true
+  clarity_id: x33wgbqrbr
 
-# Google Analytics
-# ga_track_id: "UA-xxxxxx-xx" # Format: UA-xxxxxx-xx
-# ga_domain: bill74186.github.io
+google_analytics:
+  enable: false
+  ga_track_id: "UA-xxxxxx-xx"
+  ga_domain: bill74186.github.io
+
+baidu_tongji:
+  enable: true
+  ba_track_id: 788ec39160ac61840afc0489faf9298f
 
 # Comments switch
 comments: true
