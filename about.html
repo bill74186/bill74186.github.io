@@ -4,7 +4,6 @@ title: "About"
 description: "「他单纯只想把日子过得不浪费」"
 header-img: "img/about-bg.png"
 header-mask: 0.3
-multilingual: true
 ---
 
 <!-- Language Selector -->
@@ -34,64 +33,64 @@ multilingual: true
 
 <!-- Language Change -->
 <script type="text/javascript">
-    var $zhCN = document.querySelector(".zhCN");
-    var $zhTW = document.querySelector(".zhTW");
-    var $enUS = document.querySelector(".enUS");
-    var $select = document.querySelector(".sel-lang");
+	var $zhCN = document.querySelector(".zhCN");
+	var $zhTW = document.querySelector(".zhTW");
+	var $enUS = document.querySelector(".enUS");
+	var $select = document.querySelector(".sel-lang");
 
-    function getLang() {
-        return new URLSearchParams(document.location.search).get("lang");
-    }
+	function getLang() {
+		return new URLSearchParams(document.location.search).get("lang");
+	}
 
-    function setLang(newLang) {
-        const params = new URLSearchParams(document.location.search);
-        params.set("lang", newLang);
-        document.location.search = params.toString();
-    }
+	function setLang(newLang) {
+		const params = new URLSearchParams(document.location.search);
+		params.set("lang", newLang);
+		document.location.search = params.toString();
+	}
 
-    function _render() {
-        $zhCN.style.display = "none";
-        $zhCN.classList.remove("active");
-        $zhTW.style.display = "none";
-        $zhTW.classList.remove("active");
-        $enUS.style.display = "none";
-        $enUS.classList.remove("active");
+	function _render() {
+		$zhCN.style.display = "none";
+		$zhCN.classList.remove("active");
+		$zhTW.style.display = "none";
+		$zhTW.classList.remove("active");
+		$enUS.style.display = "none";
+		$enUS.classList.remove("active");
 
-        const lang = getLang();
-        switch (lang) {
-            case "zhCN":
-                $select.selectedIndex = 0;
-                $zhCN.style.display = "block";
-                $zhCN.classList.add("active");
-                break;
-            case "zhTW":
-                $select.selectedIndex = 1;
-                $zhTW.style.display = "block";
-                $zhTW.classList.add("active");
-                break;
-            case "enUS":
-                $select.selectedIndex = 2;
-                $enUS.style.display = "block";
-                $enUS.classList.add("active");
-                break;
-            default:
-                $select.selectedIndex = 0;
-                $zhCN.style.display = "block";
-                $zhCN.classList.add("active");
-        }
-        generateCatalog(".catalog-body");
-    }
+		const lang = getLang();
+		switch (lang) {
+			case "zhCN":
+				$select.selectedIndex = 0;
+				$zhCN.style.display = "block";
+				$zhCN.classList.add("active");
+				break;
+			case "zhTW":
+				$select.selectedIndex = 1;
+				$zhTW.style.display = "block";
+				$zhTW.classList.add("active");
+				break;
+			case "enUS":
+				$select.selectedIndex = 2;
+				$enUS.style.display = "block";
+				$enUS.classList.add("active");
+				break;
+			default:
+				$select.selectedIndex = 0;
+				$zhCN.style.display = "block";
+				$zhCN.classList.add("active");
+		}
+		generateCatalog(".catalog-body");
+	}
 
-    function onLanChange(val) {
-        const langMap = {
-            "0": "zhCN",
-            "1": "zhTW",
-            "2": "enUS"
-        };
-        setLang(langMap[val]);
-    }
+	function onLanChange(val) {
+		const langMap = {
+			"0": "zhCN",
+			"1": "zhTW",
+			"2": "enUS"
+		};
+		setLang(langMap[val]);
+	}
 
-    _render();
+	_render();
 </script>
 
 {% include comments.html %}
