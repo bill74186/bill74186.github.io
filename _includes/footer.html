@@ -130,24 +130,39 @@
 <!-- add support for mathjax -->
 <script>
 window.MathJax = {
+  // 同时兼容 $...$ 和 \(...\) 两种行内公式
   tex: {
-    inlineMath: [['$', '$']],
-    displayMath: [['$$', '$$']],
-    processEscapes: true,
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: false, // 关闭转义，杜绝\$干扰
     equationNumbers: { autoNumber: "AMS" },
-    packages: {'[+]': ['ams', 'cases']}
+    packages: {'[+]': ['ams', 'cases', 'mathtools']} // 补齐矩阵/分段函数依赖
   },
   svg: {
-    scale: 1.1,
+    scale: 1.15,
     fontCache: 'global'
   },
   startup: {
-    pageReady: () => MathJax.startup.defaultPageReady()
+    // DOM加载完成后强制全局渲染
+    pageReady: function () {
+      return MathJax.startup.defaultPageReady().then(function () {
+        // 延迟二次渲染，解决博客懒加载DOM延迟
+        setTimeout(() => MathJax.typeset(), 300);
+      });
+    }
   }
 };
 </script>
+<!-- 移除async，同步加载，配置优先执行 -->
 <script type="text/javascript" id="MathJax-script"
   src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js">
+</script>
+
+<!-- 页面底部追加兜底渲染脚本（必须加） -->
+<script>
+window.addEventListener('load', function() {
+  MathJax.typesetPromise();
+});
 </script>
 {% endif %}
 
