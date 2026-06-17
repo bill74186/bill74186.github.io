@@ -131,18 +131,22 @@
 <script>
 window.MathJax = {
   tex: {
-	inlineMath: [['$', '$']],
-	displayMath: [['$$', '$$']],
-	processEscapes: true,
-	equationNumbers: { autoNumber: "AMS" }
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true,
+    equationNumbers: { autoNumber: "AMS" },
+    packages: {'[+]': ['ams', 'cases']}
   },
   svg: {
-	scale: 0.9,
-	fontCache: 'global'
+    scale: 1.1,
+    fontCache: 'global'
+  },
+  startup: {
+    pageReady: () => MathJax.startup.defaultPageReady()
   }
 };
 </script>
-<script type="text/javascript" id="MathJax-script" async
+<script type="text/javascript" id="MathJax-script"
   src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js">
 </script>
 {% endif %}
