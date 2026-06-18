@@ -1,10 +1,9 @@
-/* ===========================================================
- * sw.js
- * ===========================================================
- * Copyright 2016 @huxpro
- * Licensed under Apache 2.0
+/* sw.js
+ * Copyright 2026 bill74186
+ * Licensed under MIT
  * service worker scripting
- * ========================================================== */
+ * Made by Huxpro
+ */
 
 // CACHE_NAMESPACE
 // CacheStorage is shared between all sites under same domain.
@@ -17,13 +16,13 @@ const PRECACHE_LIST = [
   "./offline.html",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
-  "./js/hux-blog.min.js",
+  "./js/script.min.js",
   "./js/snackbar.js",
   "./img/icon_wechat.png",
   "./img/avatar-hux.jpg",
   "./img/home-bg.jpg",
   "./img/404-bg.jpg",
-  "./css/hux-blog.min.css",
+  "./css/style.min.css",
   "./css/bootstrap.min.css"
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",

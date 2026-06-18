@@ -1,11 +1,10 @@
-/* ===========================================================
- * sw-registration.js
- * ===========================================================
- * Copyright 2016 @huxpro
- * Licensed under Apache 2.0
+/* sw-registration.js
+ * Copyright 2026 bill74186
+ * Licensed under MIT
  * Register service worker.
- * ========================================================== */
-
+ * Made  by Huxpro
+ */
+ 
 // SW Version Upgrade Ref: <https://youtu.be/Gb9uI67tqV0>
 
 function handleRegistration(registration){

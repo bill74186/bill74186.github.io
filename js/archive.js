@@ -2,6 +2,7 @@
 Credits: this script is shamelessly borrowed from
 https://github.com/kitian616/jekyll-TeXt-theme
 */
+
 (function() {
   function queryString() {
 	// This function is anonymous, is executed immediately and

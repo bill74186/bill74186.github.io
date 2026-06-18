@@ -1,3 +1,5 @@
+// jquery.tagcloud.js
+
 (function($) {
 
   $.fn.tagcloud = function(options) {

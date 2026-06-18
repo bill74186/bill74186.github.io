@@ -1,10 +1,9 @@
-/**
+/*
  * SnackBar.js
  * 
  * This small component is borrowed from 
  * https://codepen.io/wibblymat/pen/avAjq
  */
-
 
 var createSnackbar = (function() {
   // Any snackbar that is already shown
