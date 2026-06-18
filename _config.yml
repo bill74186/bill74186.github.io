@@ -42,6 +42,7 @@ exclude:
     "README.zh.md",
   ]
 anchorjs: true
+language: zh-CN
 timezone: CN
 
 plugins: [jekyll-paginate, jekyll-sitemap, jekyll-seo-tag]
