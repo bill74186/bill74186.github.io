@@ -7,7 +7,7 @@
 				{% include sns-links.html center=true %}
 
 				<p class="copyright text-muted">
-					Copyright &copy; {{ site.title }} {{ site.start_time }} - {{ site.time | date: '%Y' }}
+					Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
 					<br>
 					Made By <a href="https://github.com/bill74186/bill74186.github.io/">bill74186</a> |
 					<iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px"

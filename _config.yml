@@ -42,6 +42,7 @@ exclude:
     "README.zh.md",
   ]
 anchorjs: true
+start_time: 2026
 language: zh-CN
 timezone: CN
 
