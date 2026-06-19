@@ -103,7 +103,7 @@ gitalk:
 
 ### 数学公式
 
-一些特殊的数学符号是无法正常显示的，所以需要使用mathjax库显示
+一些特殊的数学符号是无法正常显示的，所以需要使用`mathjax`库显示
 
 这个库可以完美显示所有数学物理的公式与式子，这里就不做演示了
 
@@ -134,6 +134,31 @@ window.MathJax = {
   src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js">
 </script>
 {% endif %}
+```
+
+#### 注意
+
+开启mathjax必须要在`_config.yml`和`*Front Matter`都写上下面的代码才行：
+
+```yaml
+mathjax: true
+```
+
+像这样：
+
+```yaml
+---
+layout: post
+title: "文章标题"
+subtitle: "文章小标题"
+author: "作者"
+header-img: "img/post-bg-4.png"
+header-mask: 0.2
+# 下面的代码就是开关，不要就删掉或改成false
+mathjax: true
+tags:
+  - 标签
+---
 ```
 
 **不想用千万不要直接删代码！**

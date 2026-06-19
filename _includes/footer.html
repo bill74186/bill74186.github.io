@@ -126,7 +126,7 @@
 </script>
 {% endif %}
 
-{% if site.mathjax and page.url != '/' %}
+% if site.mathjax and page.mathjax %
 <!-- add support for mathjax -->
 <script>
 window.MathJax = {
@@ -165,6 +165,7 @@ window.addEventListener('load', function() {
 <script type="text/javascript">
 	function generateCatalog(selector) {
 
+		let _containerSelector;
 		// interop with multilangual 
 		if ('{{ page.multilingual }}' == 'true') {
 			_containerSelector = 'div.post-container.active'
