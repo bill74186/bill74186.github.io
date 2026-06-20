@@ -5,18 +5,20 @@
 	{% if site.sidebar-avatar %}
 	<img alt="个人图片{{site.sidebar-avatar}}" src="{{site.sidebar-avatar}}" />
 	{% endif %}
-	{% if site.sidebar-about-description %}
-	<i class="fa fa-quote-left"></i> {{site.sidebar-about-description}}
-	{% endif %}
-	{% if site.sidebar-wechat %}
-	<i class="fa fa-wechat"></i> {{site.sidebar-wechat}}
-	{% endif %}
-	{% if site.sidebar-qq %}
-	<i class="fa fa-qq"></i> {{site.sidebar-qq}}
-	{% endif %}
-	{% if site.sidebar-email %}
-	<i class="fa fa-envelope"></i> {{site.sidebar-email}}
-	{% endif %}
+	<div>
+	  {% if site.sidebar-about-description %}
+	  <i class="fa fa-quote-left"></i> {{site.sidebar-about-description}}
+	  {% endif %}
+	  {% if site.sidebar-wechat %}
+	  <i class="fa fa-wechat"></i> {{site.sidebar-wechat}}
+	  {% endif %}
+	  {% if site.sidebar-qq %}
+	  <i class="fa fa-qq"></i> {{site.sidebar-qq}}
+	  {% endif %}
+	  {% if site.sidebar-email %}
+	  <i class="fa fa-envelope"></i> {{site.sidebar-email}}
+	  {% endif %}
+	</div>
 	<!-- SNS Link -->
 	{% include sns-links.html %}
   </div>
