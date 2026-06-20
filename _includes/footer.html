@@ -130,24 +130,24 @@
 <!-- add support for mathjax -->
 <script>
 window.MathJax = {
-  tex: {
-	inlineMath: [['$', '$'], ['\\(', '\\)']],
-	displayMath: [['$$', '$$'], ['\\[', '\\]']],
-	processEscapes: false,
-	equationNumbers: { autoNumber: "AMS" },
-	packages: {'[+]': ['ams', 'cases', 'mathtools']}
-  },
-  svg: {
-	scale: 0.9,
-	fontCache: 'global'
-  },
-  startup: {
-	pageReady: function () {
-	  return MathJax.startup.defaultPageReady().then(function () {
-		setTimeout(() => MathJax.typeset(), 300);
-	  });
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$', '$$'], ['\\[', '\\]']],
+		processEscapes: false,
+		equationNumbers: { autoNumber: "AMS" },
+		packages: {'[+]': ['ams', 'cases', 'mathtools']}
+	},
+	svg: {
+		scale: 0.9,
+		fontCache: 'global'
+	},
+	startup: {
+		pageReady: function () {
+		    return MathJax.startup.defaultPageReady().then(function () {
+		        setTimeout(() => MathJax.typeset(), 300);
+	    });
+	    }
 	}
-  }
 };
 </script>
 <script type="text/javascript" id="MathJax-script"

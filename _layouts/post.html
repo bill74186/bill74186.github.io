@@ -10,7 +10,7 @@ layout: default
 	<div class="container">
 		<div class="row">
 
-	<!-- Post Container -->
+			<!-- Post Container -->
 			<div class="
 				col-lg-8 col-lg-offset-2
 				col-md-10 col-md-offset-1
@@ -40,12 +40,10 @@ layout: default
 					{% endif %}
 				</ul>
 				<hr style="visibility: hidden;">
+			</div>
 
-				
-			</div>  
-
-	<!-- Side Catalog Container -->
-		{% unless page.no-catalog %}
+			{% unless page.no-catalog %}
+			<!-- Side Catalog Container -->
 			<div class="
 				col-lg-2 col-lg-offset-0
 				visible-lg-block
@@ -59,9 +57,9 @@ layout: default
 					<ul class="catalog-body"></ul>
 				</div>
 			</div>
-		{% endunless %}
+			{% endunless %}
 
-	<!-- Sidebar Container -->
+			<!-- Sidebar Container -->
 			<div class="
 				col-lg-8 col-lg-offset-2
 				col-md-10 col-md-offset-1
@@ -81,12 +79,12 @@ layout: default
 <!-- async load function -->
 <script>
 	function async(u, c) {
-	  var d = document, t = 'script',
-		  o = d.createElement(t),
-		  s = d.getElementsByTagName(t)[0];
-	  o.src = u;
-	  if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-	  s.parentNode.insertBefore(o, s);
+		var d = document, t = 'script',
+			o = d.createElement(t),
+			s = d.getElementsByTagName(t)[0];
+		o.src = u;
+		if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+		s.parentNode.insertBefore(o, s);
 	}
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->

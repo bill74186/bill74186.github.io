@@ -1,25 +1,25 @@
 <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="{{'ff/about/' | prepend: site.baseurl }}"><i class="fa fa-user"></i> ABOUT ME</a></h5>
-  <div class="short-about">
-	{% if site.sidebar-avatar %}
-	<img alt="个人图片{{site.sidebar-avatar}}" src="{{site.sidebar-avatar}}" />
-	{% endif %}
-	<div>
-	  {% if site.sidebar-about-description %}
-	  <i class="fa fa-quote-left"></i> {{site.sidebar-about-description}}
-	  {% endif %}
-	  {% if site.sidebar-wechat %}
-	  <i class="fa fa-wechat"></i> {{site.sidebar-wechat}}
-	  {% endif %}
-	  {% if site.sidebar-qq %}
-	  <i class="fa fa-qq"></i> {{site.sidebar-qq}}
-	  {% endif %}
-	  {% if site.sidebar-email %}
-	  <i class="fa fa-envelope"></i> {{site.sidebar-email}}
-	  {% endif %}
+	<hr>
+	<h5><a href="{{'/about/' | prepend: site.baseurl }}"><i class="fa fa-user"></i> ABOUT ME</a></h5>
+	<div class="short-about">
+		{% if site.sidebar-avatar %}
+		<img alt="个人图片{{site.sidebar-avatar}}" src="{{site.sidebar-avatar}}" />
+		{% endif %}
+		<p>
+			{% if site.sidebar-about-description %}
+			<i class="fa fa-quote-left"></i> {{site.sidebar-about-description}}<br>
+			{% endif %}
+			{% if site.sidebar-wechat %}
+			<i class="fa fa-wechat"></i> {{site.sidebar-wechat}}<br>
+			{% endif %}
+			{% if site.sidebar-qq %}
+			<i class="fa fa-qq"></i> {{site.sidebar-qq}}<br>
+			{% endif %}
+			{% if site.sidebar-email %}
+			<i class="fa fa-envelope"></i> {{site.sidebar-email}}<br>
+			{% endif %}
+		</p>
+		<!-- SNS Link -->
+		{% include sns-links.html %}
 	</div>
-	<!-- SNS Link -->
-	{% include sns-links.html %}
-  </div>
 </section>
