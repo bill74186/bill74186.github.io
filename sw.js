@@ -14,24 +14,23 @@ const CACHE = CACHE_NAMESPACE + 'precache-then-runtime';
 const PRECACHE_LIST = [
   "./",
   "./offline.html",
+  "./css/style.min.css",
+  "./css/bootstrap.min.css",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
   "./js/script.min.js",
   "./js/snackbar.js",
-  "./img/icon_wechat.png",
-  "./img/avatar-hux.jpg",
-  "./img/home-bg.jpg",
-  "./img/404-bg.jpg",
-  "./css/style.min.css",
-  "./css/bootstrap.min.css"
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
+  "./img/404-bg.png",
+  "./img/bill74186.png",
+  "./img/home-bg.png"
+  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.6.3",
   // "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "huangxuan.me",
-  "yanshuo.io",
+  "bill74186.github.io",
+  "bill74286.githb.io",
   "cdnjs.cloudflare.com"
 ]
 const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
@@ -77,7 +76,6 @@ const endWithExtension = (req) => Boolean(new URL(req.url).pathname.match(/\.\w+
 //    .ext?blah -> !(sw 302 -> .ext/?blah -> gh 404) -> .ext?blah
 // If It's a navigation req and it's url.pathname isn't end with '/' or '.ext'
 // it should be a dir/repo request and need to be fixed (a.k.a be redirected)
-// Tracking https://twitter.com/Huxpro/status/798816417097224193
 const shouldRedirect = (req) => (isNavigationReq(req) && new URL(req.url).pathname.substr(-1) !== "/" && !endWithExtension(req))
 
 // The Util Function to get redirect URL
@@ -90,11 +88,11 @@ const getRedirectUrl = (req) => {
 }
 
 
-/**
+/*
  *  @Lifecycle Install
  *  Precache anything static to this version of your app.
  *  e.g. App Shell, 404, JS/CSS dependencies...
- *
+
  *  waitUntil() : installing ====> installed
  *  skipWaiting() : waiting(installed) ====> activating
  */
@@ -109,10 +107,10 @@ self.addEventListener('install', e => {
 });
 
 
-/**
+/*
  *  @Lifecycle Activate
  *  New one activated when old isnt being used.
- *
+
  *  waitUntil(): activating ====> activated
  */
 self.addEventListener('activate', event => {
@@ -154,10 +152,10 @@ var fetchHelper = {
 }
 
 
-/**
+/*
  *  @Functional Fetch
  *  All network requests are being intercepted here.
- *
+
  *  void respondWith(Promise<Response> r);
  */
 self.addEventListener('fetch', event => {
@@ -217,9 +215,7 @@ self.addEventListener('fetch', event => {
 });
 
 
-/**
- * Broadcasting all clients with MessageChannel API
- */
+// Broadcasting all clients with MessageChannel API
 function sendMessageToAllClients(msg) {
   self.clients.matchAll().then(clients => {
     clients.forEach(client => {
@@ -229,22 +225,20 @@ function sendMessageToAllClients(msg) {
   })
 }
 
-/**
- * Broadcasting all clients async
- */
+
+// Broadcasting all clients async
 function sendMessageToClientsAsync(msg) {
   // waiting for new client alive with "async" setTimeout hacking
-  // https://twitter.com/Huxpro/status/799265578443751424
   // https://jakearchibald.com/2016/service-worker-meeting-notes/#fetch-event-clients
   setTimeout(() => {
     sendMessageToAllClients(msg)
   }, 1000)
 }
 
-/**
+/*
  * if content modified, we can notify clients to refresh
  * TODO: Gh-pages rebuild everything in each release. should find a workaround (e.g. ETag with cloudflare)
- * 
+
  * @param  {Promise<response>} cachedResp  [description]
  * @param  {Promise<response>} fetchedResp [description]
  * @return {Promise}
