@@ -117,4 +117,5 @@ friends: [
     { title: "bill74286", href: "http://github.com/bill74286/"},
     { title: "Github", href: "https://github.com/"},
     { title: "2048", href: "https://bill74186.github.io/2048-Game/"}
+    { title: "AI Chat", href: "/AI-Chat/ai.html"}
 ]

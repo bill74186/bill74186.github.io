@@ -3,7 +3,7 @@ layout: post
 title: "如何学习Python"
 subtitle: "学习 Python 的小建议"
 author: "bill74186"
-header-img: "https://vcg05.cfp.cn/creative/vcg/nowater800/new/VCG21gic11147846.jpg"
+header-img: "post-bg-3.png"
 header-mask: 0.2
 tags:
   - 教程
