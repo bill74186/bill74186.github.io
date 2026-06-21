@@ -6,7 +6,3 @@ gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
 gem "rake"
 gem "webrick", "~> 1.7"
-
-platform :ruby do
-  gem "bundler", "4.0.12"
-end
