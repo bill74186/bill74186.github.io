@@ -22,17 +22,15 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
 
-Blog setup tutorial modified from [Hux](https://github.com/Huxpro/huxpro.github.io)
-
-Blog template also modified from [Hux Blog](https://github.com/huxpro.github.io)
-
-Feel free to check out the original tutorial
-
 </div>
 
 >
 ### [Check out the blog here 👆](http://bill74186.github.io)
 
+> [!tip]
+> Blog setup tutorial modified from [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
+> Blog template also modified from [Hux Blog](https://github.com/huxpro.github.io)<br>
+> Feel free to check out the original tutorial
 
 ## Usage
 

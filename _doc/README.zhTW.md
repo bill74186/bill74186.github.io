@@ -22,17 +22,15 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
 </p>
 
-部落格的搭建教學修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)
-
-部落格模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)
-
-有興趣可以看看原版教學
-
 </div>
 
 >
 ### [查看部落格戳這裡 👆](http://bill74186.github.io)
 
+> [!tip]
+> 部落格的搭建教學修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
+> 部落格模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)<br>
+> 有興趣可以看看原版教學
 
 ## 使用
 

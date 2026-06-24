@@ -26,7 +26,7 @@
 >
 ### [查看博客戳这里 👆](http://bill74186.github.io)
 
-> ![tip]
+> [!tip]
 >博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
 >博客模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)<br>
 >有兴趣可以看看原版教程
