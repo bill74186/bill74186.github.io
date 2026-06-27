@@ -48,7 +48,7 @@
 	* [评论](#评论系统)
 	* [网站分析](#统计分析) 
 * 高级部分
-	* [自定义](#customization)
+	* [自定义](#自定义)
 	* [标题底图](#标题底图)
 	* [搜索展示标题-头文件](#头文件修改)
 
@@ -67,6 +67,7 @@
 # 网站设置
 title: Bill Blog    # 你的博客网站标题
 SEOTitle: bill74186的博客 | Bill Blog    # SEO 标题
+author: bill74186
 description: "Hey"    # 随便说点，描述一下
 
 # SNS 设置

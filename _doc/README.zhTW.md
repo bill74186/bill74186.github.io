@@ -49,7 +49,7 @@
 	* [評論](#評論系統)
 	* [網站分析](#統計分析) 
 * 進階部分
-	* [自訂](#customization)
+	* [自訂](#自訂)
 	* [標題底圖](#標題底圖)
 	* [搜尋展示標題-頭文件](#頭文件修改)
 
@@ -68,6 +68,7 @@
 # 網站設定
 title: Bill Blog    # 你的部落格網站標題
 SEOTitle: bill74186的部落格 | Bill Blog    # SEO 標題
+author: bill74186
 description: "Hey"    # 隨便說點，描述一下
 
 # SNS 設定

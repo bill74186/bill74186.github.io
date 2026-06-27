@@ -68,6 +68,7 @@ You can easily start building your own blog by modifying the `_config.yml` file:
 # Site Settings
 title: Bill Blog    # Your blog title
 SEOTitle: bill74186's Blog | Bill Blog    # SEO title
+author: bill74186
 description: "Hey"    # Say something, describe it a bit
 
 # SNS Settings

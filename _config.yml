@@ -4,12 +4,13 @@
 
 title: Bill Blog
 SEOTitle: bill74186的博客 | Bill Blog
+author: bill74186
 header-img: img/home-bg.png
 description: 「一“码”之缘，有“源”再见！」    ——bill71186
 keyword: "Bill, Bill Blog, Bill的博客, bill71186, 比尔, HTML, blog"
 url: "https://bill74186.github.io"
 baseurl: ""
-github_repo: "https://github.com/bill74186/bill74186.github.io.git"
+repo: "bill74186.github.io"
 
 sidebar: true
 sidebar-about-description: "目标决定你将成为什么样的人！"
