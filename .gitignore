@@ -1,0 +1,6 @@
+*.log
+*.bak
+*.cache
+
+_site/
+.jekyll-cache/
