@@ -130,6 +130,10 @@ item > description {
   background: #f8f9fa;
   border-radius: 6px;
   border: 1px solid #e9ecef;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+  overflow-x: auto;
 }
  
 item > link, item > guid {
