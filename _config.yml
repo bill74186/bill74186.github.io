@@ -100,7 +100,7 @@ utterances:
 gitalk:
   enable: false
   clientID: "Ov23liP2CLqcJYEBhES0"
-  clientSecret: "dc0393f29a8165ce41468028b6f4ec16c3a42cf4"
+  clientSecret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   repo: "bill74186.github.io"
   owner: "bill74186"
   admin: "bill74186"
