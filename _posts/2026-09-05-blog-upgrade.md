@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "博客升级小记：资源库大换血"
-subtitle: "两个月没更新，不是不想写，是账号丢了"
+title: "博客技术栈升级记录"
+subtitle: "2026年9月 · 资源库更新与维护"
 date: 2026-09-05
 author: "bill74186"
 header-img: "img/post-bg-1.png"
