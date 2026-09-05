@@ -23,18 +23,17 @@ const PRECACHE_LIST = [
 	"./img/404-bg.png",
 	"./img/bill74186.png",
 	"./img/home-bg.png",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2",
-	"//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css",
+	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/v4-shims.min.css",
+	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/webfonts/fa-solid-900.woff2",
+	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/webfonts/fa-brands-400.woff2",
+	"//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
 	self.location.hostname,
 	"bill74186.github.io",
 	"bill74286.github.io",
-	"cdnjs.cloudflare.com",
-	"cdn.bootcdn.net"
+	"cdn.jsdelivr.net"
 ]
 const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
 
