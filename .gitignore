@@ -4,3 +4,5 @@
 
 _site/
 .jekyll-cache/
+# Trae auto-generated packages
+.trae-html-share-packages/
