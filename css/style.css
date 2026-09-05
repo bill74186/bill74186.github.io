@@ -1680,7 +1680,8 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
-.MathJax_SVG_Display {
+.MathJax_SVG_Display,
+mjx-container[display="true"] {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
