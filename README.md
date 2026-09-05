@@ -9,9 +9,10 @@
 <p>
   <img src="https://img.shields.io/badge/HTML-5-E34F26?style=flat-square&logo=html5&" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS-3-1572B6?style=flat-square&logo=css&" alt="CSS3">
-  <img src="https://img.shields.io/badge/Less-4.2.0-1D365D?style=flat-square&logo=less&" alt="Less4.2.0">
   <img src="https://img.shields.io/badge/JavaScript-ES2025-F7DF1E?style=flat-square&logo=javascript&" alt="JavaScript-ES2025">
   <img src="https://img.shields.io/badge/Ruby-3.4-CC342D?style=flat-square&logo=ruby&" alt="Ruby3.4">
+  <img src="https://img.shields.io/badge/jQuery-4.0.0-0769AD?style=flat-square&logo=jquery&" alt="jQuery4.0.0">
+  <img src="https://img.shields.io/badge/Bootstrap-3.3.2-7952B3?style=flat-square&logo=bootstrap&" alt="Bootstrap3.3.2">
 </p>
 
 **English** | [简体中文](_doc/README.zhCN.md) | [繁體中文](_doc/README.zhTW.md)
