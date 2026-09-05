@@ -22,10 +22,12 @@ const PRECACHE_LIST = [
 	"./js/snackbar.js",
 	"./img/404-bg.png",
 	"./img/bill74186.png",
-	"./img/home-bg.png"
-	// "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-	// "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.6.3",
-	// "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+	"./img/home-bg.png",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/v4-shims.min.css",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-solid-900.woff2",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-brands-400.woff2",
+	"//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
 	self.location.hostname,
