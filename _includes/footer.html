@@ -81,14 +81,6 @@
 <script src='{{ "/js/archive.js " | prepend: site.baseurl }}'></script>
 {% endif %}
 
-<!--fastClick.js -->
-<script>
-	async("//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function () {
-		var $nav = document.querySelector("nav");
-		if ($nav) FastClick.attach($nav);
-	})
-</script>
-
 {% if site.google_analytics.enable %}
 <!-- Google Analytics -->
 <script>

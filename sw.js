@@ -26,8 +26,7 @@ const PRECACHE_LIST = [
 	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css",
 	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/v4-shims.min.css",
 	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/webfonts/fa-solid-900.woff2",
-	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/webfonts/fa-brands-400.woff2",
-	"//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"
+	"//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/webfonts/fa-brands-400.woff2"
 ]
 const HOSTNAME_WHITELIST = [
 	self.location.hostname,
