@@ -15,7 +15,7 @@
 | Category | Skills |
 | :--- | :--- |
 | Core Frontend | HTML5｜CSS3｜Vanilla JavaScript｜ES6 |
-| Common Libraries | jQuery 4.0.0｜Font Awesome 7.3.1 |
+| Common Libraries | jQuery 4.0.0｜Font Awesome 6.4.0 |
 | Game Development | Canvas 2D Rendering｜Native game logic｜Slide gesture optimization |
 | Mobile Adaptation | Full device compatibility｜Touch logic debugging｜Mis-touch fix & fluent interaction |
 | Code Security | JS obfuscation｜File disguise｜Coding standard｜Resource encryption |

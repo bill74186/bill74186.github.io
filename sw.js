@@ -23,10 +23,10 @@ const PRECACHE_LIST = [
 	"./img/404-bg.png",
 	"./img/bill74186.png",
 	"./img/home-bg.png",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/v4-shims.min.css",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-solid-900.woff2",
-	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-brands-400.woff2",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2",
+	"//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2",
 	"//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
