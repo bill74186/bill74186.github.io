@@ -1,7 +1,13 @@
+<div align="center">
+
 # _config.yml 文件配置
+
+[English](Set-Config.md) | **简体中文** | [繁体中文](Set-Config.zhTW.md)
 
 **`config.yml` 是 Jekyll 的主配置文件**，位于站点根目录，使用 YAML 格语编写。它存储了站点的基本设置、构建选项、插件配置、自定义变量等，Jekyll 在构建时会自动读取并应用这些配置<br><br>
 下面我会使用代码介绍本博客 `_config.yml` 的配置，希望你看完后会使用和修改你网站的 `_config.yml`
+
+</div>
 
 > [!tip]
 > 代码被注释或者写“*”则该选项可以不用理会

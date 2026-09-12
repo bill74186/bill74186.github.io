@@ -1,7 +1,13 @@
+<div align="center">
+
 # _config.yml File Configuration
+
+**English** | [简体中文](Set-Config.zhCN.md) | [繁体中文](Set-Config.zhTW.md)
 
 **`config.yml` is Jekyll's main configuration file**, located in the site root directory and written in YAML format. It stores the site's basic settings, build options, plugin configurations, custom variables, and more. Jekyll automatically reads and applies these configurations during the build process.<br><br>
 Below I will introduce the configuration of this blog's `_config.yml` using code. I hope that after reading it, you will be able to use and modify your website's `_config.yml`.
+
+</div>
 
 > [!tip]
 > Options that are commented out or marked with "*" can be ignored.
