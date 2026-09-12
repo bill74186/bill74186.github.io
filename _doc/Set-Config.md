@@ -10,8 +10,8 @@ Below I will introduce the configuration of this blog's `_config.yml` using code
 </div>
 
 > [!tip]
-> Options that are commented out or marked with "*" can be ignored.
-> Options marked with "!" are required!
+> Options that are commented out or marked with "*" can be ignored.<br>
+> Options marked with "!" are required!<br>
 > `true` and `false` can be left as-is.
 
 ## 1. Website General Settings
