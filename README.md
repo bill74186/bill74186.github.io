@@ -30,7 +30,7 @@
 
 > [!tip]
 > Blog setup tutorial modified from [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
-> Blog template also modified from [Hux Blog](https://github.com/huxpro.github.io)<br>
+> Blog template also modified from [Hux Blog](https://huxpro.github.io)<br>
 > Feel free to check out the original tutorial
 
 ## Usage
@@ -65,7 +65,7 @@ If you have [jekyll](http://jekyllcn.com/) installed, you just need to type `jek
 
 You can easily start building your own blog by modifying the `_config.yml` file:
 
-```
+```yaml
 # Site Settings
 title: Bill Blog    # Your blog title
 SEOTitle: bill74186's Blog | Bill Blog    # SEO title
@@ -112,7 +112,7 @@ Look on the right:
 
 The settings are in the `Sidebar Settings` section of the `_config.yml` file.
 
-```
+```yaml
 # Sidebar Settings
 sidebar: true  # Add sidebar
 sidebar-about-description: "Briefly describe yourself"
@@ -128,10 +128,10 @@ The Mini-About-Me module will display all your social accounts below your avatar
 
 ### Featured Tags
 
-I saw the featured tags on [Medium](http://medium.com) and they were really cool, so I added them in.
+I saw the featured tags on [Medium](http://medium.com) and they were really cool, so I added them in.<br>
 This module is now independent and can appear on all pages, including the homepage and the top of every published article.
 
-```
+```yaml
 # Featured Tags
 featured-tags: true  
 featured-condition-size: 1
@@ -145,7 +145,7 @@ There's a conditional template inside `{% if tag[1].size &gt; {{site.featured-co
 
 Enter your social accounts below. Those not added will not be displayed in the sidebar.
 
-```
+```yaml
 	# SNS Settings
 	RSS: false
     weibo_username: bill74186
@@ -165,7 +165,7 @@ Friend links section. This will be displayed on all pages.
 
 The settings are in the `Friends` section of the `_config.yml` file. Add them yourself.
 
-```
+```yaml
 # Friend Links
 friends: [
     { title: "Github", href: "https://github.com/"},
@@ -186,7 +186,7 @@ The main principle is to add an `iframe` and include an external link. You can w
 
 ---
 layout:     keynote
-iframe:     "http://huangxuan.me/js-module-7day/"
+iframe:     "http://huxpro.github.io/js-module-7day/"
 ---
 ```
 
@@ -245,7 +245,7 @@ gitalk:
 
 Website analytics now supports Baidu Analytics and Google Analytics. You need to register on the official website and then paste the returned code below:
 
-```
+```yaml
 # Baidu Analytics
 ba_track_id: [your-baId-id]
 

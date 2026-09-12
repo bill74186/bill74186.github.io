@@ -29,7 +29,7 @@
 
 > [!tip]
 >博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
->博客模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)<br>
+>博客模板也修改自 [Hux Blog](https://huxpro.github.io)<br>
 >有兴趣可以看看原版教程
 
 ## 使用
@@ -79,6 +79,8 @@ github_username: bill74186    # 你的 GitHub 名称
 # paginate: 10    # 一页你准备放几篇文章
 ```
 
+了解更多→[_config.yml 文件配置](Set-Config.zhCN.md)
+
 Jekyll官方网站还有很多的参数可以调，比如设置文章的链接形式...网址在这里：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在这里：[Jekyll中文](http://jekyllcn.com/)。
 
 ### 撰写博文
@@ -127,7 +129,7 @@ Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账
 
 ### 推荐标签
 
-看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。
+看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。<br>
 这个模块现在是独立的，可以呈现在所有页面，包括主页和发表的每一篇文章标题的头上。
 
 ```yaml
@@ -185,7 +187,7 @@ friends: [
 
 ---
 layout:     keynote
-iframe:     "http://huangxuan.me/js-module-7day/"
+iframe:     "http://huxpro.github.io/js-module-7day/"
 ---
 ```
 

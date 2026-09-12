@@ -30,7 +30,7 @@
 
 > [!tip]
 > 部落格的搭建教學修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
-> 部落格模板也修改自 [Hux Blog](https://github.com/huxpro.github.io)<br>
+> 部落格模板也修改自 [Hux Blog](https://huxpro.github.io)<br>
 > 有興趣可以看看原版教學
 
 ## 使用
@@ -128,7 +128,7 @@ Mini-About-Me 這個模組將在你的頭像下面，展示你所有的社交帳
 
 ### 推薦標籤
 
-看到這個網站 [Medium](http://medium.com) 的推薦標籤非常的炫酷，所以我將他加了進來。
+看到這個網站 [Medium](http://medium.com) 的推薦標籤非常的炫酷，所以我將他加了進來。<br>
 這個模組現在是獨立的，可以呈現在所有頁面，包括首頁和發表的每一篇文章標題的頭上。
 
 ```yaml
@@ -186,7 +186,7 @@ friends: [
 
 ---
 layout:     keynote
-iframe:     "http://huangxuan.me/js-module-7day/"
+iframe:     "http://huxpro.github.io/js-module-7day/"
 ---
 ```
 
@@ -247,7 +247,7 @@ gitalk:
 
 網站分析，現在支援百度統計和Google Analytics。需要去官方網站註冊一下，然後將返回的code貼在下面：
 
-```
+```yaml
 # Baidu Analytics
 ba_track_id: [your-baId-id]
 
@@ -274,7 +274,7 @@ ga_domain: auto			# 預設的是 auto, 這裡我是自訂了的功能變數名�
 
 ### 頭文件修改
 
-我的部落格標題是 **「Bill Blog」** 但是我想要在搜尋的時候顯示 **「bill74186的部落格 | Bill Blog」**，這個就需要 SEO Title 來定義了。
+我的部落格標題是 **「Bill Blog」** 但是我想要在搜尋的時候顯示 **bill74186的博客 | Bill Blog**，這個就需要 SEO Title 來定義了。
 
 其實這個 SEO Title 就是定義了`&lt;head&gt;&lt;title&gt;標題&lt;/title&gt;&lt;/head&gt;`這個裡面的東西和多說分享的標題，你可以自行修改的。
 

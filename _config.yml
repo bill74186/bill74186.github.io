@@ -19,8 +19,6 @@ sidebar-qq: 3854052547
 sidebar-wechat: mmll1920141
 sidebar-email: bill74186@outlook.com
 
-future: true
-
 RSS: true
 #weibo_username: bill74186
 #jianshu_username: bill74186
@@ -35,12 +33,12 @@ permalink: pretty
 paginate: 5
 exclude:
   [
-    "less",
     "node_modules",
     "Gruntfile.js",
     "package.json",
+    ".gitignore"，
     "README.md",
-    "README.zh.md",
+    "_doc"
   ]
 anchorjs: true
 start_time: 2026
@@ -112,6 +110,7 @@ featured-condition-size: 1
 chrome-tab-theme-color: "#000000"
 service-worker: true
 mathjax: true
+future: true
 
 friends: [
     { title: "AI Chat", href: "/AI-Chat/web/chat.html"},
