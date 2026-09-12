@@ -79,7 +79,7 @@ github_username: bill74186    # 你的 GitHub 名稱
 # paginate: 10    # 一頁你準備放幾篇文章
 ```
 
-**[了解更多](Set-Config.zhTW.md)**
+**了解更多→[_Config.yml 檔案配置](Set-Config.zhTW.md)**
 
 Jekyll官方網站還有很多的參數可以調，比如設定文章的連結形式...網址在這裡：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在這裡：[Jekyll中文](http://jekyllcn.com/)。
 

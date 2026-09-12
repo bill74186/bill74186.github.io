@@ -79,7 +79,7 @@ github_username: bill74186    # Your GitHub username
 # paginate: 10    # How many posts per page
 ```
 
-**[Learn more](_doc/Set-Config.md)**
+**Learn more→[_Config.yml File Configuration](_doc/Set-Config.md)**
 
 There are many more parameters you can adjust on the official Jekyll website, such as setting the permalink format... The website is here: [Jekyll - Official Site](http://jekyllrb.com/)
 
