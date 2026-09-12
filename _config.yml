@@ -36,7 +36,7 @@ exclude:
     "node_modules",
     "Gruntfile.js",
     "package.json",
-    ".gitignore"，
+    ".gitignore",
     "README.md",
     "_doc"
   ]

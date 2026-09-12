@@ -1,6 +1,6 @@
 # _config.yml 文件配置
 
-**`config.yml` 是 Jekyll 的主配置文件**，位于站点根目录，使用 YAML 格语编写。它存储了站点的基本设置、构建选项、插件配置、自定义变量等，Jekyll 在构建时会自动读取并应用这些配置<br>
+**`config.yml` 是 Jekyll 的主配置文件**，位于站点根目录，使用 YAML 格语编写。它存储了站点的基本设置、构建选项、插件配置、自定义变量等，Jekyll 在构建时会自动读取并应用这些配置<br><br>
 下面我会使用代码介绍本博客 `_config.yml` 的配置，希望你看完后会使用和修改你网站的 `_config.yml`
 
 > [!tip]
@@ -64,7 +64,7 @@ exclude:
     "node_modules",
     "Gruntfile.js",
     "package.json",
-    ".gitignore"，
+    ".gitignore",
     "README.md",
     "_doc"
   ]    # *不需要构建的文件
@@ -171,7 +171,7 @@ gitalk:
 
 ## 7.其他设置
 
-这些设置都是**“选填＊”**的
+这些设置都是**选填**的
 
 ### 精选标签
 
@@ -189,7 +189,7 @@ mathjax: true    # 是否渲染数学公式
 future: true    # 是否允许发布带有未来日期的帖子或文档
 ```
 
-# 9.朋友设置
+# 8.朋友设置
 
 `{ title: "你朋友名字", href: "你朋友网址"}`
 
@@ -203,8 +203,9 @@ friends: [
 ]
 ```
 
-目前本博客的`_config.yml`就是这样，后续添加新内容可能会择期更新<br>
-如发现问题可 Issues 报告漏洞
+> [!note]
+> 目前本博客的`_config.yml`就是这样，后续添加新内容可能会择期更新<br><br>
+> **如发现问题可 Issues 报告漏洞**
 
 ## 附
 
@@ -250,7 +251,7 @@ exclude:
     "node_modules",
     "Gruntfile.js",
     "package.json",
-    ".gitignore"，
+    ".gitignore",
     "README.md",
     "_doc"
   ]    # 不需要构建的文件
