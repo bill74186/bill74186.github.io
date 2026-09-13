@@ -29,7 +29,7 @@
 
 > [!tip]
 >博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
->博客模板也修改自 [Hux Blog](https://huxpro.github.io)<br>
+>博客模板也修改自 [Hux Blog](https://og.hux.pro)<br>
 >有兴趣可以看看原版教程
 
 ## 使用

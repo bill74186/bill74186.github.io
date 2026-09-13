@@ -29,7 +29,7 @@
 
 > [!tip]
 > Blog setup tutorial modified from [Hux](https://github.com/Huxpro/huxpro.github.io)<br>
-> Blog template also modified from [Hux Blog](https://huxpro.github.io)<br>
+> Blog template also modified from [Hux Blog](https://og.hux.pro)<br>
 > Feel free to check out the original tutorial
 
 ## Usage
