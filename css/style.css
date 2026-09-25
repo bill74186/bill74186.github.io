@@ -797,6 +797,9 @@ table.table > thead td {
     border: 0;
   }
 }
+hr {
+  border-color: var(--border-divider);
+}
 hr.small {
   max-width: 100px;
   margin: 15px auto;
