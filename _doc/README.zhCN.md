@@ -242,6 +242,8 @@ gitalk:
 > ![note]
 > 这里写的是建议值，请按实际修改
 
+**了解更多→[评论系统配置](Set-Comments-zhCN.md)**
+
 ### 统计分析
 
 网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：

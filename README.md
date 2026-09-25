@@ -242,6 +242,8 @@ gitalk:
 > ![note]
 > The values shown here are recommended defaults. Please modify them according to your actual situation.
 
+**Learn more→[Comment System Configuration](Set-Comments.md)**
+
 ### Statistical Analysis
 
 Website analytics now supports Baidu Analytics and Google Analytics. You need to register on the official website and then paste the returned code below:
