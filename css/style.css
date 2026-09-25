@@ -1,6 +1,6 @@
 :root {
   /* 主色 */
-  --accent: var(--accent);
+  --accent: #0085a1;
   /* 文字 */
   --text-primary: #404040;
   --text-secondary: #a3a3a3;
@@ -20,6 +20,24 @@
   --text-on-surface: #000000;
   --bg-hover: #eaeaea;
   --bg-tag-active: #e4e4e4;
+}
+[data-theme="dark"] {
+  --accent: #5bc0de;
+  --text-primary: #c8c8c8;
+  --text-secondary: #999;
+  --text-sidebar: #999;
+  --bg-body: #1a1a1a;
+  --bg-surface: #252525;
+  --bg-tag: #2a2a2a;
+  --bg-catalog-active: #2a2a2a;
+  --bg-intro-fallback: #333;
+  --border-light: #333;
+  --border-table: #444;
+  --border-divider: #333;
+  --icon-bar: #c8c8c8;
+  --text-on-surface: #e0e0e0;
+  --bg-hover: #333;
+  --bg-tag-active: #333;
 }
 @media (min-width: 1200px) {
   .post-container,
@@ -1737,4 +1755,31 @@ mjx-container[display="true"] {
 }
 .no-scroll {
   overflow-y: hidden;
+}
+/* ===== Dark Mode Overrides ===== */
+[data-theme="dark"] body {
+  background-color: var(--bg-body);
+}
+[data-theme="dark"] .navbar-custom.is-fixed {
+  background-color: rgba(26, 26, 26, 0.95);
+}
+[data-theme="dark"] .navbar-custom.invert .navbar-toggle:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="dark"] blockquote {
+  color: var(--text-secondary);
+}
+[data-theme="dark"] table.table > tbody td,
+[data-theme="dark"] table.table > thead td {
+  border-color: var(--border-table);
+}
+[data-theme="dark"] hr.small {
+  border-color: var(--border-divider);
+}
+[data-theme="dark"] .post-container img {
+  opacity: 0.9;
+}
+[data-theme="dark"] ::selection {
+  background: var(--accent);
+  color: #fff;
 }
