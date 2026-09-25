@@ -11,12 +11,32 @@
 	data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
 	data-emit-metadata="{{ site.giscus.emit_metadata }}"
 	data-input-position="{{ site.giscus.input_position }}"
-	data-theme="{{ site.giscus.theme }}"
+	data-theme="{% if site.giscus.dark-theme %}preferred_color_scheme{% else %}{{ site.giscus.theme }}{% endif %}"
 	data-lang="{{ site.giscus.lang }}"
 	data-loading="{{ site.giscus.loading }}"
 	crossorigin="anonymous"
 	async>
 </script>
+{% if site.giscus.dark-theme %}
+<script>
+	(function () {
+		var lightTheme = "{{ site.giscus.theme }}";
+		var darkTheme = "{{ site.giscus.theme-dark }}";
+		function syncGiscusTheme() {
+			var siteTheme = document.documentElement.getAttribute('data-theme');
+			var giscusTheme = siteTheme === 'dark' ? darkTheme : lightTheme;
+			var iframe = document.querySelector('iframe.giscus-frame');
+			if (iframe) {
+				iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
+			}
+		}
+		new MutationObserver(syncGiscusTheme).observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['data-theme']
+		});
+	})();
+</script>
+{% endif %}
 {% elsif site.utterances.enable %}
 <!-- Utterances Comments -->
 <script src="https://utteranc.es/client.js"
