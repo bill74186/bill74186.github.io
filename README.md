@@ -242,7 +242,7 @@ gitalk:
 > ![note]
 > The values shown here are recommended defaults. Please modify them according to your actual situation.
 
-**Learn more→[Comment System Configuration](Set-Comments.md)**
+**Learn more→[Comment System Configuration](_doc/Set-Comments.md)**
 
 ### Statistical Analysis
 
