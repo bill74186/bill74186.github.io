@@ -20,6 +20,9 @@
   --text-on-surface: #000000;
   --bg-hover: #eaeaea;
   --bg-tag-active: #e4e4e4;
+  /* 行内代码 */
+  --code-bg: #f9f2f4;
+  --code-color: #c7254e;
 }
 [data-theme="dark"] {
   --accent: #5bc0de;
@@ -38,6 +41,8 @@
   --text-on-surface: #e0e0e0;
   --bg-hover: #333;
   --bg-tag-active: #333;
+  --code-bg: #2a2a2a;
+  --code-color: #e06c75;
 }
 @media (min-width: 1200px) {
   .post-container,
@@ -821,6 +826,18 @@ kbd,
 pre,
 samp {
   font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code {
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
 }
 .postlist-container {
   margin-bottom: 15px;
