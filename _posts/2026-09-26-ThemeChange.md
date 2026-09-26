@@ -54,12 +54,12 @@ giscus:
 - 修复几个漏洞
 - 更改一些文字
 
-> 这次就主要添加暗黑模式，其他没有大变化。
-> 其实 Hux Blog 这个模版是很难添加暗黑模式的，但我做出来了。
-> 所以给我一个 Star 吧！
+> 这次就主要添加暗黑模式，其他没有大变化。<br>
+> 其实 Hux Blog 这个模版是很难添加暗黑模式的，但我做出来了。<br>
+> 所以给我一个 Star 吧！<br>
 
 ## 附，搞笑图
 
 高考失利了可以试试下面办法：
 
-![高考失利补救方法](https://bill74186.github.io/img/gkslbjff.png)
+![高考失利补救方法](https://bill74186.github.io/img/in-post/gkslbjff.png)
