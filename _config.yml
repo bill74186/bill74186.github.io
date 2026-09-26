@@ -84,9 +84,8 @@ giscus:
   reactions_enabled: 1
   emit_metadata: 1
   input_position: "top"
-  theme: "light"            # 亮色模式下的 Giscus 主题
-  dark-theme: false         # 是否跟随网站暗色模式切换（true/false）
-  theme-dark: "dark"        # dark-theme: true 时，暗色模式下的 Giscus 主题
+  theme: "light"
+  theme-dark: "dark"
   lang: "zh-CN"
   loading: "lazy"
 
@@ -111,6 +110,7 @@ featured-condition-size: 1
 
 chrome-tab-theme-color: "#000000"
 service-worker: true
+theme-dark: true
 mathjax: true
 future: true
 

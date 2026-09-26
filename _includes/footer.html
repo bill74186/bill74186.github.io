@@ -267,3 +267,23 @@ window.addEventListener('load', function() {
 		});
 	});
 </script>
+
+{% if site.theme-dark %}
+<!-- Dark Theme -->
+<script>
+	var $themeToggle = document.getElementById('theme-toggle');
+	var $themeIcon = $themeToggle.querySelector('i');
+	function updateThemeIcon() {
+		var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+		$themeIcon.className = isDark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+	}
+	updateThemeIcon();
+	$themeToggle.addEventListener('click', function () {
+		var current = document.documentElement.getAttribute('data-theme');
+		var next = current === 'dark' ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', next);
+		localStorage.setItem('theme', next);
+		updateThemeIcon();
+	});
+</script>
+{% endif %}

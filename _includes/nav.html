@@ -32,9 +32,11 @@
 						<li class="search-icon">
 							<a href="javascript:void(0)"><i class="fa fa-search"></i> Search</a>
 						</li>
+						{% if site.theme-dark %}
 						<li>
-							<a href="javascript:void(0)" id="theme-toggle" title="Toggle dark mode"><i class="fa fa-moon-o"></i></a>
+							<a href="javascript:void(0)" id="theme-toggle"><i class="fa fa-moon-o"></i> Dark</a>
 						</li>
+						{% endif %}
 					</ul>
 				</div>
 			</div>
@@ -80,20 +82,4 @@
 			if (e.target.className == 'icon-bar') return;
 			__HuxNav__.close();
 		})
-
-		// Theme toggle
-		var $themeToggle = document.getElementById('theme-toggle');
-		var $themeIcon = $themeToggle.querySelector('i');
-		function updateThemeIcon() {
-			var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-			$themeIcon.className = isDark ? 'fa fa-sun-o' : 'fa fa-moon-o';
-		}
-		updateThemeIcon();
-		$themeToggle.addEventListener('click', function () {
-			var current = document.documentElement.getAttribute('data-theme');
-			var next = current === 'dark' ? 'light' : 'dark';
-			document.documentElement.setAttribute('data-theme', next);
-			localStorage.setItem('theme', next);
-			updateThemeIcon();
-		});
 	</script>
