@@ -1,6 +1,22 @@
 {% if site.comments %}
 {% if site.giscus.enable %}
 <!-- Giscus Comments -->
+<script src="https://giscus.app/client.js"
+	data-repo="{{ site.giscus.repo }}"
+	data-repo-id="{{ site.giscus.repo_id }}"
+	data-category="{{ site.giscus.category }}"
+	data-category-id="{{ site.giscus.category_id }}"
+	data-mapping="{{ site.giscus.mapping }}"
+	data-strict="{{ site.giscus.strict }}"
+	data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
+	data-emit-metadata="{{ site.giscus.emit_metadata }}"
+	data-input-position="{{ site.giscus.input_position }}"
+	data-theme="{% if site.giscus.theme-dark %}preferred_color_scheme{% else %}{{ site.giscus.theme }}{% endif %}"
+	data-lang="{{ site.giscus.lang }}"
+	data-loading="{{ site.giscus.loading }}"
+	crossorigin="anonymous"
+	async>
+</script>
 {% if site.giscus.theme-dark %}
 <script>
 	(function () {
@@ -16,47 +32,21 @@
 				iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: getGiscusTheme() } } }, 'https://giscus.app');
 			}
 		}
-		// 动态创建 Giscus 脚本，初始主题跟随当前网站主题
-		var s = document.createElement('script');
-		s.src = 'https://giscus.app/client.js';
-		s.async = true;
-		s.crossOrigin = 'anonymous';
-		s.setAttribute('data-repo', '{{ site.giscus.repo }}');
-		s.setAttribute('data-repo-id', '{{ site.giscus.repo_id }}');
-		s.setAttribute('data-category', '{{ site.giscus.category }}');
-		s.setAttribute('data-category-id', '{{ site.giscus.category_id }}');
-		s.setAttribute('data-mapping', '{{ site.giscus.mapping }}');
-		s.setAttribute('data-strict', '{{ site.giscus.strict }}');
-		s.setAttribute('data-reactions-enabled', '{{ site.giscus.reactions_enabled }}');
-		s.setAttribute('data-emit-metadata', '{{ site.giscus.emit_metadata }}');
-		s.setAttribute('data-input-position', '{{ site.giscus.input_position }}');
-		s.setAttribute('data-theme', getGiscusTheme());
-		s.setAttribute('data-lang', '{{ site.giscus.lang }}');
-		s.setAttribute('data-loading', '{{ site.giscus.loading }}');
-		document.currentScript.parentNode.insertBefore(s, document.currentScript);
+		// Giscus iframe 出现后立即同步主题
+		var iframeObserver = new MutationObserver(function () {
+			var iframe = document.querySelector('iframe.giscus-frame');
+			if (iframe) {
+				iframeObserver.disconnect();
+				syncGiscusTheme();
+			}
+		});
+		iframeObserver.observe(document.body, { childList: true, subtree: true });
 		// 监听网站主题切换，同步到 Giscus
 		new MutationObserver(syncGiscusTheme).observe(document.documentElement, {
 			attributes: true,
 			attributeFilter: ['data-theme']
 		});
 	})();
-</script>
-{% else %}
-<script src="https://giscus.app/client.js"
-	data-repo="{{ site.giscus.repo }}"
-	data-repo-id="{{ site.giscus.repo_id }}"
-	data-category="{{ site.giscus.category }}"
-	data-category-id="{{ site.giscus.category_id }}"
-	data-mapping="{{ site.giscus.mapping }}"
-	data-strict="{{ site.giscus.strict }}"
-	data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
-	data-emit-metadata="{{ site.giscus.emit_metadata }}"
-	data-input-position="{{ site.giscus.input_position }}"
-	data-theme="{{ site.giscus.theme }}"
-	data-lang="{{ site.giscus.lang }}"
-	data-loading="{{ site.giscus.loading }}"
-	crossorigin="anonymous"
-	async>
 </script>
 {% endif %}
 {% elsif site.utterances.enable %}
