@@ -11,13 +11,13 @@
 	data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
 	data-emit-metadata="{{ site.giscus.emit_metadata }}"
 	data-input-position="{{ site.giscus.input_position }}"
-	data-theme="{% if site.giscus.dark-theme %}preferred_color_scheme{% else %}{{ site.giscus.theme }}{% endif %}"
+	data-theme="{% if site.giscus.theme-dark %}preferred_color_scheme{% else %}{{ site.giscus.theme }}{% endif %}"
 	data-lang="{{ site.giscus.lang }}"
 	data-loading="{{ site.giscus.loading }}"
 	crossorigin="anonymous"
 	async>
 </script>
-{% if site.theme-dark %}
+{% if site.giscus.theme-dark %}
 <script>
 	(function () {
 		var lightTheme = "{{ site.giscus.theme }}";
