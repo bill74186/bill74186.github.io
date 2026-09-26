@@ -3,7 +3,7 @@ layout: post
 title: "如何学习Python"
 subtitle: "学习 Python 的小建议"
 author: "bill74186"
-header-img: "post-bg-3.png"
+header-img: "img/post-bg-3.png"
 header-mask: 0.2
 tags:
   - 教程

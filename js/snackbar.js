@@ -1,6 +1,6 @@
-/*
- * SnackBar.js
- * 
+/* SnackBar.js
+ * Copyright 2026 bill74186
+ *
  * This small component is borrowed from 
  * https://codepen.io/wibblymat/pen/avAjq
  */

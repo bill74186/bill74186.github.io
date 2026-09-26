@@ -1,5 +1,6 @@
 /* sw.js
  * Copyright 2026 bill74186
+ *
  * Licensed under MIT
  * service worker scripting
  * Made by Huxpro

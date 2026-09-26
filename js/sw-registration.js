@@ -4,7 +4,7 @@
  * Register service worker.
  * Made  by Huxpro
  */
- 
+
 // SW Version Upgrade Ref: <https://youtu.be/Gb9uI67tqV0>
 
 function handleRegistration(registration){

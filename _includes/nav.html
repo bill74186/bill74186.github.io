@@ -29,6 +29,11 @@
 						<li>
 							<a href="{{ site.baseurl }}/archive"><i class="fa fa-archive"></i> Archive</a>
 						</li>
+						{% if site.theme-dark %}
+						<li>
+							<a href="javascript:void(0)" id="theme-toggle"><i class="fa fa-moon-o"></i> Dark</a>
+						</li>
+						{% endif %}
 						<li class="search-icon">
 							<a href="javascript:void(0)"><i class="fa fa-search"></i> Search</a>
 						</li>

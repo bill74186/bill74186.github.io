@@ -1,7 +1,9 @@
-/*
-Credits: this script is shamelessly borrowed from
-https://github.com/kitian616/jekyll-TeXt-theme
-*/
+/* archive.js
+ * Copyright 2026 bill74186
+ *
+ * Credits: this script is shamelessly borrowed from
+ * https://github.com/kitian616/jekyll-TeXt-theme
+ */
 
 (function() {
   function queryString() {

@@ -1,4 +1,8 @@
-// jquery.tagcloud.js
+/* jquery.tagcloud.js
+ * Copyright 2026 bill74186
+ *
+ * JQuery-TagCloud
+ */
 
 (function($) {
 

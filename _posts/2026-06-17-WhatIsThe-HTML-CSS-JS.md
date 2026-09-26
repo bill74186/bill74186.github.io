@@ -3,7 +3,7 @@ layout: post
 title: "网页三剑客"
 subtitle: "网页三剑客HTML、CSS、JS到底是什么？"
 author: "bill74186"
-header-img: "post-bg-5.png"
+header-img: "img/post-bg-5.png"
 header-mask: 0.2
 tags:
   - 教程

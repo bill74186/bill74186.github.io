@@ -1,4 +1,6 @@
-/*
+/* jquery.nav.js
+ * Copyright 2026 bill74186
+ *
  * jQuery One Page Nav Plugin
  * http://github.com/davist11/jQuery-One-Page-Nav
 

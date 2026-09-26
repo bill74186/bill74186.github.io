@@ -1,6 +1,12 @@
 ---
 layout: null
 ---
+/* search.json
+ * Copyright 2026 bill74186
+ *
+ * Made by Huxpro
+ */
+
 [
     {% for post in site.posts %}
         {
