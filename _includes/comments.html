@@ -17,7 +17,7 @@
 	crossorigin="anonymous"
 	async>
 </script>
-{% if site.giscus.theme-dark %}
+{% if site.theme-dark %}
 <script>
 	(function () {
 		var lightTheme = "{{ site.giscus.theme }}";
@@ -30,6 +30,7 @@
 				iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
 			}
 		}
+		syncGiscusTheme();
 		new MutationObserver(syncGiscusTheme).observe(document.documentElement, {
 			attributes: true,
 			attributeFilter: ['data-theme']
@@ -47,7 +48,7 @@
 	crossorigin="anonymous"
 	async>
 </script>
-{% if site.utterances.theme-dark %}
+{% if site.theme-dark %}
 <script>
 	(function () {
 		var lightTheme = "{{ site.utterances.theme }}";
@@ -60,6 +61,7 @@
 				iframe.contentWindow.postMessage({ type: 'set-theme', theme: utterancesTheme }, 'https://utteranc.es');
 			}
 		}
+		syncUtterancesTheme();
 		new MutationObserver(syncUtterancesTheme).observe(document.documentElement, {
 			attributes: true,
 			attributeFilter: ['data-theme']
