@@ -95,6 +95,7 @@ utterances:
   issue_term: "pathname"
   label: "Comment"
   theme: "github-light"
+  theme-dark: "github-dark"
 
 gitalk:
   enable: false
