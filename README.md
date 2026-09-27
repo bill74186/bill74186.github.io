@@ -120,7 +120,7 @@ sidebar-about-description: "Briefly describe yourself"
 sidebar-avatar: /img/bill74186.jpg     # Your avatar, please use absolute path. Note: Case sensitive! File extension too
 ```
 
-The sidebar is responsive. When the screen size is less than 992px, the sidebar will move to the bottom. Please see the bootstrap grid system &lt;http://v3.bootcss.com/css/&gt;
+The sidebar is responsive. When the screen size is less than 992px, the sidebar will move to the bottom. Please see the bootstrap grid system <http://v3.bootcss.com/css/>
 
 
 ### Mini About Me
@@ -140,7 +140,7 @@ featured-condition-size: 1
 
 The only thing to note is `featured-condition-size`: If the SIZE of a tag, meaning the number of posts using that tag, is greater than the condition value set above, this tag will be featured on the homepage.
  
-There's a conditional template inside `{% if tag[1].size &gt; {{site.featured-condition-size}} %}` that's used for filtering.
+There's a conditional template inside `{% if tag[1].size > {{site.featured-condition-size}} %}` that's used for filtering.
 
 ### SNS Settings
 
@@ -218,7 +218,8 @@ giscus:
   reactions_enabled: [0/1]
   emit_metadata: [0/1]
   input_position: "[top/bottom]"
-  theme: "[light/dark/custom]"
+  theme: "[light/custom]"
+  theme-dark: "[dark/custom]"
   lang: "[zh-CN/en-US/other]"
   loading: "[lazy/eager]"
 
@@ -228,6 +229,7 @@ utterances:
   issue_term: "pathname"
   label: "[Comment/other]"
   theme: "[github-light/other]"
+  theme-dark: "[github-dark/other]"
 
 gitalk:
   enable: [true/false]
@@ -263,13 +265,17 @@ If you like to tinker, you can customize this template's Code.
 
 **If you can understand the code in the `_include/` and `_layouts/` folders (this is where the entire interface layout is), you can directly modify/add code using the template engine [Liquid](https://github.com/Shopify/liquid/wiki) syntax used by Jekyll for more creative custom interfaces!**
 
+For example, I added a dark mode feature that's really handy for reading articles at night.
+
+![theme-dark.png](theme-dark.png)
+
 ### Header Background
 
 The header background for each page of the blog can be chosen by yourself. Look at a few example posts and you'll know how to set it up.
   
 The choice of header background is entirely up to your personal aesthetic. Each article can have a different background, you can put whatever you want, just make sure the width is sufficient and the size isn't too big, otherwise it will load slowly.
 
-&gt; It's best to compress the uploaded images first. Here I recommend imageOptim image compression software to make your blog take off.
+> It's best to compress the uploaded images first. Here I recommend imageOptim image compression software to make your blog take off.
 
 But note that the title of this template is **white**, so the background color should be set to **gray** or **black**, in short, a dark color scheme. Of course, you can also customize the font color. In short, using github pages means you can completely customize your own blog.
 
@@ -277,7 +283,7 @@ But note that the title of this template is **white**, so the background color s
 
 My blog title is **"Bill Blog"** but I want it to display **"bill74186的博客 | Bill Blog"** when searched. This requires the SEO Title to be defined.
 
-Actually, this SEO Title defines what's inside `&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;` and the share title. You can modify it yourself.
+Actually, this SEO Title defines what's inside `<head><title>Title</title></head>` and the share title. You can modify it yourself.
 
 ### About Receiving "Page Build Warning" Emails
 
@@ -292,8 +298,8 @@ Students using `jekyll server` need to do this:
 
 Students using `bundle exec jekyll server` need to enter `bundle update` to update dependency packages after updating jekyll.
 
-&gt; Note:
-&gt; You can use the `jekyll -s` command to configure the blog locally in real time, improving efficiency. See [Jekyll.com](http://jekyllcn.com/) for details.
+> Note:
+> You can use the `jekyll -s` command to configure the blog locally in real time, improving efficiency. See [Jekyll.com](http://jekyllcn.com/) for details.
 
 Reference documents: [using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) &amp; [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 

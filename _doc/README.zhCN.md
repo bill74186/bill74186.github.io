@@ -158,7 +158,7 @@ featured-condition-size: 1
     linkedin_username: firstname-lastname-idxxxx
 ```
 
-![SNS 设置SNS-Setting.png](SNS-Setting.png)
+![SNS 设置 SNS-Setting.png](SNS-Setting.png)
 
 ### 好友链接
 
@@ -218,7 +218,8 @@ giscus:
   reactions_enabled: [0/1]
   emit_metadata: [0/1]
   input_position: "[top/bottom]"
-  theme: "[light/dark/custom]"
+  theme: "[light/custom]"
+  theme-dark: "[dark/custom]"
   lang: "[zh-CN/en-US/other]"
   loading: "[lazy/eager]"
 
@@ -228,6 +229,7 @@ utterances:
   issue_term: "pathname"
   label: "[Comment/other]"
   theme: "[github-light/other]"
+  theme-dark: "[github-dark/other]"
 
 gitalk:
   enable: [true/false]
@@ -262,6 +264,10 @@ ga_domain: auto			# 默认的是 auto, 这里我是自定义了的域名，你�
 如果你喜欢折腾，你可以去自定义这个模板的 Code。
 
 **如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
+
+比如我自己就添加了一个非常利于夜晚看文章的暗黑模式功能：
+
+![theme-dark.png](theme-dark.png)
 
 ### 标题底图
 

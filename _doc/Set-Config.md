@@ -120,7 +120,7 @@ baidu_tongji:
 
 ## 6. Comment Settings
 
-I may publish a dedicated tutorial later on how to configure this.
+**Learn more→[Comment System Configuration](Set-Comments.md)**
 
 ```yaml
 comments: true    # *Whether to enable the comment feature

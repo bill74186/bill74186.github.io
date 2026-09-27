@@ -220,7 +220,8 @@ giscus:
   reactions_enabled: [0/1]
   emit_metadata: [0/1]
   input_position: "[top/bottom]"
-  theme: "[light/dark/custom]"
+  theme: "[light/custom]"
+  theme-dark: "[github-dark/other]"
   lang: "[zh-CN/en-US/other]"
   loading: "[lazy/eager]"
 
@@ -230,6 +231,7 @@ utterances:
   issue_term: "pathname"
   label: "[Comment/other]"
   theme: "[github-light/other]"
+  theme-dark: "[github-dark/other]"
 
 gitalk:
   enable: [true/false]
@@ -265,13 +267,17 @@ ga_domain: auto			# 預設的是 auto, 這裡我是自訂了的功能變數名�
 
 **如果你可以理解 `_include/` 和 `_layouts/`資料夾下的程式碼（這裡是整個介面佈局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的語法直接修改/新增程式碼，來進行更有創意的自訂介面啦！**
 
+比如我自己就添加了一個非常利於夜晚看文章的暗黑模式功能：
+
+![theme-dark.png](theme-dark.png)
+
 ### 標題底圖
 
 部落格每頁的標題底圖是可以自己選的，看看幾篇範例post你就知道如何設定了。
   
 標題底圖的選取完全是看個人的審美了。每一篇文章可以有不同的底圖，你想放什麼就放什麼，最後寬度要夠，大小不要太大，否則載入慢啊。
 
-&gt; 上傳的圖片最好先壓縮，這裡推薦 imageOptim 圖片壓縮軟體，讓你的部落格起飛。
+> 上傳的圖片最好先壓縮，這裡推薦 imageOptim 圖片壓縮軟體，讓你的部落格起飛。
 
 但是需要注意的是本模板的標題是**白色**的，所以背景色要設定為**灰色**或者**黑色**，總之深色系就對了。當然你還可以自訂修改字型顏色，總之，用github pages就是可以完全的個性自訂自己的部落格。
 
@@ -279,7 +285,7 @@ ga_domain: auto			# 預設的是 auto, 這裡我是自訂了的功能變數名�
 
 我的部落格標題是 **「Bill Blog」** 但是我想要在搜尋的時候顯示 **bill74186的博客 | Bill Blog**，這個就需要 SEO Title 來定義了。
 
-其實這個 SEO Title 就是定義了`&lt;head&gt;&lt;title&gt;標題&lt;/title&gt;&lt;/head&gt;`這個裡面的東西和多說分享的標題，你可以自行修改的。
+其實這個 SEO Title 就是定義了`<head><title>標題</title></head>`這個裡面的東西和多說分享的標題，你可以自行修改的。
 
 ### 關於收到"Page Build Warning"的 Email
 
@@ -294,8 +300,8 @@ ga_domain: auto			# 預設的是 auto, 這裡我是自訂了的功能變數名�
 
 使用`bundle exec jekyll server`的同學在更新 jekyll 後，需要輸入`bundle update`來更新依賴的包.
 
-&gt; Note：
-&gt; 可以使用 `jekyll -s` 命令在本地即時組態部落格，提高效率。詳見 [Jekyll.com](http://jekyllcn.com/)
+> Note：
+> 可以使用 `jekyll -s` 命令在本地即時組態部落格，提高效率。詳見 [Jekyll.com](http://jekyllcn.com/)
 
 參考文件：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) &amp; [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 

@@ -29,9 +29,11 @@
 
 ### 總開關
 
-如果你覺得做部落格不需要別人評論，你可以把下面的值改為`false`：
+如果你覺得做部落格不需要別人評論，你可以把下面的值改為`false`，
+並且為了更好適應夜晚閱讀評論，建議也開啟暗黑模式：
 ```yaml
 comments: [true/false]    # 開啟或關閉評論
+theme-dark: [true/false]    # 開啟或關閉暗黑模式
 ```
 
 ### Giscus
@@ -51,7 +53,8 @@ giscus:
   reactions_enabled: [0/1]    # 是否開啟評論表情點贊反應：1開啟，0關閉
   emit_metadata: [0/1]    # 是否注入評論元資料：1開啟，0關閉
   input_position: "[top/bottom]"    # 評論輸入框位置：top在評論列表上方，bottom在下方
-  theme: "[light/dark/custom]"    # 主題：light淺色 / dark深色 / custom自訂主題
+  theme: "[light/custom]"    # 主題：light淺色 / custom自訂主題
+  theme-dark: "[dark/custom]"    # 暗黑模式下的主題：dark深色 / custom自訂主題（可選）
   lang: "[zh-CN/en-US/other]"    # 介面語言：zh-CN簡體中文、en-US英文等
   loading: "[lazy/eager]"    # 載入模式：lazy捲動到區域才載入，eager頁面直接載入
 ```
@@ -69,6 +72,7 @@ utterances:
   issue_term: "pathname"    # 文章與Issue對應規則：pathname頁面路徑 / url完整連結 / title頁面標題
   label: "[Comment/other]"    # 自動建立Issue時附加的標籤
   theme: "[github-light/other]"    # 主題樣式：github-light淺色等
+  theme-dark: "[github-dark/other]"    # 暗黑模式下的主題樣式：github-dark深色等（可選）
 ```
 
 ### Gitalk

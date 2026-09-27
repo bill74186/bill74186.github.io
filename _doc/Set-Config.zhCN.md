@@ -120,7 +120,7 @@ baidu_tongji:
 
 ## 6.评论设置
 
-后面可能我会专门出文档教程教大家如何配置
+**了解更多→[评论系统配置](Set-Comments-zhCN.md)**
 
 ```yaml
 comments: true    # *是否开启评论功能
@@ -143,6 +143,7 @@ giscus:
   emit_metadata: 1
   input_position: "top"
   theme: "light"
+  theme-dark: "dark"
   lang: "zh-CN"
   loading: "lazy"
 ```
@@ -158,6 +159,7 @@ utterances:
   issue_term: "pathname"
   label: "Comment"
   theme: "github-light"
+  theme-dark: "github-dark"
 ```
 
 ### Gitalk
@@ -191,6 +193,7 @@ featured-condition-size: 1    # 标签关联的文章数超过此值时才展示
 ```yaml
 chrome-tab-theme-color: "#000000"    # Chrome 浏览器导航栏颜色
 service-worker: true    # 是否允许 SW
+theme-dark: true    # 是否开启暗黑模式
 mathjax: true    # 是否渲染数学公式
 future: true    # 是否允许发布带有未来日期的帖子或文档
 ```
@@ -237,8 +240,6 @@ sidebar-avatar: /img/bill74186.png    # 你的大头照
 sidebar-qq: 3854052547    # 你的QQ号
 sidebar-wechat: mmll1920141    # 你的微信号
 sidebar-email: bill74186@outlook.com    # 你的邮箱地址
-
-future: true    #是否允许发布带有未来日期的帖子或文档
 
 # SNS 设置（没有就注释掉）
 RSS: true    # 是否开启订阅功能
@@ -319,6 +320,7 @@ giscus:
   emit_metadata: 1
   input_position: "top"
   theme: "light"
+  theme-dark: "dark"
   lang: "zh-CN"
   loading: "lazy"
 
@@ -329,6 +331,7 @@ utterances:
   issue_term: "pathname"
   label: "Comment"
   theme: "github-light"
+  theme-dark: "github-dark"
 
 # Gitalk
 gitalk:
@@ -347,7 +350,9 @@ featured-condition-size: 1    # 标签关联的文章数超过此值时才展示
 # 其他设置
 chrome-tab-theme-color: "#000000"    # Chrome 浏览器导航栏颜色
 service-worker: true    # 是否允许 SW
+theme-dark: true    # 是否开启暗黑模式
 mathjax: true    # 是否渲染数学公式
+future: true    #是否允许发布带有未来日期的帖子或文档
 
 #朋友设置
 friends: [

@@ -29,9 +29,11 @@ When reviewing the code below, please note:
 
 ### Master Switch
 
-If you feel that your blog does not need comments from others, you can change the value below to `false`:
+If you feel that your blog does not need comments from others, you can change the value below to `false`,
+Also, to make reading comments at night easier, it's recommended to turn on dark mode:
 ```yaml
 comments: [true/false]    # Enable or disable comments
+theme-dark: [true/false]    # Enable or disable dark mode
 ```
 
 ### Giscus
@@ -51,7 +53,8 @@ giscus:
   reactions_enabled: [0/1]    # Whether to enable comment emoji reactions: 1 enable, 0 disable
   emit_metadata: [0/1]    # Whether to inject comment metadata: 1 enable, 0 disable
   input_position: "[top/bottom]"    # Comment input box position: top above the comment list, bottom below
-  theme: "[light/dark/custom]"    # Theme: light / dark / custom theme
+  theme: "[light/custom]"    # Theme: light / dark / custom theme
+  theme-dark: "[dark/custom]"    # Theme in dark mode: dark / custom theme. (optional)
   lang: "[zh-CN/en-US/other]"    # Interface language: zh-CN Simplified Chinese, en-US English, etc.
   loading: "[lazy/eager]"    # Loading mode: lazy loads when scrolled to the area, eager loads immediately on page load
 ```
@@ -69,6 +72,8 @@ utterances:
   issue_term: "pathname"    # Article-to-Issue mapping rule: pathname page path / url full link / title page title
   label: "[Comment/other]"    # Label attached when automatically creating an Issue
   theme: "[github-light/other]"    # Theme style: github-light, etc.
+  theme-dark: "[github-dark/other]"    # Theme in dark mode: github-dark, etc. (optional)
+
 ```
 
 ### Gitalk
