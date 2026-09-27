@@ -143,6 +143,7 @@ giscus:
   emit_metadata: 1
   input_position: "top"
   theme: "light"
+  theme-dark: "dark"
   lang: "zh-CN"
   loading: "lazy"
 ```
@@ -158,6 +159,7 @@ utterances:
   issue_term: "pathname"
   label: "Comment"
   theme: "github-light"
+  theme-dark: "github-dark"
 ```
 
 ### Gitalk
@@ -191,6 +193,7 @@ featured-condition-size: 1    # Tags are only displayed when the number of assoc
 ```yaml
 chrome-tab-theme-color: "#000000"    # Chrome browser tab theme color
 service-worker: true    # Whether to allow Service Worker
+theme-dark: true    # Whether to open dark mode
 mathjax: true    # Whether to render mathematical formulas
 future: true    # Whether to allow publishing posts or documents with future dates
 ```
@@ -237,8 +240,6 @@ sidebar-avatar: /img/bill74186.png    # Your profile photo
 sidebar-qq: 3854052547    # Your QQ number
 sidebar-wechat: mmll1920141    # Your WeChat ID
 sidebar-email: bill74186@outlook.com    # Your email address
-
-future: true    # Whether to allow publishing posts or documents with future dates
 
 # SNS Settings (comment out if you don't have them)
 RSS: true    # Whether to enable the RSS subscription feature
@@ -347,7 +348,9 @@ featured-condition-size: 1    # Tags are only displayed when the number of assoc
 # Other Settings
 chrome-tab-theme-color: "#000000"    # Chrome browser tab theme color
 service-worker: true    # Whether to allow Service Worker
+theme-dark: true    # Whether to open dark mode
 mathjax: true    # Whether to render mathematical formulas
+future: true    # Whether to allow publishing posts or documents with future dates
 
 # Friends Settings
 friends: [
