@@ -3,6 +3,7 @@
 *.cache
 
 _site/
+.idea/
 .jekyll-cache/
 .trae-html-share-packages/
 

@@ -22,8 +22,8 @@ tags:
 
 如果现在想使用只需在导航栏按下 “DARK” 就行了。
 
-![明白模式下的开关](https://bill74186.github.io/img/in-post/theme-light.png)
-![暗黑模式下的开关](https://bill74186.github.io/img/in-post/theme-dark.png)
+![明亮模式下的开关](/img/in-post/theme-light.png)
+![暗黑模式下的开关](/img/in-post/theme-dark.png)
 
 如果你是制作者只需在 `_config.yml` 里设置 `theme-dark` 的值为 `true` 就可以开启了。
 
@@ -62,4 +62,4 @@ giscus:
 
 高考失利了可以试试下面办法：
 
-![高考失利补救方法](https://bill74186.github.io/img/in-post/gkslbjff.png)
+![高考失利补救方法](/img/in-post/gkslbjff.png)

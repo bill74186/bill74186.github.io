@@ -67,12 +67,16 @@ permalink: pretty    # (No need to worry) Use "pretty" to beautify permalinks
 paginate: 5    # !How many articles to display per page
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]    # *Files that do not need to be built
 anchorjs: true    # *Whether to enable anchor links
 start_time: 2026    # !Footer start year
@@ -257,12 +261,16 @@ permalink: pretty    # Use "pretty" to beautify permalinks
 paginate: 5    # How many articles to display per page
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]    # Files that do not need to be built
 anchorjs: true    # Whether to enable anchor links
 start_time: 2026    # Footer start year

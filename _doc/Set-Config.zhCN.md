@@ -67,12 +67,16 @@ permalink: pretty    # （不用管）使用pretty美化永久链接
 paginate: 5    # !一页你准备放几篇文章
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]    # *不需要构建的文件
 anchorjs: true    # *是否开启锚链接
 start_time: 2026    # !页脚开始年份
@@ -257,13 +261,17 @@ permalink: pretty    # 使用pretty美化永久链接
 paginate: 5    # 一页你准备放几篇文章
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
-  ]    # 不需要构建的文件
+    "LICENSE",
+    "*.bak"
+  ]    # 不需要构建的文件（建议里面放垃圾文件）
 anchorjs: true    # 是否开启锚链接
 start_time: 2026    # 页脚开始年份
 language: zh-CN    # 网页语言，默认中文

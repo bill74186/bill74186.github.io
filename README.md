@@ -267,7 +267,7 @@ If you like to tinker, you can customize this template's Code.
 
 For example, I added a dark mode feature that's really handy for reading articles at night.
 
-![theme-dark.png](theme-dark.png)
+![theme-dark.png](_doc/theme-dark.png)
 
 ### Header Background
 

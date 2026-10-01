@@ -32,12 +32,16 @@ permalink: pretty
 paginate: 5
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]
 anchorjs: true
 start_time: 2026

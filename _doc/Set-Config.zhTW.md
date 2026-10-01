@@ -67,12 +67,16 @@ permalink: pretty    # （不用管）使用pretty美化永久連結
 paginate: 5    # !一頁你準備放幾篇文章
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]    # *不需要建置的檔案
 anchorjs: true    # *是否開啟錨點連結
 start_time: 2026    # !頁尾開始年份
@@ -257,12 +261,16 @@ permalink: pretty    # 使用pretty美化永久連結
 paginate: 5    # 一頁你準備放幾篇文章
 exclude:
   [
-    "node_modules",
     "Gruntfile.js",
+    "Gemfile",
+    "Gemfile.lock",
     "package.json",
+    "package-lock.json",
+    ".git",
     ".gitignore",
     "README.md",
-    "_doc"
+    "LICENSE",
+    "*.bak"
   ]    # 不需要建置的檔案
 anchorjs: true    # 是否開啟錨點連結
 start_time: 2026    # 頁尾開始年份
