@@ -992,9 +992,9 @@ pre code {
   }
   /**
    * Animation
-   * Blog-Navbar using genuine Material Design Animation
+   * HuxBlog-Navbar using genuine Material Design Animation
    */
-  #blog_navbar {
+  #huxblog_navbar {
     /**
 	 * Sharable code and 'out' function
 	 */
@@ -1009,11 +1009,11 @@ pre code {
 	 *'In' Animation
 	 */
   }
-  #blog_navbar a {
+  #huxblog_navbar a {
     font-size: 13px;
     line-height: 28px;
   }
-  #blog_navbar .navbar-collapse {
+  #huxblog_navbar .navbar-collapse {
     height: 0px;
     transform: scaleY(0);
     transform-origin: top right;
@@ -1022,25 +1022,25 @@ pre code {
     -webkit-transform-origin: top right;
     -webkit-transition: -webkit-transform 400ms cubic-bezier(0.32, 1, 0.23, 1) 0ms;
   }
-  #blog_navbar li {
+  #huxblog_navbar li {
     opacity: 0;
     transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     -webkit-transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   }
-  #blog_navbar.in {
+  #huxblog_navbar.in {
     transform: scaleX(1);
     -webkit-transform: scaleX(1);
     opacity: 1;
     transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     -webkit-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   }
-  #blog_navbar.in .navbar-collapse {
+  #huxblog_navbar.in .navbar-collapse {
     transform: scaleY(1);
     -webkit-transform: scaleY(1);
     transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
     -webkit-transition: -webkit-transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #blog_navbar.in li {
+  #huxblog_navbar.in li {
     opacity: 1;
     transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
     -webkit-transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
