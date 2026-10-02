@@ -50,7 +50,7 @@
 	<link href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/v4-shims.min.css" rel="stylesheet"
 		type="text/css">
 
-    {% if site.theme-dark %}
+	{% if site.theme-dark %}
 	<!-- Theme init (prevent FOUC) -->
 	<script>
 		(function () {
@@ -61,9 +61,6 @@
 		})();
 	</script>
 	{% endif %}
-
-	<!-- ga & ba script hoook -->
-	<script></script>
 	{% if site.microsoft-clarity.enable %}
 	<!-- Microsoft Clarity -->
 	<script type="text/javascript">
@@ -74,5 +71,4 @@
 		})(window, document, "clarity", "script", "{{ site.microsoft-clarity.clarity_id }}");
 	</script>
 	{% endif %}
-
 </head>
